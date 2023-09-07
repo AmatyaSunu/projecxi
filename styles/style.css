@@ -2,11 +2,24 @@
 
 .row {
     display: flex;
-  }
-  
-  .column {
-    flex: 50%;
-  }
+    width: 100%;
+}
+
+.column {
+    flex: 1;
+    box-sizing: border-box;
+}
+
+label {
+    font-family: Arial;
+    font-weight: 300;
+    font-size: small;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+a {
+    color: #0052CC;
+}
 
 /* signup page CSS */
 .signup-body {
@@ -50,15 +63,69 @@
     box-sizing: border-box;
 }
 
+.signup-column h1 {
+    color: #2898C7;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-form {
+    padding-right: 30px;
+}
+
 .signup-img {
     display: flex;
     justify-content: center;
-    align-items: center;  
-    height: 100%; 
+    align-items: center;
+    height: 100%;
     margin-top: 40px;
 }
 
 .signup-img img {
     max-width: 60%;
     height: auto;
+}
+
+.custom-input {
+    width: 629px;
+    height: 38px;
+    background-color: #F8F8F8;
+    border: black 1px solid;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.custom-input-half {
+    width: 300px;
+    height: 38px;
+    background-color: #F8F8F8;
+    border: black 1px solid;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.policy {
+   font-size: large;
+   font-family: sans-serif;
+}
+
+.create-button {
+    display: flex;
+    justify-content: center; /* Horizontally centers the button */
+    align-items: center;
+}
+
+.create-account-button {
+    font-size: x-large;
+    font-weight: bolder;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    background-color: #4CBB17;
+    padding: 10px 25px;
+    width: 280px;
+    height: 45px;
+    margin: 30px 30px 0px 0px;
 }
