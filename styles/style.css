@@ -1,0 +1,64 @@
+/* General CSS */
+
+.row {
+    display: flex;
+  }
+  
+  .column {
+    flex: 50%;
+  }
+
+/* signup page CSS */
+.signup-body {
+    background-color: #ECECEC;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: white;
+    margin: 30px;
+    width: calc(100% - 60px);
+    height: calc(100% - 60px);
+    overflow: auto;
+}
+
+.main-logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.logo {
+    width: 240px;
+    height: auto;
+}
+
+.signup-row {
+    display: flex;
+    width: 100%;
+}
+
+.signup-column {
+    flex: 1;
+    box-sizing: border-box;
+}
+
+.signup-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    height: 100%; 
+    margin-top: 40px;
+}
+
+.signup-img img {
+    max-width: 60%;
+    height: auto;
+}
