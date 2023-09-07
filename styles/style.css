@@ -89,7 +89,7 @@ a {
 }
 
 .custom-input {
-    width: 629px;
+    width: 630px;
     height: 38px;
     background-color: #F8F8F8;
     border: black 1px solid;
@@ -98,12 +98,16 @@ a {
 }
 
 .custom-input-half {
-    width: 300px;
+    width: 305px;
     height: 38px;
     background-color: #F8F8F8;
     border: black 1px solid;
     border-radius: 5px;
     margin-bottom: 10px;
+}
+
+.last-name {
+    margin-left: -40px;
 }
 
 .policy {
