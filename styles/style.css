@@ -21,6 +21,33 @@ a {
     color: #0052CC;
 }
 
+#confirm-button {
+    font-size: large;
+    font-weight: bolder;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    background-color: #2898C7;
+    padding: 5px 10px;
+    width: 110px;
+    height: 30px;
+    margin: 30px 0px;
+}
+
+#confirm-button:hover {
+    background-color: #09709d;
+}
+
+#skip {
+    color: grey;
+    text-decoration: underline;
+    margin-left: 30px;
+}
+
+#skip:hover {
+    color: #2898C7;
+}
+
 /* signup page CSS */
 .signup-body {
     background-color: #ECECEC;
@@ -117,7 +144,7 @@ a {
 
 .create-button {
     display: flex;
-    justify-content: center; /* Horizontally centers the button */
+    justify-content: center;
     align-items: center;
 }
 
@@ -133,3 +160,124 @@ a {
     height: 45px;
     margin: 30px 30px 0px 0px;
 }
+
+/* MFA Page CSS */
+
+.mfa-logo {
+    width: 210px;
+    height: auto;
+}
+.mfa-container {
+    background-color: white;
+    margin: 30px 400px;
+    width: calc(100% - 800px);
+    height: calc(100% - 60px);
+    overflow: auto;
+}
+
+.mfa-container h1{
+    margin: 30px 0px;
+}
+
+.mfa-container p {
+    margin: 0px 90px;
+    line-height: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+}
+
+.para-2 {
+    text-align: center;
+    padding: 50px 100px 0px 110px;
+    font-size: large;
+    font-weight: 100;
+}
+
+.para-3 {
+    text-align: center;
+    padding: 0px 110px 20px 140px;
+    font-size: large;
+    font-weight: 100;
+}
+
+.line-container {
+    display: flex;
+    align-items: center;
+    size: 20px;
+    margin: 15px 180px 70px;
+}
+
+.disabled, .enabled{
+    font-size: large;
+    font-weight: 100;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+#mfa-button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; 
+    margin-right: 100px;
+}
+
+/* Toggle switch CSS */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(16px);
+    -ms-transform: translateX(16px);
+    transform: translateX(16px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 24px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
