@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dashboard</title>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Sunidhi Amatya" />
+    <link rel="stylesheet" href="../styles/dashboard-style.css">
+    <script src="../scripts/script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="sidenav">
+        <div class="sidenav-logo">
+            <img src="../images/logo.png" />
+        </div>
+
+        <div class="menu">
+            <hr class="sidenav-line">
+            <div>
+                <a class="menu-content">Dashboard</a>
+            </div>
+            <div>
+                <a class="menu-content">Project</a>
+            </div>
+            <hr class="sidenav-line">
+            <div>
+                <a class="menu-content">Profile</a>
+            </div>
+            <div>
+                <a class="menu-content">Setting</a>
+            </div>
+            <div>
+                <a class="menu-content">About</a>
+            </div>
+            <hr class="sidenav-line">
+            <div>
+                <a class="menu-content">Contact us</a>
+            </div>
+            <div>
+                <a class="menu-content">Help</a>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="topnav">
+            <div class="search-input-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Search">
+            </div>
+            <div class="user-container">
+                <img src="./images/jessica.jpeg" alt="Avatar" class="user-avatar">
+                <span class="user-name">Jessica Bells</span>
+                <i class="fas fa-chevron-down dropdown-icon"></i>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="row">
+                <div class="grid-1">
+                    <h1>Welcome</h1>
+                    <p>Welcome to Projecxi Dashboard – Your Project's Command Center!</p>
+                    <br>
+                    <p>Organize, Monitor, Achieve.</p>
+                </div>
+                <div class="grid-1">
+                    <h1>Notice</h1>
+                    <p>Monday 2 October: Labour Day</p>
+                    <p>Sunday 24 December: Christmas Eve</p>
+                    <p>Monday 25 December: Christmas Day</p>
+                    <p>Tuesday 26 December: Boxing Day</p>
+                </div>
+            </div>
+            <div class="grid-2">
+                <div class="project-header">
+                    <h1>Projects</h1>
+                    <div class="buttons-container">
+                        <button class="create-project-btn">Create Project</button>
+                        <button class="filter-btn">Filter <i class="fas fa-filter"></i></button>
+                    </div>
+                </div>
+                <table class="project-table">
+                    <thead>
+                        <tr>
+                            <th>Key</th>
+                            <th>Project Name</th>
+                            <th>Project Lead</th>
+                            <th>Start Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>LB</td>
+                            <td>Lamba</td>
+                            <td>Jessica Bells</td>
+                            <td>21/7/2023</td>
+                            <td><button class="progress-button">Progress</td>
+                        </tr>
+                        <tr>
+                            <td>PH</td>
+                            <td>Personhood</td>
+                            <td>Jessica Bells</td>
+                            <td>23/7/2023</td>
+                            <td><button class="progress-button">Progress</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <button class="prev-btn"><i class="fas fa-arrow-left"></i> Previous</button>
+                    <div class="page-numbers">
+                        <span class="page-number active">1</span>
+                        <span class="page-number">2</span>
+                    </div>
+                    <button class="next-btn">Next <i class="fas fa-arrow-right"></i></button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
