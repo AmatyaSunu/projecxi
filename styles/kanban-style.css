@@ -291,20 +291,6 @@ body {
     margin-top: 0px;
 }
 
-.fa-flag {
-    color: rgb(221, 31, 31);
-}
-
-.fa-comment-alt{
-    padding-top: 10px;
-
-}
-.rectangle-icon {
-    width: 15px;
-    height: 15px;
-    background-color: green;
-}
-
 .left-group {
     display: flex;
     align-items: center;
@@ -318,4 +304,3 @@ body {
     gap: 10px; 
     margin-top: 10px;
 }
-

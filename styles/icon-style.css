@@ -1,0 +1,20 @@
+
+/* Style for icons */
+
+.fa-angle-double-up {
+    color: red;
+}
+
+.fa-flag {
+    color: rgb(221, 31, 31);
+}
+
+.fa-comment-alt{
+    padding-top: 10px;
+
+}
+.rectangle-icon {
+    width: 15px;
+    height: 15px;
+    background-color: green;
+}
