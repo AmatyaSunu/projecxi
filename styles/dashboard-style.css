@@ -133,6 +133,7 @@ body {
 .user-name {
     margin-right: 10px;
     font-size: large;
+    font-family: 'Inter', sans-serif;
 }
 
 .dropdown-icon {
@@ -225,7 +226,7 @@ body {
 
 .filter-btn {
     background-color: white;
-    color: #A8A8BD;
+    color: black;
     display: flex;
     align-items: center;
     gap: 15px;
@@ -263,7 +264,7 @@ body {
 }
 
 .project-table thead th {
-    color: #6d6d70;
+    color: black;
     font-weight: lighter;
     font-size: medium;
     font-family: 'Inter', sans-serif;
