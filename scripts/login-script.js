@@ -1,3 +1,6 @@
+/* Script for the login form page
+Author: Sunidhi Amatya */
+
 // Function to retrieve query parameters from the URL
 function getQueryVariable(variable) {
     const query = window.location.search.substring(1);
@@ -38,15 +41,13 @@ function navigateToDashboardPage() {
 
         alert(alertMessage);
     } else {
-        const nextPageUrl = `../dashboard.html`;
-        window.location.href = nextPageUrl;
+        window.location.href = `../dashboard.html`;
     }
 }
 
 // Checks validity of password
 function isValidPassword(password) {
     const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-
     return passwordPattern.test(password);
 }
 

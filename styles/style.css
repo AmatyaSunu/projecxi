@@ -43,6 +43,7 @@ a {
 
 #confirm-button:hover {
     background-color: #09709d;
+    cursor: pointer;
 }
 
 #skip {
@@ -53,6 +54,7 @@ a {
 
 #skip:hover {
     color: #2898c7;
+    cursor: pointer;
 }
 
 /* signup page CSS */
@@ -166,6 +168,12 @@ a {
     width: 280px;
     height: 45px;
     margin: 30px 30px 0px 0px;
+}
+
+.create-account-button:hover {
+    font-weight: bolder;
+    cursor: pointer;
+    background-color: #317b0e;
 }
 
 /* MFA Page CSS */

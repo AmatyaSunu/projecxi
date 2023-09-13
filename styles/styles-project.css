@@ -140,7 +140,7 @@ label {
   font-size: medium;
   color: rgba(11, 11, 11, 0.845);
 }
-#Project-type {
+#project-type {
   width:601px;
   height: 38px;
   background-color: #f8f8f8;
@@ -155,7 +155,7 @@ label {
   border-radius: 5px;
   margin-bottom: 10px;
 }
-#dropdown{
+#default-assignee{
   width:601px;
   height: 38px;
   background-color: #f8f8f8;

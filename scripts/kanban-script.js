@@ -1,3 +1,6 @@
+/* Script for the kanban dashboard page
+Author: Sunidhi Amatya */
+
 // PRIORITIES
 const PRIORITY_HIGH = 'HIGH';
 const PRIORITY_MEDIUM = 'MEDIUM';
@@ -77,4 +80,11 @@ function drop(ev) {
     }
 }
 
+// Function to navigate to the next page
+function navigateToPage(url) {
+    window.location.href = url;
+}
 
+document.getElementById('back').addEventListener('click', function () {
+    navigateToPage('../dashboard.html');
+});

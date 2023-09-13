@@ -140,6 +140,7 @@ p {
     font-family: 'Inter', sans-serif;
     color: #0052cc;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .terms a {
@@ -148,8 +149,10 @@ p {
     margin-right: 50px;
 }
 
-.option a:hover {
+.option a:hover,
+.terms a:hover {
     font-weight: bolder;
+    cursor: pointer;
 }
 
 .bar {
