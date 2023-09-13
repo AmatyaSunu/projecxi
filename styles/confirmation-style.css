@@ -335,9 +335,9 @@
   
   .container {
     background-color: white;
-    margin: 30px;
-    width: calc(100% - 600px);
-    height: calc(100% - 60px);
+    margin: 60px 440px;
+    width: calc(100% - 880px);
+    height: calc(100% - 120px);
     overflow: auto;
     display: flex;
     flex-direction: column;
