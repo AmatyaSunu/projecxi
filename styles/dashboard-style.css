@@ -222,6 +222,7 @@ body {
 
 .create-project-btn:hover {
     background-color: #09709d;
+    cursor: pointer;
 }
 
 .filter-btn {

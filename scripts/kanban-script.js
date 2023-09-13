@@ -1,3 +1,6 @@
+/* Script for the kanban dashboard page
+Author: Sunidhi Amatya */
+
 // PRIORITIES
 const PRIORITY_HIGH = 'HIGH';
 const PRIORITY_MEDIUM = 'MEDIUM';

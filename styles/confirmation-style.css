@@ -246,6 +246,11 @@
     height: 45px;
     margin: 0px;
   }
+
+  .verified-continue-button:hover{
+    background-color: #09709d;
+    cursor: pointer;
+  }
   
   /* verification-sent CSS */
   .verification-sent {
