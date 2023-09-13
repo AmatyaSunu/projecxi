@@ -6,6 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="author" content="Sunidhi Amatya" />
     <link rel="stylesheet" href="../styles/style.css">
+    <script src="../scripts/signup-script.js" defer></script>
     <script src="../scripts/script.js" defer></script>
 </head>
 
@@ -28,7 +29,7 @@
                             <label>Company Name</label>
                         </div>
                         <div>
-                            <input class="custom-input" type="text" id="name" name="name" placeholder="Required">
+                            <input class="custom-input" type="text" id="Company-name" name="name" placeholder="Required">
                         </div>
                     </div>
                     <div class="row">
@@ -37,7 +38,7 @@
                                 <label>First Name</label>
                             </div>
                             <div>
-                                <input class="custom-input-half" type="text" id="name" name="name"
+                                <input class="custom-input-half" type="text" id="first-name" name="name"
                                     placeholder="Required">
                             </div>
                         </div>
@@ -46,7 +47,7 @@
                                 <label>Last Name</label>
                             </div>
                             <div>
-                                <input class="custom-input-half" type="text" id="name" name="name"
+                                <input class="custom-input-half" type="text" id="last-name name="name"
                                     placeholder="Required">
                             </div>
                         </div>
@@ -64,7 +65,7 @@
                             <label>Contact Number</label>
                         </div>
                         <div>
-                            <input class="custom-input" type="number">
+                            <input class="custom-input" type="number" id="contact-number">
                         </div>
                     </div>
                     <div>
@@ -72,14 +73,14 @@
                             <label>Password</label>
                         </div>
                         <div>
-                            <input class="custom-input" type="text">
+                            <input class="custom-input" type="password" id="password" name="password" placeholder="Required">
                         </div>
                     </div>
                     <p class="policy">By clicking Create Account, you agree to the <a class="policy-link"
-                            href="privacy-policy.html">Terms of Use</a> and <a class="policy-link"
-                            href="privacy-policy.html">Privacy Policy.</a></p>
+                             id="terms-of-use" href="#">Terms of Use</a> and <a class="policy-link"
+                             id="privacy-policy" href="#">Privacy Policy.</a></p>
                     <div class="create-button">
-                        <button class="create-account-button">Create Account</button>
+                        <button class="create-account-button" id="create-account">Create Account</button>
                     </div>
                 </div>
             </div>

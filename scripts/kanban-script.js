@@ -10,12 +10,34 @@ const TYPE_DONE = 'DONE';
 
 // TITLES
 const kanbanColumns = [
-    { title: "TO DO", count: 0 },
-    { title: "IN PROGRESS", count: 0 },
-    { title: "IN TESTING", count: 0 },
-    { title: "REVIEW", count: 0 },
-    { title: "DONE", count: 0 }
+    { index: 'todo', title: "TO DO", count: 0 },
+    { index: 'inprogress', title: "IN PROGRESS", count: 0 },
+    { index: 'intesting', title: "IN TESTING", count: 0 },
+    { index: 'review', title: "REVIEW", count: 0 },
+    { index: 'done', title: "DONE", count: 0 }
 ];
+
+// Count the ticket on todo list
+document.addEventListener("DOMContentLoaded", function () {
+    for (var i = 0; i < kanbanColumns.length; i++) {
+        var column = kanbanColumns[i];
+        var columnDiv = document.getElementById(column.index);
+
+        if (columnDiv) {
+            var ticketCount = columnDiv.querySelectorAll('.ticket').length;
+
+            var countSpanId = column.index + '-count';
+            var countSpan = document.getElementById(countSpanId);
+
+            //render count in html 
+            if (countSpan) {
+                countSpan.textContent = ticketCount;
+            }
+
+            column.count = ticketCount;
+        }
+    }
+});
 
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
@@ -26,15 +48,33 @@ function allowDrop(ev) {
 }
 
 function drop(ev) {
-    console.log("drop", ev)
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
 
-    // Check if the target has the class 'kanban-block'. If not, find its closest parent with that class.
     var dropTarget = ev.target.classList.contains('kanban-block') ? ev.target : ev.target.closest('.kanban-block');
+    var sourceColumnId = document.getElementById(data).closest('.kanban-block').id;
 
-    // Append the dragged item to the drop target.
     dropTarget.appendChild(document.getElementById(data));
+
+    // Increase the count for the ticket count in target div
+    for (var i = 0; i < kanbanColumns.length; i++) {
+        var column = kanbanColumns[i];
+        if (dropTarget.id === column.index) {
+            column.count++;
+            document.getElementById(column.index + '-count').textContent = column.count;
+            break;
+        }
+    }
+
+    // Decrease the count in source div
+    for (var i = 0; i < kanbanColumns.length; i++) {
+        var column = kanbanColumns[i];
+        if (sourceColumnId === column.index) {
+            column.count--;
+            document.getElementById(column.index + '-count').textContent = column.count;
+            break;
+        }
+    }
 }
 
 
