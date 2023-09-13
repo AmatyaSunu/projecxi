@@ -9,6 +9,7 @@
     <script src="../scripts/script.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="./scripts/dashboard-script.js" defer></script>
 </head>
 
 <body>
@@ -76,7 +77,7 @@
                 <div class="project-header">
                     <h1>Projects</h1>
                     <div class="buttons-container">
-                        <button class="create-project-btn">Create Project</button>
+                        <button class="create-project-btn" id="create-project">Create Project</button>
                         <button class="filter-btn">Filter <i class="fas fa-filter"></i></button>
                     </div>
                 </div>
@@ -91,14 +92,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>LB</td>
-                            <td>Lamba</td>
+                        <tr id="kanban1">
+                            <td>TT</td>
+                            <td>Titan</td>
                             <td>Jessica Bells</td>
                             <td>21/7/2023</td>
                             <td><button class="progress-button">Progress</td>
                         </tr>
-                        <tr>
+                        <tr id="kanban2">
                             <td>PH</td>
                             <td>Personhood</td>
                             <td>Jessica Bells</td>

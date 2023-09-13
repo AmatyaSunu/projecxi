@@ -55,7 +55,8 @@ body {
 .menu-content:hover {
     background-color: #E5F0FF;
     color: #006AFF;
-    padding: 10px 30px;
+    padding: 10px;
+    width: 80%;
     border-radius: 10px;
     font-weight: bold;
 }

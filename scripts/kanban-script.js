@@ -80,4 +80,11 @@ function drop(ev) {
     }
 }
 
+// Function to navigate to the next page
+function navigateToPage(url) {
+    window.location.href = url;
+}
 
+document.getElementById('back').addEventListener('click', function () {
+    navigateToPage('../dashboard.html');
+});

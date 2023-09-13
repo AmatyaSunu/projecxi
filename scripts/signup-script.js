@@ -18,7 +18,6 @@ document.getElementById('terms-of-use').addEventListener('click', function () {
 
 // Check validity of input element
 function createAccount() {
-    console.log("SADF");
     const companyNameInput = document.getElementById('company-name');
     const firstNameInput = document.getElementById('first-name');
     const lastNameInput = document.getElementById('last-name');
