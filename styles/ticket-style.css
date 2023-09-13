@@ -65,9 +65,11 @@
     font-weight: bold;
     margin: 0px;
   }
-  p{
+  /* p{
    margin-top:10px;
   }
+  */
+  
   .menu-content {
     display: flex;
     color: white;
@@ -318,4 +320,15 @@
       width: 100%;
     }
   }
+
+  .comment-section {
+    display: flex;
+    align-items: center;
+  }
+  .comment-section h3 {
+    margin-right: 10px;
+  }
+
+
+  
   
