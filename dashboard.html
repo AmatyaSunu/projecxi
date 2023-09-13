@@ -46,10 +46,14 @@
     </div>
     <div class="main">
         <div class="topnav">
-            <div class="search-input-container">
-                <i class="fas fa-search search-icon"></i>
-                <input type="text" class="search-input" placeholder="Search">
-            </div>
+            .borderless-dropdown::after {
+                content: '\25BC'; /* Unicode down arrow character */
+                position: absolute;
+                top: 50%;
+                right: 10px; /* Adjust position of the arrow */
+                transform: translateY(-50%);
+                pointer-events: none; /* Ensure arrow doesn't interfere with dropdown click */
+            }
             <div class="user-container">
                 <img src="./images/jessica.jpeg" alt="Avatar" class="user-avatar">
                 <span class="user-name">Jessica Bells</span>
@@ -92,8 +96,8 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>LB</td>
-                            <td>Lamba</td>
+                            <td>LD</td>
+                            <td>Lamda</td>
                             <td>Jessica Bells</td>
                             <td>21/7/2023</td>
                             <td><button class="progress-button">Progress</td>
