@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Search</title>
+    <title>Search result</title>
     <meta charset="UTF-8" />
     <meta name="author" content="Tasmia Bhuiyan" />
     <link rel="stylesheet" href="../styles/search.css" />
@@ -69,17 +69,17 @@
           <div class="search-header">
             <h1>Search</h1>
             <div class="export-dropdown">
-              <div class="dropdown">
-                <button class="dropbtn">Export</button>
-                <div class="dropdown-content">
-                  <a href="#">Printable</a>
-                  <a href="#">CSV</a>
-                  <a href="#">Dashboard Chart</a>
+                <div class="dropdown">
+                  <button class="dropbtn">Export</button>
+                  <div class="dropdown-content">
+                    <a href="#">Printable</a>
+                    <a href="#">CSV</a>
+                    <a href="#">Dashboard Chart</a>
+                  </div>
                 </div>
+                <i class="fas fa-chevron-down dropdown-icon"></i>
               </div>
-              <i class="fas fa-chevron-down dropdown-icon"></i>
             </div>
-          </div>
 
           <div class="search-container">
             <div class="search-input-container">
@@ -123,7 +123,8 @@
                 <div class="filter-group">
                   <label for="status">Status: </label>
                   <select name="status" id="status" class="borderless-dropdown">
-                    <option value="All">All</option>
+                    <option value="in-progress">In Progress</option>
+                    <option value="all">All</option>
                     <option value="status1">To Do</option>
                     <option value="status2">In Progress</option>
                     <option value="status3">In Testing</option>
@@ -144,10 +145,52 @@
                 <th>Status</th>
                 <th>Type</th>
                 <th>Sprint</th>
-                <th>Report</th>
+                <th>Reporter</th>
               </tr>
             </thead>
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>Project Creation</td>
+                    <td>Jessica Bells</td>
+                    <td>High</td>
+                    <td>In Progress</td>
+                    <td>Task</td>
+                    <td>Sprint 2</td>
+                    <td>Kate Spade</td>
+
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Ticket Creation</td>
+                    <td>Kim Carter</td>
+                    <td>Low</td>
+                    <td>In Progress</td>
+                    <td>Task</td>
+                    <td>Sprint 2</td>
+                    <td>Kate Spade</td>
+                </tr>
+                <tr>
+                    <td>020</td>
+                    <td>Edit Ticket</td>
+                    <td>Jessica Bells</td>
+                    <td>Medium</td>
+                    <td>To Do</td>
+                    <td>Task</td>
+                    <td>Sprint 3</td>
+                    <td>Alan Ray</td>
+                </tr>
+            </tbody>
           </table>
+          <div class="pagination">
+            <button class="prev-btn"><i class="fas fa-arrow-left"></i> Previous</button>
+            <div class="page-numbers">
+                <span class="page-number active">1</span>
+                <span class="page-number">2</span>
+                <span class="page-number">3</span>
+            </div>
+            <button class="next-btn">Next <i class="fas fa-arrow-right"></i></button>
+        </div>
         </div>
       </div>
     </div>
