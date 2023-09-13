@@ -1,18 +1,19 @@
 body {
-    background-color: #F1F1F4;
+    background-color: white;
 }
 
 /* Style to create a sidebar on the left */
 .sidenav {
     height: 100%;
-    width: 220px;
+    width: 200px;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: white;
+    background-color: #2898c7;
     overflow-x: hidden;
     padding-top: 20px;
+    color: white;
 }
 
 /* Style to place brand logo */
@@ -22,15 +23,21 @@ body {
 }
 
 .sidenav-logo img {
-    width: 180px;
+    width: 40px;
     height: auto;
     margin-left: 20px;
-    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.project-label {
+    font-family: 'Inria Sans';
+    font-weight: medium;
+    margin-left: 5px;
 }
 
 /* style horizontal line on sidebar */
 .sidenav-line {
-    width: 180px;
+    width: 150px;
     border: 1px solid #F1F1F4;
     margin: 40px 0px;
 }
@@ -39,13 +46,14 @@ body {
 .menu {
     justify-content: center;
     align-items: center;
-    margin-left: 15px;
+    margin-left: 20px;
+    margin-top: 50px;
 }
 
 .menu-content {
     display: flex;
     align-items: center;
-    color: #585874;
+    color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
     text-decoration: none;
@@ -55,18 +63,29 @@ body {
 .menu-content:hover {
     background-color: #E5F0FF;
     color: #006AFF;
-    padding: 10px 30px;
+    padding: 10px;
+    width: 80%;
     border-radius: 10px;
     font-weight: bold;
 }
 
-/* CSS main section of dashboard page */
-.main {
-    margin-left: 220px;
-    width: calc(100% - 220px);
-    height: 100%;
+.logo {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 10px 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 30px;
 }
 
+.logo img {
+    width: 110px;
+    height: auto;
+}
+
+/* Topnav bar CSS */
 .topnav {
     display: flex;
     justify-content: space-between;
@@ -81,52 +100,16 @@ body {
     display: flex;
 }
 
-.main-content {
-    background-color: #F1F1F4;
-}
-
-/* Topnav bar CSS */
 .back-container {
     position: relative;
-}
-
-.back {
-    padding-left: 45px;
-    font-weight: bolder;
-    font-size: large;;
-    color: black;
-
-}
-
-.search-input-container {
-    position: relative;
-}
-
-.search-input {
-    padding-left: 30px;
-    width: 400px;
-    height: 40px;
-    background-color: #F1F1F4;
-    border: #F1F1F4;
-    border-radius: 8px;
-
-}
-
-.search-input::placeholder {
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    color: #888;
     margin-left: 20px;
 }
 
-.search-icon {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 12px;
-    color: #7f7f86;
+.back-container span {
+    margin-right: 10px;
+    font-size: large;
+    margin-left: 10px;
+    font-family: 'Inria Sans', sans-serif;
 }
 
 .user-container {
@@ -144,7 +127,8 @@ body {
 
 .user-name {
     margin-right: 10px;
-    font-size: large;
+    font-size: medium;
+    font-family: 'Inter', sans-serif;
 }
 
 .dropdown-icon {
@@ -152,16 +136,21 @@ body {
 }
 
 /* Style Main content */
+.main {
+    margin-left: 220px;
+    width: calc(100% - 220px);
+    height: 100%;
+}
+
+
 .main-content {
-    display: flex;
-    flex-direction: column;
     height: auto;
-    gap: 20px;
-    padding: 20px;
+    font-family: 'Inria Sans', sans-serif;
+    background-color: #F1F1F4;
 }
 
 .main-content h1 {
-    color: #2898c7;
+    color: black;
     font-family: sans-serif;
 }
 
@@ -174,20 +163,17 @@ body {
     width: 100%;
     height: 100vh;
     background-color: white;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    box-shadow: 0 -5px 10px -5px rgba(0, 0, 0, 0.1);
-    padding: 20px 0px;
+    padding: 20px 20px;
 }
 
-.project-header {
+.search-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0px 40px;
 }
 
-.project-header h1 {
+.search-header h1 {
     margin: 0;
 }
 
@@ -206,93 +192,139 @@ body {
     margin: 0;
 }
 
-.buttons-container {
+
+
+
+/*Search bar*/
+
+.search-container {
     display: flex;
-    gap: 15px;
+    justify-content: space-between; /* Align divs at opposite ends */
+    align-items: center; /* Vertically center align the content */
+    padding: 40px 40px; /* Adjust padding as needed */
 }
 
-.create-project-btn,
-.filter-btn {
+.search-input-container {
+    position: relative;
+    flex-grow: 1; 
+}
+
+.search-input {
+    padding-left: 30px;
+    width: 1050px;
+    height: 40px;
+    background-color: #F1F1F4;
+    border: #F1F1F4;
+    border-radius: 8px;
+
+}
+
+.search-input::placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #888;
+    margin-left: 20px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #7f7f86;
+}
+
+.search-btn {
     font-family: 'Inter', sans-serif;
     border-radius: 5px;
     height: 40px;
     cursor: pointer;
     padding: 5px 10px;
-    transition: background-color 0.3s ease;
-    /* Smooth color transition */
-}
-
-.create-project-btn {
     background-color: #2898c7;
     width: 120px;
     border: none;
-    font-size: 16;
+    font-size: 20px;
     font-weight: bold;
     color: #fff;
     margin-left: -20px;
     transition: background-color 0.3s ease; 
 }
 
-.create-project-btn:hover {
+.search-btn:hover {
     background-color: #09709d;
 }
 
-.filter-btn {
-    background-color: white;
-    color: #A8A8BD;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    border: 1px solid #C5C5D3;
-}
+/*search filters */
+.search-filters{
+    padding-left: 40px;
+    padding-right: 40px;
+    
+    }
+    .borderless-dropdown{
+        border: none;
+        background-color: transparent;
+        padding: 5px; 
+        font-size: 14px;
+    }
+    
+    
+    .filter-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    
+    .filter-group {
+        display: flex;
+        align-items: center;
+    }
+    
+    .filter-group label {
+        font-weight: bold;
+        margin-right: 5px;}
 
-.filter-btn:hover {
-    background-color: #F1F1F4;
-}
 
-/* CSS for project table */
-.project-table {
+/* CSS for search table */
+.search-table {
     width: 90%;
     border-collapse: collapse;
-    margin-left: 50px;
+    margin-left: 20px;
+    margin-top: 30px;
 }
 
-.project-table th,
-.project-table td {
+.search-table th,
+.search-table td {
     padding: 15px 20px;
     text-align: left;
 }
 
-.project-table thead th,
-.project-table tbody tr:not(:last-child) td {
+.search-table thead th,
+.search-table tbody tr:not(:last-child) td {
     border-bottom: 1px solid #e0e0e0;
 }
 
-.progress-button {
-    background-color: #D9F2DD;
-    border-radius: 12px;
-    border: none;
-    color: #359742;
-    padding: 5px 10px;
-}
-
-.project-table thead th {
+.search-table thead th {
     color: #6d6d70;
-    font-weight: lighter;
+    font-weight: bold;
     font-size: medium;
     font-family: 'Inter', sans-serif;
 }
 
-.project-table tbody tr {
+.search-table tbody tr {
     color: black;
     font-size:small;
     font-family: 'Inter', sans-serif;
 }
 
+/* pagination*/
 .pagination {
     display: flex;
     justify-content: space-between;
     margin: 50px 50px 20px 50px;
+   
 }
 
 .prev-btn, .next-btn {
@@ -337,33 +369,72 @@ body {
     color: 006AFF;
 }
 
-.search-filters{
-padding-left: 40px;
-padding-right: 40px;
 
-}
-.borderless-dropdown{
+
+/* Dropdown button */
+.dropbtn {
+    background-color: transparent;
+    color: #585874;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    text-decoration: none;
     border: none;
-    background-color: transparent; /* Remove background color */
-    padding: 5px; /* Add some padding for visual separation */
-    font-size: 14px; /* Adjust font size as needed */
-}
-
-
-.filter-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px; /* Add some spacing between the filters and the table */
-}
-
-/* Style for filter groups */
-.filter-group {
-    display: flex;
-    align-items: center;
-}
-
-/* Style for labels */
-.filter-group label {
-    font-weight: bold;
-    margin-right: 5px;}
+    cursor: pointer;
+  }
+  
+  /* Dropdown button on hover & focus */
+  .dropbtn:hover, .dropbtn:focus {
+    color: black;
+    background-color: transparent;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 130px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:medium;
+    text-decoration: none;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #E5F0FF;
+    color: #006AFF;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Style the dropdown icon */
+  .dropdown-icon {
+    font-size: 16px;
+    color: #585874;
+    cursor: pointer;
+  }
+  
+  /* Style for the dropdown icon on hover */
+  .dropdown-icon:hover {
+    color: #006AFF;
+  }
+  
