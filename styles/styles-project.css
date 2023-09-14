@@ -1,30 +1,24 @@
-
-html,body{
-  overflow:hidden;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
+
 .project-body {
   background-color: white;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
- 
 }
-.project-body-container {
-  background-color: white;
-  width: 80%;
-  height: 80%;
-  border-radius: 10px;
-  margin:15px;
-  border-radius: 40px;
- 
-}
+
 .project-row {
   display: flex;
   width: 100%;
+  height: 100%;
 }
 
 .navbar {
   width: 250px;
+  height: 100%;
 }
 
 /* Project Menu Styles */
@@ -33,29 +27,36 @@ html,body{
   background-color: #2898c7;
   box-sizing: border-box;
   width: 250px;
-  height: 700px;
+  height: 100%;
 }
-.project-menu-row1{
+
+.project-menu-row1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .project-menu-row2 {
   padding-top: 40px;
 }
+
 .project-menu-row3 {
   display: flex;
+  bottom: 0px;
 }
-.project-menu-content{
-  width:100px;
+
+.project-menu-content {
+  width: 100px;
 
 }
+
 .project-logo img {
   width: 60px;
   height: auto;
   margin-left: 20px;
   border-radius: 10px;
 }
+
 .project-logo {
   display: flex;
   align-items: center;
@@ -89,31 +90,28 @@ html,body{
   width: 130px;
   margin-bottom: 30px;
 }
-.main-logo{
- 
+
+.main-logo {
   border: 1px solid #ccc;
   border-radius: 10px;
   width: 220px;
   height: 60px;
-  margin-left: 20px;
+  margin-left: 10px;
   background-color: white;
-  margin-top: 100px;
-  
+  margin-top: 220px;
 }
+
 .img-main-logo {
   width: 200px;
   height: auto;
   margin-left: 15px;
   border-radius: 10px;
 }
-img.img-main-logo{
-  margin-left:0px;
 
-}
 /* Project form CSS */
 .project-form {
   background-color: #fff;
-  
+  margin: 30px;
 }
 
 .create-heading {
@@ -124,29 +122,35 @@ img.img-main-logo{
   font-weight: bold;
   padding-left: 20px;
 }
-h2{
+
+h2 {
   padding-left: 20px;
+  margin-top: 20px;
   font-weight: bolder;
-  font-style:initial;
+  font-style: initial;
 }
+
 .label {
   font-size: 16px;
   font-weight: bold;
   font-weight: bold;
 }
+
 label {
   font-family: Arial;
   font-weight: bold;
   font-size: medium;
   color: rgba(11, 11, 11, 0.845);
 }
+
 #project-type {
-  width:601px;
+  width: 601px;
   height: 38px;
   background-color: #f8f8f8;
   border: black 1px solid;
   border-radius: 5px;
 }
+
 .custom-input {
   width: 630px;
   height: 38px;
@@ -155,20 +159,24 @@ label {
   border-radius: 5px;
   margin-bottom: 10px;
 }
-#default-assignee{
-  width:601px;
+
+#default-assignee {
+  width: 601px;
   height: 38px;
   background-color: #f8f8f8;
   border: black 1px solid;
   border-radius: 5px;
 }
-.Details{
-  margin:5px;
+
+.Details {
+  margin-top: 20px;
 }
+
 .row {
   display: flex;
   width: 100%;
 }
+
 .column1 {
   flex: 1;
   box-sizing: border-box;
@@ -178,34 +186,38 @@ label {
   padding-bottom: 5px;
   margin-top: 0px;
 }
-.element{
+
+.element {
   margin: 20px;
 }
 
-.custom-inputD{
-  width: 600px; 
+.custom-inputD {
+  width: 600px;
   height: 80px;
   background-color: #F8F8F8;
   border: black 1px solid;
   border-radius: 5px;
   margin-bottom: 10px;
 }
+
 .custom-input {
-  width: 600px; 
+  width: 600px;
   height: 38px;
   background-color: #F8F8F8;
   border: black 1px solid;
   border-radius: 5px;
   margin-bottom: 10px;
 }
+
 .custom-input2 {
-  width: 400px; 
+  width: 400px;
   height: 38px;
   background-color: #F8F8F8;
   border: black 1px solid;
   border-radius: 5px;
   margin-bottom: 10px;
 }
+
 select.custom-input {
   appearance: none;
   padding: 10px;
@@ -214,9 +226,11 @@ select.custom-input {
   border-radius: 5px;
   margin-left: 40px;
 }
-.column2-row1{
+
+.column2-row1 {
   display: flex;
 }
+
 .create-project-button {
   font-size: large;
   font-weight: bolder;
@@ -229,38 +243,46 @@ select.custom-input {
   height: 45px;
   margin-right: 10px;
 }
-.create{
+
+.create {
   margin-left: 10px;
   display: inline-flex;
   padding: 10px;
 }
+
 .create-button {
   margin-right: 20px;
 }
+
 .c1 {
   font-size: 23px;
-   color: red;
- }
+  color: red;
+}
+
 .column2 {
-  flex:1;
+  flex: 1;
   box-sizing: border-box;
   margin-top: 20px;
   justify-content: space-around;
 }
-.column2-row1{
+
+.column2-row1 {
   padding-right: 150px;
 }
-.column2-row2{
+
+.column2-row2 {
   display: flex;
   padding-right: 150px;
 }
-.info{
+
+.info {
   width: 20px;
   height: 20px;
   padding-top: 20px;
   padding-left: 20px;
 }
-#infoButton {  
+
+#infoButton {
   background-color: rgb(206, 202, 202);
   color: black;
   border: none;
@@ -269,29 +291,36 @@ select.custom-input {
   height: 20px;
   cursor: pointer;
 }
-.avatar{
-  padding-top:20px;
+
+.avatar {
+  padding-top: 20px;
 }
-.avatar-logo{
-  width:10px;
+
+.avatar-logo {
+  width: 10px;
 }
-.avatar-logo img{
-  width:50px;
+
+.avatar-logo img {
+  width: 50px;
 }
-.bar{
+
+.bar {
   padding-right: 40px;
 }
+
 .image-selection button {
   color: #007bff;
   background-color: white;
   border: none;
   cursor: pointer;
   font-size: 15px;
-  margin:10px 0px 0px 50px;
+  margin: 10px 0px 0px 50px;
 }
-.in-line{
+
+.in-line {
   display: flex;
 }
+
 @media (max-width: 768px) {
   .project-body-container {
     flex-direction: column;

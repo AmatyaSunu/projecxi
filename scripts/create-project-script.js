@@ -62,7 +62,8 @@ function createProject() {
     }
 
     console.log(data);
-    navigateToPage(`./kanban.html?projectKey=${encodeURIComponent(projectKey)}&projectName=${encodeURIComponent(projectName)}&projectLead=${encodeURIComponent(projectLead)}&startDate=${encodeURIComponent(startDate)}`)
+    navigateToPage(`../confirmation/new-project-confirmation.html?projectKey=${encodeURIComponent(projectKey)}&projectName=${encodeURIComponent(projectName)}`);
+    // navigateToPage(`./kanban.html?projectKey=${encodeURIComponent(projectKey)}&projectName=${encodeURIComponent(projectName)}&projectLead=${encodeURIComponent(projectLead)}&startDate=${encodeURIComponent(startDate)}`)
 
     // Send a POST request to the dashboard page with the data object in the body
     // fetch('../dashboard.html', {
@@ -85,5 +86,3 @@ function createProject() {
 }
 
 document.getElementById('create-project-btn').addEventListener('click', createProject);
-
-// document.getElementById('cancel-btn').addEventListener('click', navigateToPage('../dashboard.html'));

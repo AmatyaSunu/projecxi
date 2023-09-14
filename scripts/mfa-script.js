@@ -10,3 +10,7 @@ function navigateToPage(url) {
 document.getElementById('skip').addEventListener('click', function () {
     navigateToPage('../dashboard.html');
 });
+
+document.getElementById('confirm-mfa-button').addEventListener('click', function () {
+    navigateToPage('../dashboard.html');
+});

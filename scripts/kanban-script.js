@@ -20,6 +20,32 @@ const kanbanColumns = [
     { index: 'done', title: "DONE", count: 0 }
 ];
 
+// Function to retrieve query parameters from the URL
+function getQueryVariable(variable) {
+    const query = window.location.search.substring(1);
+    const vars = query.split('&');
+
+    for (let i = 0; i < vars.length; i++) {
+        const pair = vars[i].split('=');
+
+        if (decodeURIComponent(pair[0]) === variable) {
+            return decodeURIComponent(pair[1]);
+        }
+    }
+
+    return null;
+}
+
+// Get project key and name query parameter from the URL and render data to page
+const projectKey = getQueryVariable('projectKey');
+const projectName = getQueryVariable('projectName');
+
+const title = document.getElementById('projectName');
+const key = document.getElementById('projectKey');
+
+title.textContent = projectName.toUpperCase();
+key.textContent = projectKey.toUpperCase();
+
 // Count the ticket on todo list
 document.addEventListener("DOMContentLoaded", function () {
     for (var i = 0; i < kanbanColumns.length; i++) {
@@ -87,4 +113,8 @@ function navigateToPage(url) {
 
 document.getElementById('back').addEventListener('click', function () {
     navigateToPage('../dashboard.html');
+});
+
+document.getElementById('create-ticket-btn').addEventListener('click', function () {
+    navigateToPage('./create-a-ticket.html');
 });

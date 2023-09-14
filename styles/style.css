@@ -298,3 +298,21 @@ input:checked+.slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+.confirm-button {
+    font-size: large;
+    font-weight: bolder;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    background-color: #2898c7;
+    padding: 5px 10px;
+    width: 110px;
+    height: 30px;
+    margin: 30px 0px;
+}
+
+.confirm-button:hover {
+    background-color: #09709d;
+    cursor: pointer;
+}
