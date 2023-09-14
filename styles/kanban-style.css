@@ -112,6 +112,10 @@ body {
     margin-left: 20px;
 }
 
+.back-container:hover {
+    cursor: pointer;
+}
+
 .back-container span {
     margin-right: 10px;
     font-size: large;
@@ -308,4 +312,23 @@ body {
 .right-group img {
     width: 30px;
     height: 30px;
+}
+
+.filter-btn {
+    font-family: 'Inter', sans-serif;
+    border-radius: 5px;
+    height: 40px;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #C5C5D3;
+}
+
+.filter-btn:hover {
+    background-color: #F1F1F4;
 }

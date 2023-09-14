@@ -39,39 +39,7 @@ function getQueryVariable(variable) {
 // To capatilize first letter
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
-  }
-
-// Get project key and name query parameter from the URL and render data to page
-const projectKey = getQueryVariable('projectKey');
-const projectName = getQueryVariable('projectName');
-
-const title = document.getElementById('projectName');
-const key = document.getElementById('projectKey');
-
-title.textContent = capitalizeFirstLetter(projectName);
-key.textContent = projectKey.toUpperCase();
-
-// Count the ticket on todo list
-document.addEventListener("DOMContentLoaded", function () {
-    for (var i = 0; i < kanbanColumns.length; i++) {
-        var column = kanbanColumns[i];
-        var columnDiv = document.getElementById(column.index);
-
-        if (columnDiv) {
-            var ticketCount = columnDiv.querySelectorAll('.ticket').length;
-
-            var countSpanId = column.index + '-count';
-            var countSpan = document.getElementById(countSpanId);
-
-            //render count in html 
-            if (countSpan) {
-                countSpan.textContent = ticketCount;
-            }
-
-            column.count = ticketCount;
-        }
-    }
-});
+}
 
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
@@ -116,11 +84,43 @@ function navigateToPage(url) {
     window.location.href = url;
 }
 
-document.getElementById('back').addEventListener('click', function () {
+// Count the ticket on todo list
+document.addEventListener("DOMContentLoaded", function () {
+    for (var i = 0; i < kanbanColumns.length; i++) {
+        var column = kanbanColumns[i];
+        var columnDiv = document.getElementById(column.index);
+
+        if (columnDiv) {
+            var ticketCount = columnDiv.querySelectorAll('.ticket').length;
+
+            var countSpanId = column.index + '-count';
+            var countSpan = document.getElementById(countSpanId);
+
+            //render count in html 
+            if (countSpan) {
+                countSpan.textContent = ticketCount;
+            }
+            column.count = ticketCount;
+        }
+    }
+
+    // Get project key and name query parameter from the URL and render data to page
+    const projectKey = getQueryVariable('projectKey');
+    const projectName = getQueryVariable('projectName');
+
+    const title = document.getElementById('projectName');
+    const key = document.getElementById('projectKey');
+
+    title.textContent = capitalizeFirstLetter(projectName);
+    key.textContent = projectKey.toUpperCase();
+
+});
+
+document.getElementById('back1').addEventListener('click', function () {
     navigateToPage('../dashboard.html');
 });
 
-document.getElementById('create-ticket-btn').addEventListener('click', function () {
+document.getElementById('create-ticket-btn1').addEventListener('click', function () {
     navigateToPage('./create-a-ticket.html');
 });
 
