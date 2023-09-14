@@ -1,317 +1,360 @@
-.Ticket-body {
-    background-color: white;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-  }
-  .Ticket-body-container {
-    background-color: white;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-   
-  }
-  .Ticket-row {
-    display: flex;
-    width: 100%;
-  }
-  .navbar {
-    width: 250px;
-  }
-  
-  /* Project Menu Styles */
-  .project-menu {
-    flex: 1;
-    background-color: #2898c7;
-    box-sizing: border-box;
-    width: 250px;
-    height: 700px;
-  }
-  .project-menu-row1{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .project-menu-row2 {
-    padding-top: 20px;
-  }
-  .project-menu-row3 {
-    display: flex;
-  }
-  .project-menu-content{
-    width:100px;
-  
-  }
-  .project-logo img {
-    width: 60px;
-    height: auto;
-    margin-left: 20px;
-    border-radius: 10px;
-  }
-  .project-logo {
-    display: flex;
-    align-items: center;
-  }
-  
-  .project-logo-label {
-    margin-top: 20px;
-    margin-right: 10px;
-    margin-left: 20px;
-    color: white;
-    font: bolder;
-  }
-  .label {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0px;
-  }
-  p{
-   margin-top:10px;
-  }
-  .menu-content {
-    display: flex;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    padding-left: 20px;
-    padding-bottom: 20px;
-    text-decoration: none;
-  }
-  .menu-content:hover {
-    font-weight: bold;
-  }
-  .hr-bar {
-    margin-left: 20px;
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    width: 130px;
-    margin-bottom: 30px;
-  }
-  .main-logo{
-   
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    width: 220px;
-    height: 60px;
-    margin-left: 20px;
-    background-color: white;
-    margin-top: 110px;
-  }
-  .img-main-logo {
-    width: 200px;
-    height: auto;
-    margin-left: 15px;
-    border-radius: 10px;
-  }
-  img.img-main-logo{
-    margin-left:0px;
-  }
-  /* Ticket form CSS */
-  .Ticket-form {
-    background-color: #fff;
-    padding: 20px;
-    overflow-y: scroll;
-    height:650px;
-  }
-  .create-heading {
-    font-size: 30px;
-    margin:0px 0px 10px;
-    color: #2898c7;
-    font-weight: bold;
-    padding-left: 20px;
-  }
-  h2{
-    margin:0px;
-    padding-left: 20px;
-    font-weight: bolder;
-    
-  } 
-  label {
-    font-family: Arial;
-    font-weight: bold;
-    font-size: medium;
-    color: rgba(11, 11, 11, 0.845);
-  width: 100px;
-  height:15px;
-  }
-  #Priority { 
-      width:601px;
-      height: 38px;
-      background-color: #f8f8f8;
-      border: black 1px solid;
-      border-radius: 5px; 
-  }
-  .custom-input {
-    width: 630px;
-    height: 38px;
-    background-color: #f8f8f8;
-    border: black 1px solid;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
-  .row {
-    display: flex;
-    width: 100%;
-  }
-  .column1 {
-    flex: 1;
-    box-sizing: border-box;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  .element{
-    margin: 20px;
-  }
-  .elementp{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 20px;
-    width: 600px; 
-    height: 80px;
-    padding: 0px;
-  }
-  #Priority-p{
-    width:601px;
-    height: 50px;
-    background-color: #f8f8f8;
-    border: black 1px solid;
-    border-radius: 5px;
-    align-self: flex-start;
-    align-self: flex-start;
-    margin-top: 5px;
-  
-  }
- 
-  .custom-inputD{
-    width: 600px; 
-    height: 80px;
-    background-color: #F8F8F8;
-    border: black 1px solid;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
-  .custom-input {
-    width: 600px; 
-    height: 38px;
-    background-color: #F8F8F8;
-    border: black 1px solid;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
-  .custom-input2 {
-    width: 400px; 
-    height: 38px;
-    background-color: #F8F8F8;
-    border: black 1px solid;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
-  select.custom-input {
-    appearance: none;
-    padding: 10px;
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-left: 40px;
-  }
-  .column2-row1{
-    display: flex;
-  }
-  .create-Ticket-button {
-    font-size: large;
-    font-weight: bolder;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    background-color: #2898c7;
-    cursor: pointer;
-    width: 200px;
-    height: 45px;
-    margin-right: 10px;
-  }
-  .create{
-    margin-left: 10px;
-    display: inline-flex;
-    padding: 10px;
-  }
-  .create-button {
-    margin-right: 20px;
-  }
-  .c1 {
-   font-size: 23px;
-    color: red;
-  }
-  .column2 {
-    flex:1;
-    box-sizing: border-box;
-    margin-top: 20px;
-    justify-content: space-around;
-  }
-  .column2-row1{
-    padding-right: 150px;
-  }
-  .column2-row2{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-right: 150px;
-    margin-top: 20px;
-  }
-  .info{
-    width: 50px;
-    height: 20px;
-    padding-top: 20px;
-    padding-left: 20px;
-    border: black;
-    margin: 0px;
-    margin-top: -20px;
-  }
-  #infoButton {
-    background-color: rgb(206, 202, 202);
-    color: black;
-    border: black;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-  }
-  .column2-row2.Attachments {
-    display: flex; 
-    align-items: center; 
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
-  .Attachments-logo{
-    width:10px;
+
+.Ticket-body {
+  background-color: white;
+}
+
+.Ticket-row {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.navbar {
+  width: 250px;
+}
+
+/* Project Menu Styles */
+.project-menu {
+  flex: 1;
+  background-color: #2898c7;
+  box-sizing: border-box;
+  width: 250px;
+  height: 100%;
+}
+
+.project-menu-row1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-menu-row2 {
+  padding-top: 40px;
+}
+
+.project-menu-row3 {
+  display: flex;
+  bottom: 0px;
+}
+
+.project-menu-content {
+  width: 100px;
+}
+
+.project-logo img {
+  width: 60px;
+  height: auto;
+  margin-left: 20px;
+  border-radius: 10px;
+}
+
+.project-logo {
+  display: flex;
+  align-items: center;
+}
+
+.project-logo-label {
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-left: 20px;
+  color: white;
+  font: bolder;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0px;
+}
+
+p {
+  margin-top: 10px;
+}
+
+.menu-content {
+  display: flex;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  text-decoration: none;
+}
+
+.menu-content:hover {
+  font-weight: bold;
+}
+
+.hr-bar {
+  margin-left: 20px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  width: 130px;
+  margin-bottom: 30px;
+}
+
+.main-logo {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 220px;
+  height: 60px;
+  margin-left: 10px;
+  background-color: white;
+  margin-top: 220px;
+}
+
+.img-main-logo {
+  width: 200px;
+  height: auto;
+  margin-left: 15px;
+  border-radius: 10px;
+}
+
+img.img-main-logo {
+  margin-left: 0px;
+}
+
+/* Ticket form CSS */
+.Ticket-form {
+  background-color: #fff;
+  padding: 20px;
+  overflow-y: scroll;
+  height: 650px;
+}
+
+.create-heading {
+  font-size: 30px;
+  margin: 0px 0px 10px;
+  color: #2898c7;
+  font-weight: bold;
+  padding-left: 20px;
+}
+
+h2 {
+  margin: 0px;
+  padding-left: 20px;
+  font-weight: bolder;
+
+}
+
+label {
+  font-family: Arial;
+  font-weight: bold;
+  font-size: medium;
+  color: rgba(11, 11, 11, 0.845);
+  width: 100px;
+  height: 15px;
+}
+
+#Priority {
+  width: 601px;
+  height: 38px;
+  background-color: #f8f8f8;
+  border: black 1px solid;
+  border-radius: 5px;
+}
+
+.custom-input {
+  width: 630px;
+  height: 38px;
+  background-color: #f8f8f8;
+  border: black 1px solid;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+}
+
+.column1 {
+  flex: 1;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.element {
+  margin: 20px;
+}
+
+.elementp {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 20px;
+  width: 600px;
+  height: 80px;
+  padding: 0px;
+}
+
+#Priority-p {
+  width: 601px;
+  height: 50px;
+  background-color: #f8f8f8;
+  border: black 1px solid;
+  border-radius: 5px;
+  align-self: flex-start;
+  align-self: flex-start;
+  margin-top: 5px;
+
+}
+
+.custom-inputD {
+  width: 600px;
+  height: 80px;
+  background-color: #F8F8F8;
+  border: black 1px solid;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.custom-input {
+  width: 600px;
+  height: 38px;
+  background-color: #F8F8F8;
+  border: black 1px solid;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.custom-input2 {
+  width: 400px;
+  height: 38px;
+  background-color: #F8F8F8;
+  border: black 1px solid;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+select.custom-input {
+  appearance: none;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-left: 40px;
+}
+
+.column2-row1 {
+  display: flex;
+}
+
+.create-Ticket-button {
+  font-size: large;
+  font-weight: bolder;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  background-color: #2898c7;
+  cursor: pointer;
+  width: 200px;
+  height: 45px;
+  margin-right: 10px;
+}
+
+.create {
+  margin-left: 10px;
+  display: inline-flex;
+  padding: 10px;
+}
+
+.create-button {
+  margin-right: 20px;
+}
+
+.c1 {
+  font-size: 23px;
+  color: red;
+}
+
+.column2 {
+  flex: 1;
+  box-sizing: border-box;
+  margin-top: 20px;
+  justify-content: space-around;
+}
+
+.column2-row1 {
+  padding-right: 150px;
+}
+
+.column2-row2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-right: 150px;
+  margin-top: 20px;
+}
+
+.info {
+  width: 50px;
+  height: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
+  border: black;
+  margin: 0px;
+  margin-top: -20px;
+}
+
+#infoButton {
+  background-color: rgb(206, 202, 202);
+  color: black;
+  border: black;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.column2-row2.Attachments {
+  display: flex;
+  align-items: center;
+}
+
+.Attachments-logo {
+  width: 10px;
+}
+
+.Attachments-logo img {
+  width: 50px;
+}
+
+.bar {
+  padding-right: 40px;
+}
+
+.image-selection button {
+  color: #007bff;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  margin: 10px 0px 0px 50px;
+}
+
+.Attachments {
+
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .project-body-container {
+    flex-direction: column;
+    align-items: center;
   }
-  .Attachments-logo img{
-    width:50px;
+
+  .project-menu {
+    width: 100%;
   }
-  .bar{
-    padding-right: 40px;
+
+  .project-form {
+    width: 100%;
   }
-  
-  .image-selection button {
-    color: #007bff;
-    background-color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 15px;
-    margin:10px 0px 0px 50px;
-  }
-  .Attachments{
-    
-    display: flex;
-  }
-  
-  @media (max-width: 768px) {
-    .project-body-container {
-      flex-direction: column;
-      align-items: center;
-    }
-    .project-menu {
-      width: 100%;
-    }
-    .project-form {
-      width: 100%;
-    }
-  }
-  
+}
