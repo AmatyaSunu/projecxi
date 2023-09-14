@@ -106,6 +106,10 @@ body {
   border-radius: 10px;
 }
 
+.main-logo:hover{
+  cursor: pointer;
+}
+
 /* Project form CSS */
 .project-form {
   background-color: #fff;

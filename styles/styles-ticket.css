@@ -119,12 +119,14 @@ img.img-main-logo {
   margin-left: 0px;
 }
 
+.main-logo:hover{
+  cursor: pointer;
+}
+
 /* Ticket form CSS */
 .Ticket-form {
   background-color: #fff;
-  padding: 20px;
-  overflow-y: scroll;
-  height: 650px;
+  margin: 10px;
 }
 
 .create-heading {
@@ -181,7 +183,7 @@ label {
 }
 
 .element {
-  margin: 20px;
+  margin: 15px 20px;
 }
 
 .elementp {

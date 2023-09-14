@@ -127,3 +127,7 @@ document.getElementById('create-ticket-btn').addEventListener('click', function 
 document.getElementById('filter').addEventListener('click', function () {
     navigateToPage('../Search/search.html');
 });
+
+document.getElementById('main-logo-kanban').addEventListener('click', function () {
+    navigateToPage('../dashboard.html')
+});

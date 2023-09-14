@@ -88,6 +88,10 @@ body {
     padding-top: 5px;
 }
 
+.logo:hover{
+    cursor: pointer;
+  }
+
 /* CSS main section of kanban page */
 .main {
     margin-left: 220px;

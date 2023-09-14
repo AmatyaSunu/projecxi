@@ -86,3 +86,7 @@ function createProject() {
 }
 
 document.getElementById('create-project-btn').addEventListener('click', createProject);
+
+document.getElementById('main-logo-project').addEventListener('click', function () {
+    navigateToPage('../dashboard.html');
+});
