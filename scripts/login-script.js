@@ -2,7 +2,7 @@
 Author: Sunidhi Amatya */
 
 const loginEmail = "hf@flinders.com";
-const loginPassword = "Password1@";
+const loginPassword = "Password@1";
 
 // Function to retrieve query parameters from the URL
 function getQueryVariable(variable) {
