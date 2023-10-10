@@ -1,419 +1,401 @@
 .Ticket-body {
-    background-color: white;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-  }
-  .Ticket-body-container {
-    background-color: white;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    padding: 20px;
-  }
-  .Ticket-row {
-    display: flex;
-    width: 100%;
-  }
-  .navbar {
-    width: 250px;
-    
-  }
-  /* Project Menu Styles */
-  .project-menu {
-    flex: 1;
-    background-color: #2898c7;
-    box-sizing: border-box;
-    width: 250px;
-    height: 700px;
-  }
-  .project-menu-row1{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .project-menu-row2 {
-    padding-top: 20px;
-  }
-  .project-menu-row3 {
-    display: flex;
-  }
-  .project-menu-content{
-    width:100px;
-  
-  }
-  .project-logo img {
-    width: 60px;
-    height: auto;
-    margin-left: 20px;
-    border-radius: 10px;
-  }
-  .project-logo {
-    display: flex;
-    align-items: center;
-  }
-  .project-logo-label {
-    margin-top: 20px;
-    margin-right: 10px;
-    margin-left: 20px;
-    color: white;
-    font: bolder;
-  }
-  .label {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0px;
-  }
-  p{
-   margin-top:10px;
-  }
-  .menu-content {
-    display: flex;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    padding-left: 20px;
-    padding-bottom: 20px;
-    text-decoration: none;
-  }
-  
-  .menu-content:hover {
-    font-weight: bold;
-  }
-  
-  .hr-bar {
-    margin-left: 20px;
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    width: 130px;
-    margin-bottom: 30px;
-  }
-  .main-logo{
-   
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    width: 220px;
-    height: 60px;
-    margin-left: 20px;
-    background-color: white;
-    margin-top: 110px;
-  }
-  .img-main-logo {
-    width: 200px;
-    height: auto;
-    margin-left: 15px;
-    border-radius: 10px;
-  }
-  img.img-main-logo{
-    margin-left:0px;
-  }
-    /* Ticket view CSS */
-    .Ticket-form {
-      background-color: #fff;
-      flex: 1;
-      overflow-y: scroll;
-      height: 700px;
-      width:auto;
-      overflow-x: hidden;
-    }
-   
-    .headings {
-      display: flex;
-      align-items: center;
-  
-    }
-    .green-box {
-      width: 15px; 
-      height: 15px; 
-      background-color: rgb(9, 237, 9);
-      margin:0px 20px 0px 20px;
-    }
-    
-    .tt {
-      margin: 0;
-      color: #2898c7;
-    }
-  
-    .create-heading {
-      font-size: 30px;
-      margin:  0px 0px 10px;
-      color: #2898c7;
-      font-weight: bold;
-      padding-left: 20px;
-    }
-    h2{
-      margin:0px;
-      padding-left: 20px;
-      font-weight: bolder;
-      font-style:initial;
-    }
-    
-    label {
-      font-family: Arial;
-      font-weight: bold;
-      font-size: medium;
-      color: rgba(11, 11, 11, 0.845);
-    
-    }
-    .Ticket-form-row2 {
-      display: flex;
-      width:1000px;
-      margin-top:30px;
-      margin-left:50px;
-    }
-    
-   /* ... Previous CSS Code ... */
-  
-  .sub-column {
-    width: fit-content;
-    display: flex;
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+.Ticket-body-container {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  padding: 20px;
+}
+.Ticket-row {
+  display: flex;
+  width: 100%;
+}
+.navbar {
+  width: 250px;
+}
+/* Project Menu Styles */
+.project-menu {
+  flex: 1;
+  background-color: #2898c7;
+  box-sizing: border-box;
+  width: 250px;
+  height: 700px;
+}
+.project-menu-row1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.project-menu-row2 {
+  padding-top: 20px;
+}
+.project-menu-row3 {
+  display: flex;
+}
+.project-menu-content {
+  width: 100px;
+}
+.project-logo img {
+  width: 60px;
+  height: auto;
+  margin-left: 20px;
+  border-radius: 10px;
+}
+.project-logo {
+  display: flex;
+  align-items: center;
+}
+.project-logo-label {
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-left: 20px;
+  color: white;
+  font: bolder;
+}
+.label {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0px;
+}
+p {
+  margin-top: 10px;
+}
+.menu-content {
+  display: flex;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  text-decoration: none;
+}
+
+.menu-content:hover {
+  font-weight: bold;
+}
+
+.hr-bar {
+  margin-left: 20px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  width: 130px;
+  margin-bottom: 30px;
+}
+.main-logo {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 220px;
+  height: 60px;
+  margin-left: 20px;
+  background-color: white;
+  margin-top: 110px;
+}
+.img-main-logo {
+  width: 200px;
+  height: auto;
+  margin-left: 15px;
+  border-radius: 10px;
+}
+img.img-main-logo {
+  margin-left: 0px;
+}
+/* Ticket view CSS */
+.Ticket-form {
+  background-color: #fff;
+  flex: 1;
+  overflow-y: scroll;
+  height: 700px;
+  width: auto;
+  overflow-x: hidden;
+}
+
+.headings {
+  display: flex;
+  align-items: center;
+}
+.green-box {
+  width: 15px;
+  height: 15px;
+  background-color: rgb(9, 237, 9);
+  margin: 0px 20px 0px 20px;
+}
+
+.tt {
+  margin: 0;
+  color: #2898c7;
+}
+
+.create-heading {
+  font-size: 30px;
+  margin: 0px 0px 10px;
+  color: #2898c7;
+  font-weight: bold;
+  padding-left: 20px;
+}
+h2 {
+  margin: 0px;
+  padding-left: 20px;
+  font-weight: bolder;
+  font-style: initial;
+}
+
+label {
+  font-family: Arial;
+  font-weight: bold;
+  font-size: medium;
+  color: rgba(11, 11, 11, 0.845);
+}
+.Ticket-form-row2 {
+  display: flex;
+  width: 1000px;
+  margin-top: 30px;
+  margin-left: 50px;
+}
+
+/* ... Previous CSS Code ... */
+
+.sub-column {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.field {
+  display: flex;
+  justify-content: space-between;
+  width: 700px;
+}
+
+.field label {
+  font-family: Arial;
+  font-weight: bold;
+  font-size: medium;
+  color: grey; /* Add this line for grey color */
+  width: 30%;
+}
+
+.field .in-filed {
+  margin-left: 0px;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 70%;
+  margin-top: 9px;
+}
+.field .in-filedD {
+  margin-left: 0px;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 70%;
+}
+
+.sub-column3 {
+  width: 50px;
+
+  margin-top: 20px;
+}
+.custom-input2 {
+  width: 630px;
+  height: 38px;
+  background-color: #f8f8f8;
+  border: black 1px solid;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.row {
+  display: flex;
+  width: 100%;
+}
+
+.column1 {
+  flex: 1;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.custom-inputD {
+  width: 600px;
+  height: 80px;
+  background-color: #f8f8f8;
+  border: black 1px solid;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.input-info-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.custom-input {
+  width: 80px;
+  height: 38px;
+  background-color: #f8f8f8;
+  border: black 1px solid;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.Ticket-form-row3 {
+  margin: 40px;
+}
+.edit-Ticket-button {
+  font-size: large;
+  font-weight: bolder;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  background-color: #2898c7;
+  cursor: pointer;
+  width: 150px;
+  height: 45px;
+  margin-right: 10px;
+}
+
+.column2-row1 {
+  padding-right: 150px;
+}
+.column2-row2 {
+  display: flex;
+  padding-right: 150px;
+}
+.info {
+  width: 50px;
+  height: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
+  border: black;
+  margin: 0px;
+}
+#infoButton {
+  background-color: rgb(206, 202, 202);
+  color: black;
+  border: black;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.Attachments {
+  padding-top: 20px;
+}
+.Attachments-logo {
+  width: 10px;
+}
+.Attachments-logo img {
+  width: 50px;
+}
+.bar {
+  padding-right: 40px;
+}
+
+.image-selection button {
+  color: #007bff;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  margin: 10px 0px 0px 50px;
+  white-space: nowrap;
+}
+.in-line {
+  display: flex;
+}
+h3 {
+  color: grey;
+}
+.add-comment {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 17px;
+  white-space: nowrap;
+}
+.comment-section {
+  display: flex;
+  align-items: center;
+}
+
+.comment-count {
+  margin-right: 10px; /* Adjust the margin as needed */
+  color: grey;
+  white-space: nowrap;
+}
+
+.comment-section h3 {
+  margin-right: 30px;
+}
+
+@media (max-width: 768px) {
+  .project-body-container {
     flex-direction: column;
+    align-items: center;
   }
-  
-  .field {
-    display: flex;
-    justify-content: space-between;
-    width:700px;
-  }
-  
-  .field label {
-    font-family: Arial;
-    font-weight: bold;
-    font-size: medium;
-    color: grey; /* Add this line for grey color */
-    width: 30%;
-  }
-  
-  .field .in-filed {
-    margin-left:0px;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    width: 70%;
-    margin-top:9px
-    
-  }
-  .field .in-filedD {
-    margin-left:0px;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    width: 70%;
-    
-  }
-  
-   .sub-column3 {
-    width:50px;
-   
-    margin-top: 20px;
-  
-    
-  }
-    .custom-input2 {
-      width: 630px;
-      height: 38px;
-      background-color: #f8f8f8;
-      border: black 1px solid;
-      border-radius: 5px;
-      margin-bottom: 10px;
-    }
-    .row {
-      display: flex;
-      width: 100%;
-     
-    }
-    
-    .column1 {
-      flex: 1;
-      box-sizing: border-box;
-      padding-left: 20px;
-      padding-right: 20px;
-      
-    } 
-    .custom-inputD{
-      width: 600px; 
-      height: 80px;
-      background-color: #F8F8F8;
-      border: black 1px solid;
-      border-radius: 5px;
-      margin-bottom: 10px;
-    }
 
-    .input-info-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-      }
-      
-    .custom-input {
-        width: 80px;
-      height: 38px;
-      background-color: #F8F8F8;
-      border: black 1px solid;
-      border-radius: 5px;
-      margin-bottom: 10px;
-    }
-    
-    .Ticket-form-row3{
-      margin:40px;
-    }
-    .edit-Ticket-button {
-      font-size: large;
-      font-weight: bolder;
-      color: #fff;
-      border: none;
-      border-radius: 10px;
-      background-color: #2898c7;
-      cursor: pointer;
-      width: 150px;
-      height: 45px;
-      margin-right: 10px;
-    }
-    
-    .column2-row1{
-      padding-right: 150px;
-    }
-    .column2-row2{
-      display: flex;
-      padding-right: 150px;
-    }
-    .info{
-      width: 50px;
-      height: 20px;
-      padding-top: 20px;
-      padding-left: 20px;
-      border: black;
-      margin: 0px;
-    }
-    #infoButton {
-      
-      background-color: rgb(206, 202, 202);
-      color: black;
-      border: black;
-      border-radius: 50%;
-      width: 20px;
-      height: 20px;
-      cursor: pointer;
-     
-    }
-    
-    .Attachments{
-      padding-top:20px;
-    }
-    .Attachments-logo{
-      width:10px;
-    }
-    .Attachments-logo img{
-      width:50px;
-    }
-    .bar{
-      padding-right: 40px;
-    }
-    
-    .image-selection button {
-      color: #007bff;
-      background-color: white;
-      border: none;
-      cursor: pointer;
-      font-size: 15px;
-      margin:10px 0px 0px 50px;
-      white-space: nowrap;
-    }
-    .in-line{
-      display: flex;
-    }
-    h3{
-      color: grey;
-    }
-    .add-comment{
-      text-decoration: none;
-      color: #007bff;
-      font-size: 17PX;
-      white-space: nowrap;
-    }
-    .comment-section {
-      display: flex;
-      align-items: center;
-    }
+  .project-menu {
+    width: 100%;
+  }
 
-    .comment-count {
-        margin-right: 10px; /* Adjust the margin as needed */
-        color: grey;
-        white-space: nowrap;
-      }
+  .project-form {
+    width: 100%;
+  }
+}
 
-    .comment-section h3 {
-      
-      margin-right: 30px;
-    }
-    
-    @media (max-width: 768px) {
-      .project-body-container {
-        flex-direction: column;
-        align-items: center;
-      }
-    
-      .project-menu {
-        width: 100%;
-      }
-    
-      .project-form {
-        width: 100%;
-      }
-    }
-
-     /*comment css*/
-  /* Add this CSS for the textbox section */
+/*comment css*/
 .textbox-section {
-    margin-top: 10px;
-  }
-  
-  
-  .custom-textarea {
-    width: 400px;
-    height: 100px;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 5px;
-    font-size: 16px;
-  }
+  margin-top: 10px;
+}
 
-  /* Style for the button section */
+.custom-textarea {
+  width: 400px;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Style for the button section */
 .button-section {
   margin-top: 20px;
   margin-left: 430px;
   display: flex;
-  justify-content: flex-end;/* Add padding for spacing *//* Right-align the buttons */
-  }
-  
-  /* Style for the Comment button */
-  .comment-button {
-    font-size: 20px;
-    font-weight: bold;
-    color: #2898c7;
-    border: none;
-    cursor: pointer;
-    margin-right: 15px;
-    background-color: transparent; 
-  }
-  
-  /* Style for the Cancel button */
-  .cancel-button {
-    font-size: 20px;
-    font-weight: bold;
-    color: red; 
-    border: none;
-    background-color: transparent; 
-    cursor: pointer;
-  }
+  justify-content: flex-end; /* Add padding for spacing */ /* Right-align the buttons */
+}
 
-  .related-tickets-label {
-    font-family: Arial;
-    font-weight: bold;
-    font-size: medium;
-    color: black;
-    width: 120px; 
-    white-space: nowrap; 
-    overflow: hidden; 
-    text-overflow: ellipsis;
-  }
-  
-  
+/* Style for the Comment button */
+.comment-button {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2898c7;
+  border: none;
+  cursor: pointer;
+  margin-right: 15px;
+  background-color: transparent;
+}
+
+/* Style for the Cancel button */
+.cancel-button {
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.related-tickets-label {
+  font-family: Arial;
+  font-weight: bold;
+  font-size: medium;
+  color: black;
+  width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
