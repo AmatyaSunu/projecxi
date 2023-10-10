@@ -5,17 +5,20 @@
     <title>Dashboard</title>
     <meta charset="UTF-8" />
     <meta name="author" content="Sunidhi Amatya" />
-    <link rel="stylesheet" href="../styles/dashboard-style.css">
-    <script src="../scripts/script.js" defer></script>
-    <script src="./scripts/dashboard-script.js" defer></script>
+    <link rel="stylesheet" href="styles/dashboard-style.css">
+    <script src="scripts/script.js" defer></script>
+    <script src="scripts/dashboard-script.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 
 <body>
+<?php
+ require_once "inc/dbconn.inc.php";
+?>
     <div class="sidenav">
         <div class="sidenav-logo" id="main-logo">
-            <img src="../images/logo.png" />
+            <img src="images/logo.png" />
         </div>
 
         <div class="menu">
@@ -67,10 +70,26 @@
                 </div>
                 <div class="grid-1">
                     <h1>Notice</h1>
-                    <p>Monday 2 October: Labour Day</p>
+                    <!-- <p>Monday 2 October: Labour Day</p>
                     <p>Sunday 24 December: Christmas Eve</p>
                     <p>Monday 25 December: Christmas Day</p>
-                    <p>Tuesday 26 December: Boxing Day</p>
+                    <p>Tuesday 26 December: Boxing Day</p> -->
+                
+                    <?php 
+                    // Query the database to retrieve notices
+                    $query = "SELECT * FROM notices LIMIT 4";
+                    $result = mysqli_query($conn, $query);
+
+                    // Check if the query was successful
+                    if ($result) {
+                        if (mysqli_num_rows($result) >= 1) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                $formattedDate = date("l j F", strtotime($row["date"]));
+                                echo "<p id='notice-list'>". $formattedDate . " : " . $row["description"]."</p>";
+                            }
+                        }
+                    }
+                    ?>
                 </div>
             </div>
             <div class="grid-2">
