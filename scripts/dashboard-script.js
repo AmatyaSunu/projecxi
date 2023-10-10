@@ -17,12 +17,12 @@ function getProjectDetail(elem) {
 }
 // Adding event listeners to the links
 document.getElementById('create-project').addEventListener('click', function () {
-    navigateToPage('./project/create-project.html');
+    navigateToPage('./project/create-project.php');
 });
 
 document.getElementById('kanban1').addEventListener('click', function () {
     const { projectKey, projectName } = getProjectDetail('kanban1');
-    navigateToPage(`./project/kanban1.html?projectKey=${encodeURIComponent(projectKey)}&projectName=${encodeURIComponent(projectName)}`);
+    navigateToPage(`../project/kanban1.php?projectKey=${encodeURIComponent(projectKey)}&projectName=${encodeURIComponent(projectName)}`);
 });
 
 document.getElementById('kanban2').addEventListener('click', function () {

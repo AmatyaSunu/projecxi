@@ -10,6 +10,7 @@ CREATE TABLE users (
     userId INT AUTO_INCREMENT PRIMARY KEY,
     firstName VARCHAR(255) NOT NULL,
     lastName VARCHAR(255) NOT NULL,
+    fullName VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
     companyName VARCHAR(255),
     contactNumber VARCHAR(15),
@@ -71,3 +72,6 @@ INSERT INTO projects (projectName, `key`, projectLead, startDate, status)
 VALUES ('Titan', 'TT', 'Jessica Bells', '2023-07-21', 'Progress');
 INSERT INTO projects (projectName, `key`, projectLead, startDate, status)
 VALUES ('Personhood', 'PH', 'Jessica Bells', '2023-07-23', 'Progress');
+
+INSERT INTO users (firstName, lastName, fullName, email, companyName, contactNumber, password)
+VALUES ('Jessica', 'Bells', 'Jessica Bells', 'hf@flinders.com', 'Armour Technology', '610435189378', '$2y$10$tT/F5Wv5LnM9bVaGTHgq2.xv85YCXKGHSHfRjdGGfpWSBXPqGd3T.');

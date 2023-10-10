@@ -6,19 +6,21 @@
     <meta charset="UTF-8" />
     <meta name="author" content="Sunidhi Amatya" />
     <link rel="stylesheet" href="styles/dashboard-style.css">
-    <script src="scripts/script.js" defer></script>
-    <script src="scripts/dashboard-script.js" defer></script>
+    <script src="./scripts/script.js" defer></script>
+    <script src="./scripts/dashboard-script.js" defer></script>
+    <!-- For implementing google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <!-- For implementing the various icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 
 <body>
-<?php
- require_once "inc/dbconn.inc.php";
-?>
+    <?php
+    require_once "inc/dbconn.inc.php";
+    ?>
     <div class="sidenav">
         <div class="sidenav-logo" id="main-logo">
-            <img src="images/logo.png" />
+            <img src="./images/logo.png" />
         </div>
 
         <div class="menu">
@@ -70,7 +72,7 @@
                 </div>
                 <div class="grid-1">
                     <h1>Notice</h1>
-                    <?php 
+                    <?php
                     // Query the database to retrieve notices
                     $query = "SELECT * FROM notices LIMIT 4";
                     $result = mysqli_query($conn, $query);
@@ -80,10 +82,12 @@
                         if (mysqli_num_rows($result) >= 1) {
                             while ($row = mysqli_fetch_assoc($result)) {
                                 $formattedDate = date("l j F", strtotime($row["date"]));
-                                echo "<p id='notice-list'>". $formattedDate . " : " . $row["description"]."</p>";
+                                echo "<p id='notice-list'>" . $formattedDate . " : " . $row["description"] . "</p>";
                             }
                         }
                     }
+                    // Close the database connection
+                    mysqli_close($conn);
                     ?>
                 </div>
             </div>
@@ -120,29 +124,31 @@
                             <td>23/7/2023</td>
                             <td><button class="progress-button">Progress</td>
                         </tr> -->
-                        <?php 
+                        <?php
+                    echo"<script>console.log('dsaf');</script>";
                         // Query the database to retrieve projects
                         $projectQuery = "SELECT * FROM projects";
                         $projectList = mysqli_query($conn, $projectQuery);
-
+                        echo"<script>Console.log('dsaasdff');</script>";
                         // Check if the query was successful
                         if ($projectList) {
-                        if (mysqli_num_rows($projectList) >= 1) {
-                        while ($rowProject = mysqli_fetch_assoc($projectList)) {
-                            ?>
-                        <tr id="kanban1">
-                        <td><?php echo $rowProject["key"]; ?></td>
-                        <td><?php echo $rowProject["projectName"]; ?></td>
-                        <td><?php echo $rowProject["projectLead"]; ?></td>
-                        <td><?php echo $rowProject["startDate"]; ?></td>
-                        <td><button class="progress-button"><?php echo $rowProject["status"]; ?></td>
-                    </tr>
-                    <?php
+                            if (mysqli_num_rows($projectList) >= 1) {
+                                while ($rowProject = mysqli_fetch_assoc($projectList)) {
+    
+                        ?>
+                                        <tr id="kanban1">
+                                            <td><?php echo $rowProject["key"]; ?></td>
+                                            <td><?php echo $rowProject["projectName"]; ?></td>
+                                            <td><?php echo $rowProject["projectLead"]; ?></td>
+                                            <td><?php echo $rowProject["startDate"]; ?></td>
+                                            <td><button class="progress-button"><?php echo $rowProject["status"]; ?></td>
+                                        </tr>
+                        <?php
+                                }
+                            } else {
+                                echo "<tr><td colspan='5'>No projects found.</td></tr>";
+                            }
                         }
-                        } else {
-                            echo "<tr><td colspan='5'>No projects found.</td></tr>";
-                        }
-                    }
                         ?>
                     </tbody>
                 </table>

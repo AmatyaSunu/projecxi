@@ -17,6 +17,46 @@
  </head>
 
  <body>
+    <?php
+    require_once "inc/dbconn.inc.php";
+   
+    // Initialize variables to store user information
+    $firstName = $lastName = $email = $contactNumber = $project = "";
+    
+    // Check if the form is submitted
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Get the updated profile information from the form
+        $firstName = $_POST['first_name'];
+        $lastName = $_POST['last_name'];
+        $email = $_POST['email'];
+        $contactNumber = $_POST['contact_number'];
+        $project = $_POST['project'];
+
+        // Update the user's profile information in the database
+        $updateQuery = "UPDATE user_profile SET first_name='$firstName', last_name='$lastName', contact_number='$contactNumber', project='$project' WHERE email='$email'";
+
+        // Execute the update query
+        $result = mysqli_query($connection, $updateQuery);
+
+        // Check if the update was successful
+        if ($result) {
+            echo "<p>Profile updated successfully!</p>";
+        } else {
+            echo "<p>Error updating profile.</p>";
+        }
+    }
+
+    // Fetch the user's current profile information from the database
+    $email = "user@example.com"; // Replace with the user's email
+    $selectQuery = "SELECT * FROM user_profile WHERE email='$email'";
+    $result = mysqli_query($connection, $selectQuery);
+    $row = mysqli_fetch_assoc($result);
+
+    // Close the database connection
+    mysqli_close($connection);
+
+?>
+
     <div class="sidenav">
         <div class="sidenav-logo">
           <img src="../images/project-logo.png" />
@@ -74,14 +114,15 @@
              
         </div>
         <div class="edit-content">
+            <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
         <div class="row">
-            <div class="column">
+            <div class="column">               
                 <div>
                     <label>First Name</label>
                 </div>
                 <div>
                     <input class="custom-input-half" type="text" id="first-name" name="name"
-                       >
+                    value="<?php echo $row['first_name']; ?>" required  >
                 </div>
             </div>
             <div class="column last-name">
@@ -90,7 +131,7 @@
                 </div>
                 <div>
                     <input class="custom-input-half" type="text" id="last-name" name="name"
-                        >
+                    value="<?php echo $row['last_name']; ?>" required   >
                 </div>
             </div>
         </div>
@@ -99,7 +140,7 @@
                 <label>Email</label>
             </div>
             <div>
-                <input class="custom-input" type="email" id="signup-email" name="signup-email" >
+                <input class="custom-input" type="email" id="signup-email" name="signup-email" value="<?php echo $row['email']; ?>" required readonly >
             </div>
         </div>
         <div>
@@ -107,7 +148,7 @@
                 <label>Contact Number</label>
             </div>
             <div>
-                <input class="custom-input" type="tel" id="contact-number">
+                <input class="custom-input" type="tel" id="contact-number"  value="<?php echo $row['contact_number']; ?>" required>
             </div>
         </div>
         <div>
@@ -115,7 +156,7 @@
                 <label>Project</label>
             </div>
             <div>
-                <input class="custom-input" type="password" id="password" name="password" >
+                <input class="custom-input" type="password" id="password" name="password"  value="<?php echo $row['project']; ?>" required >
             </div>
         </div>
         <div>
@@ -123,7 +164,7 @@
                 <label>Password</label>
             </div>
             <div>
-                <input class="custom-input" type="password" id="password" name="password" >
+                <input class="custom-input" type="password" id="password" name="password"  value="<?php echo $row['passworde']; ?>" required >
             </div>
         </div>
         <div class="button">
@@ -134,7 +175,9 @@
             <button class="cancle-changes-button" id="cancle-changes">Cancle</button>
         </div>
         </div>
+    </form>
         </div>
+   
         </div>
       </div>
  </body>

@@ -11,43 +11,44 @@
 </head>
 
 <body class="project-body">
-    <div class="project-row">
-      <div class="navbar">
-        <div class="project-menu">
-          <div class="project-menu-row1">
-            <div class="project-logo">
-              <img src="../images/project-logo.png" />
-            </div>
-            <div class="project-logo-label">
-              <span class="label">Armour Technology</span>
-              <p>Businness Project</p>
-            </div>
+  <div class="project-row">
+    <div class="navbar">
+      <div class="project-menu">
+        <div class="project-menu-row1">
+          <div class="project-logo">
+            <img src="../images/project-logo.png" />
           </div>
-          <div class="project-menu-row2">
-            <div class="project-menu-content">
-              <a class="menu-content" href="privacy-policy.html">Dashboard</a>
-              <a class="menu-content" href="privacy-policy.html">People</a>
-              <a class="menu-content" href="privacy-policy.html">Project</a>
-              <hr class="bar hr-bar" />
-              <a class="menu-content" href="privacy-policy.html">My Profile</a>
-              <a class="menu-content" href="privacy-policy.html">Settings</a>
-              <a class="menu-content" href="privacy-policy.html">About</a>
-              <hr class="bar hr-bar" />
-              <a class="menu-content" href="privacy-policy.html">Contact Us</a>
-              <a class="menu-content" href="privacy-policy.html">Help</a>
-            </div>
+          <div class="project-logo-label">
+            <span class="label">Armour Technology</span>
+            <p>Businness Project</p>
           </div>
-          <div class="project-menu-row3">
-            <div class="main-logo" id="main-logo-project">
-              <img class="img-main-logo" src="../images/logo.png" />
-            </div>
+        </div>
+        <div class="project-menu-row2">
+          <div class="project-menu-content">
+            <a class="menu-content" href="privacy-policy.html">Dashboard</a>
+            <a class="menu-content" href="privacy-policy.html">People</a>
+            <a class="menu-content" href="privacy-policy.html">Project</a>
+            <hr class="bar hr-bar" />
+            <a class="menu-content" href="privacy-policy.html">My Profile</a>
+            <a class="menu-content" href="privacy-policy.html">Settings</a>
+            <a class="menu-content" href="privacy-policy.html">About</a>
+            <hr class="bar hr-bar" />
+            <a class="menu-content" href="privacy-policy.html">Contact Us</a>
+            <a class="menu-content" href="privacy-policy.html">Help</a>
+          </div>
+        </div>
+        <div class="project-menu-row3">
+          <div class="main-logo" id="main-logo-project">
+            <img class="img-main-logo" src="../images/logo.png" />
           </div>
         </div>
       </div>
-      <div>
-        <div class="project-form">
-          <h1 class="create-heading">Create a project</h1>
-          <h2 class="Details">Details</h2>
+    </div>
+    <div>
+      <div class="project-form">
+        <h1 class="create-heading">Create a project</h1>
+        <h2 class="Details">Details</h2>
+        <!-- <form id="create-project"> -->
           <div class="row">
             <div class="column1">
               <div class="element">
@@ -61,9 +62,8 @@
               <div class="element">
                 <label>Project Type</label>
                 <select id="project-type" name="project-type">
-                  <option value="#">Type 1</option>
-                  <option value="#">Type 2</option>
-                  <option value="#">Type 3</option>
+                  <option value="#">Kanban</option>
+                  <option value="#">Scrum</option>
                 </select>
               </div>
               <div class="element">
@@ -76,7 +76,7 @@
               </div>
               <div class="element">
                 <label>Default Assignee</label>
-                <select id="default-assignee" name="dropdown">
+                <select id="default-assignee" name="default-assignee">
                   <option value="Employee 1">Employee 1</option>
                   <option value="Employee 2">Employee 2</option>
                   <option value="Employee 3">Employee 3</option>
@@ -89,7 +89,7 @@
                   </button>
                 </div>
                 <div class="cancel">
-                  <a href="../dashboard.html" class="c1" id="cancel-new-project">Cancel</a>
+                  <a href="../dashboard.php" class="c1" id="cancel-new-project">Cancel</a>
                 </div>
               </div>
             </div>
@@ -120,8 +120,9 @@
               </div>
             </div>
           </div>
-        </div>
+        <!-- </form> -->
       </div>
+    </div>
   </div>
 </body>
 

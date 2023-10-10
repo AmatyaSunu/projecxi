@@ -13,6 +13,7 @@ function isNotEmpty(inputField) {
 
 // Function to create project
 function createProject() {
+    console.log("check");
     const projectKey = document.getElementById('project-key').value.trim();
     const projectName = document.getElementById('project-name').value.trim();
     const url = document.getElementById('url').value.trim();
@@ -24,12 +25,11 @@ function createProject() {
 
     // Extract day, month, and year
     const day = String(currentDate.getDate()).padStart(2, '0');
-    const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are zero-based, so add 1
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0');
     const year = currentDate.getFullYear();
 
-    // Format the date as "dd/mm/yyyy"
-    const startDate = `${day}/${month}/${year}`;
-
+    // Format the date as "yyyy/mm/dd"
+    const startDate = `${year}/${month}/${day}`;
 
     if (!isNotEmpty(projectName)) {
         alert('Please enter a valid title.');
@@ -61,32 +61,39 @@ function createProject() {
         startDate
     }
 
-    console.log(data);
-    navigateToPage(`../confirmation/new-project-confirmation.html?projectKey=${encodeURIComponent(projectKey)}&projectName=${encodeURIComponent(projectName)}`);
-    // navigateToPage(`./kanban.html?projectKey=${encodeURIComponent(projectKey)}&projectName=${encodeURIComponent(projectName)}&projectLead=${encodeURIComponent(projectLead)}&startDate=${encodeURIComponent(startDate)}`)
+    localStorage.setItem('projectData', JSON.stringify(data));
 
-    // Send a POST request to the dashboard page with the data object in the body
-    // fetch('../dashboard.html', {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(data)
-    // })
-    // .then(response => {
-    //     if (response.ok) {
-    //         navigateToPage('../dashboard.html');
-    //     } else {
-    //         alert('An error occurred while creating the project.');
-    //     }
-    // })
-    // .catch(error => {
-    //     console.error('Error:', error);
-    // });
+    navigateToPage('../confirmation/new-project-confirmation.html?projectKey=' + encodeURIComponent(data.projectKey) + '&projectName=' + encodeURIComponent(data.projectName));
 }
+
+// // Function to send data to the server
+// function sendDataToServer(data) {
+//     console.log("data", data)
+//     fetch('../php/createproject.php', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(data)
+//     })
+//         .then(response => {
+//             console.log("return", response);
+//         if (response.ok) {
+//             console.log("sucess");
+//             // Handle success as needed, e.g., redirect to a confirmation page
+//             // navigateToPage('../confirmation/new-project-confirmation.html?projectKey=' + encodeURIComponent(data.projectKey) + '&projectName=' + encodeURIComponent(data.projectName));
+//         } else {
+//             // Handle errors, e.g., show an error message
+//             alert('An error occurred while creating the project.');
+//         }
+//     })
+//     .catch(error => {
+//         console.error('Error:', error);
+//     });
+// } 
 
 document.getElementById('create-project-btn').addEventListener('click', createProject);
 
 document.getElementById('main-logo-project').addEventListener('click', function () {
-    navigateToPage('../dashboard.html');
+    navigateToPage('../dashboard.php');
 });
