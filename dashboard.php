@@ -70,11 +70,6 @@
                 </div>
                 <div class="grid-1">
                     <h1>Notice</h1>
-                    <!-- <p>Monday 2 October: Labour Day</p>
-                    <p>Sunday 24 December: Christmas Eve</p>
-                    <p>Monday 25 December: Christmas Day</p>
-                    <p>Tuesday 26 December: Boxing Day</p> -->
-                
                     <?php 
                     // Query the database to retrieve notices
                     $query = "SELECT * FROM notices LIMIT 4";
@@ -111,7 +106,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr id="kanban1">
+                        <!-- <tr id="kanban1">
                             <td>TT</td>
                             <td>Titan</td>
                             <td>Jessica Bells</td>
@@ -124,7 +119,31 @@
                             <td>Jessica Bells</td>
                             <td>23/7/2023</td>
                             <td><button class="progress-button">Progress</td>
-                        </tr>
+                        </tr> -->
+                        <?php 
+                        // Query the database to retrieve projects
+                        $projectQuery = "SELECT * FROM projects";
+                        $projectList = mysqli_query($conn, $projectQuery);
+
+                        // Check if the query was successful
+                        if ($projectList) {
+                        if (mysqli_num_rows($projectList) >= 1) {
+                        while ($rowProject = mysqli_fetch_assoc($projectList)) {
+                            ?>
+                        <tr id="kanban1">
+                        <td><?php echo $rowProject["key"]; ?></td>
+                        <td><?php echo $rowProject["projectName"]; ?></td>
+                        <td><?php echo $rowProject["projectLead"]; ?></td>
+                        <td><?php echo $rowProject["startDate"]; ?></td>
+                        <td><button class="progress-button"><?php echo $rowProject["status"]; ?></td>
+                    </tr>
+                    <?php
+                        }
+                        } else {
+                            echo "<tr><td colspan='5'>No projects found.</td></tr>";
+                        }
+                    }
+                        ?>
                     </tbody>
                 </table>
                 <div class="pagination">

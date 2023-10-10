@@ -66,3 +66,8 @@ CREATE TABLE ticketAssignees (
 INSERT INTO notices (date, description) VALUES ('2023-12-24', 'Christmas eve');
 INSERT INTO notices (date, description) VALUES ('2023-12-25', 'Christmas Day');
 INSERT INTO notices (date, description) VALUES ('2023-12-26', 'Boxing day');
+
+INSERT INTO projects (projectName, `key`, projectLead, startDate, status)
+VALUES ('Titan', 'TT', 'Jessica Bells', '2023-07-21', 'Progress');
+INSERT INTO projects (projectName, `key`, projectLead, startDate, status)
+VALUES ('Personhood', 'PH', 'Jessica Bells', '2023-07-23', 'Progress');
