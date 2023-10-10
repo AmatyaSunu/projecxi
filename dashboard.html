@@ -14,12 +14,14 @@
 
 <body>
     <div class="sidenav">
-        <div class="sidenav-logo" id="main-logo">
-            <img src="../images/logo.png" />
+        <div class="sidenav-logo">
+            <img src="../images/project-logo.png" />
+            <span class="project-label">Armour<br>Technology</span>
         </div>
-
+       
         <div class="menu">
             <hr class="sidenav-line">
+            
             <div>
                 <a class="menu-content">Dashboard</a>
             </div>
@@ -44,6 +46,9 @@
                 <a class="menu-content">Help</a>
             </div>
         </div>
+        <div class="logo" id="main-logo1">
+            <img class="img-logo" src="../images/logo.png" />
+        </div>
     </div>
     <div class="main">
         <div class="topnav">
@@ -54,8 +59,13 @@
             <div class="user-container">
                 <img src="./images/jessica.jpeg" alt="Avatar" class="user-avatar">
                 <span class="user-name">Jessica Bells</span>
-                <i class="fas fa-chevron-down dropdown-icon"></i>
+                <i class="fas fa-chevron-down dropdown-icon" id="dropdownIcon"></i>
+                <div class="dropdown-content" id="dropdownContent">
+                    <a href="#">Profile</a>
+                    <a href="#">Logout</a>
+                </div>
             </div>
+            
         </div>
         <div class="main-content">
             <div class="row">
