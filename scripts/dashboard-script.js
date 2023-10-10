@@ -29,3 +29,21 @@ document.getElementById('kanban2').addEventListener('click', function () {
     const { projectKey, projectName } = getProjectDetail('kanban2');
     navigateToPage(`./project/kanban.html?projectKey=${encodeURIComponent(projectKey)}&projectName=${encodeURIComponent(projectName)}`);
 });
+
+// Adding event listeners to the side nav-bar links
+document.getElementById('cant-login').addEventListener('click', function () {
+    navigateToPage('./signup/reset-password.html');
+  });
+  
+  document.getElementById('create-account').addEventListener('click', function () {
+    navigateToPage('./signup/signup.html');
+  });
+  
+  document.getElementById('privacy-policy').addEventListener('click', function () {
+    console.log("here");
+    navigateToPage('./landing-pages/privacy-policy.html');
+  });
+  
+  document.getElementById('terms-of-use').addEventListener('click', function () {
+    navigateToPage('./landing-pages/terms-of-use.html');
+  });
