@@ -20,11 +20,22 @@ document.getElementById('create-project').addEventListener('click', function () 
     navigateToPage('./project/create-project.php');
 });
 
+function navigateToPage(url, projectKey, projectName) {
+  if (projectKey) {
+    // window.location.href = `../php/setProjectId.php?projectKey=${projectKey}&redirectUrl=${encodeURIComponent(url)}`;
+    window.location.href = 'php/setProjectId.php?projectKey=' + projectKey + '&redirectUrl=' + encodeURIComponent(url) + '&projectName=' + projectName;
+  } else {
+      window.location.href = url;
+  }
+}
+
 document.querySelectorAll('.project-row').forEach(row => {
   row.addEventListener('click', function() {
       const projectKey = this.getElementsByTagName("td")[0].textContent;
       const projectName = this.getElementsByTagName("td")[1].textContent;
-      navigateToPage('project/kanband.php?projectKey=' + encodeURIComponent(projectKey) + '&projectName=' + encodeURIComponent(projectName));
+      // navigateToPage('project/kanband.php?projectKey=' + encodeURIComponent(projectKey) + '&projectName=' + encodeURIComponent(projectName));
+    const redirectUrl = '../project/kanband.php?projectKey=' + encodeURIComponent(projectKey) + '&projectName=' + encodeURIComponent(projectName);
+    navigateToPage(redirectUrl, projectKey, projectName);
   });
 });
 
