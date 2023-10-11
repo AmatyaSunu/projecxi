@@ -22,6 +22,7 @@ function createProject() {
     const description = document.getElementById('description').value.trim();
     const defaultAssignee = document.getElementById('default-assignee').value.trim();
     const currentDate = new Date();
+    const status = 'Progress';
 
     // Extract day, month, and year
     const day = String(currentDate.getDate()).padStart(2, '0');
@@ -56,10 +57,14 @@ function createProject() {
         projectName,
         url,
         projectType,
+        projectLead,
         description,
         defaultAssignee,
-        startDate
+        startDate,
+        status
     }
+
+    console.log("query", data);
 
     const queryString = new URLSearchParams(data).toString();
 

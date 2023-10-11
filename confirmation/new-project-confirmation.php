@@ -26,9 +26,11 @@
                 <input type="hidden" name="projectName" value="<?php echo $_GET['projectName']; ?>">
                 <input type="hidden" name="url" value="<?php echo $_GET['url']; ?>">
                 <input type="hidden" name="projectType" value="<?php echo $_GET['projectType']; ?>">
+                <input type="hidden" name="projectLead" value="<?php echo $_GET['projectLead']; ?>">
                 <input type="hidden" name="description" value="<?php echo $_GET['description']; ?>">
                 <input type="hidden" name="defaultAssignee" value="<?php echo $_GET['defaultAssignee']; ?>">
                 <input type="hidden" name="startDate" value="<?php echo $_GET['startDate']; ?>">
+                <input type="hidden" name="status" value="<?php echo $_GET['status']; ?>">
                 <h1 class="new-project-confirmation-heading">Are you sure you want to create a new project?</h1>
                 <div>
                     <div>
@@ -60,11 +62,12 @@
                 $projectName = $_POST['projectName'];
                 $url = $_POST['url'];
                 $projectType = $_POST['projectType'];
+                $projectLead = $_POST['projectLead'];
                 $description = $_POST['description'];
                 $defaultAssignee = $_POST['defaultAssignee'];
                 $startDate = $_POST['startDate'];
+                $status = $_POST['status'];
 
-                echo "<script>console.log(" . $projectKey . ");</script>";
                 // starting session
                 session_start();
 
@@ -73,7 +76,7 @@
                 $_SESSION['projectKey'] = $projectKey;
 
                 // SQL query to insert user data into the 'users' table
-                $query = "INSERT INTO projects (`key`, projectName, url, projectType, description, defaultAssignee, startDate) VALUES (?, ?, ?, ?, ?, ?, ?)";
+                $query = "INSERT INTO projects (`key`, projectName, url, projectType, projectLead, description, defaultAssignee, startDate, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
                 // Prepare the statement
                 $statement = mysqli_stmt_init($conn);
@@ -82,20 +85,21 @@
                     // Bind parameters
                     mysqli_stmt_bind_param(
                         $statement,
-                        "sssssss",
+                        "sssssssss",
                         $projectKey,
                         $projectName,
                         $url,
                         $projectType,
+                        $projectLead,
                         $description,
                         $defaultAssignee,
-                        $startDate
+                        $startDate,
+                        $status
                     );
 
                     if (mysqli_stmt_execute($statement)) {
                         // Set a flag to indicate successful insertion
                         $success = true;
-                        $_SESSION['projectId'] = mysqli_insert_id($conn);
                     } else {
                         $errorMessage = "Statement execution failed: " . mysqli_stmt_error($statement);
                     }

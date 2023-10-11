@@ -35,3 +35,15 @@ pull if any update
 push update
     git push --set-upstream origin branch_name
 
+
+**** steps to push all your changes *****
+git status
+git add .
+git commit -m  "message"
+git push
+
+***** steps to fetch and merge other branch code in yours *****
+git fetch
+git merge branch_name
+    ** resolve merge conflict if any **
+git push

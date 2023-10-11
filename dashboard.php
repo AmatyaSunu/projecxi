@@ -16,11 +16,16 @@
 
 <body>
     <?php
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+
     require_once "inc/dbconn.inc.php";
     ?>
     <div class="sidenav">
-        <div class="sidenav-logo" id="main-logo">
-            <img src="./images/logo.png" />
+        <div class="company-logo">
+            <img src="images/project-logo.png" />
+            <span class="project-label">  Armour<br />Technology</span>
         </div>
 
         <div class="menu">
@@ -44,6 +49,9 @@
             </div>
             <div>
                 <a class="menu-content" id="faq">FAQ</a>
+            </div>
+            <div class="sidenav-logo" id="main-logo">
+                <img src="images/logo.png"/>
             </div>
         </div>
     </div>
@@ -83,8 +91,6 @@
                             }
                         }
                     }
-                    // Close the database connection
-                    mysqli_close($conn);
                     ?>
                 </div>
             </div>
@@ -122,25 +128,25 @@
                             <td><button class="progress-button">Progress</td>
                         </tr> -->
                         <?php
-                    echo"<script>console.log('1');</script>";
+                        
                         // Query the database to retrieve projects
-                        $projectQuery = "SELECT * FROM projects";
-                        echo"<script>console.log('2');</script>";
+                        $projectQuery = "SELECT * FROM projects LIMIT 10";
+                        
                         $projectList = mysqli_query($conn, $projectQuery);
-                        echo"<script>console.log('3');</script>";
+                        
                         // Check if the query was successful
                         if ($projectList) {
                             if (mysqli_num_rows($projectList) >= 1) {
                                 while ($rowProject = mysqli_fetch_assoc($projectList)) {
-    
+
                         ?>
-                                        <tr id="kanban1">
-                                            <td><?php echo $rowProject["key"]; ?></td>
-                                            <td><?php echo $rowProject["projectName"]; ?></td>
-                                            <td><?php echo $rowProject["projectLead"]; ?></td>
-                                            <td><?php echo $rowProject["startDate"]; ?></td>
-                                            <td><button class="progress-button"><?php echo $rowProject["status"]; ?></td>
-                                        </tr>
+                                    <tr id="kanban1">
+                                        <td><?php echo $rowProject["key"]; ?></td>
+                                        <td><?php echo $rowProject["projectName"]; ?></td>
+                                        <td><?php echo $rowProject["projectLead"]; ?></td>
+                                        <td><?php echo $rowProject["startDate"]; ?></td>
+                                        <td><button class="progress-button"><?php echo $rowProject["status"]; ?></td>
+                                    </tr>
                         <?php
                                 }
                             } else {

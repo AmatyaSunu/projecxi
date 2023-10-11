@@ -24,8 +24,23 @@ body {
 .sidenav-logo img {
     width: 180px;
     height: auto;
-    margin-left: 20px;
+    margin-left: 10px;
+    margin-top: 100px;
     border-radius: 10px;
+}
+
+.company-logo {
+    display: flex;
+    align-items: center;
+}
+
+.company-logo img {
+    width: 60px;
+    height: auto;
+    margin-left: 20px;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: solid 1px black;
 }
 
 /* style horizontal line on sidebar */
@@ -218,7 +233,7 @@ body {
     font-weight: bold;
     color: #fff;
     margin-left: -20px;
-    transition: background-color 0.3s ease; 
+    transition: background-color 0.3s ease;
 }
 
 .create-project-btn:hover {
@@ -274,7 +289,7 @@ body {
 
 .project-table tbody tr {
     color: black;
-    font-size:small;
+    font-size: small;
     font-family: 'Inter', sans-serif;
 }
 
@@ -284,7 +299,8 @@ body {
     margin: 50px 50px 20px 50px;
 }
 
-.prev-btn, .next-btn {
+.prev-btn,
+.next-btn {
     font-family: 'Inter', sans-serif;
     padding: 10px 15px;
     border: 1px solid #C5C5D3;
@@ -292,14 +308,16 @@ body {
     background-color: #fff;
     color: black;
     cursor: pointer;
-    transition: background-color 0.3s ease; 
+    transition: background-color 0.3s ease;
 }
 
-.prev-btn:hover, .next-btn:hover {
+.prev-btn:hover,
+.next-btn:hover {
     background-color: #2898c7;
 }
 
-.prev-btn i, .next-btn i {
+.prev-btn i,
+.next-btn i {
     margin: 0 5px;
 }
 
