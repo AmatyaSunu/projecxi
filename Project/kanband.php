@@ -45,12 +45,13 @@
         }
     }
 
-    function displayTickets($status, $tickets) {
+    function displayTickets($status, $tickets)
+    {
         foreach ($tickets as $ticket) {
             if ($ticket['status'] == $status) {
                 echo '<div class="ticket" id="ticket-' . $ticket['ticketId'] . '" draggable="true" ondragstart="drag(event)">';
                 echo '<div class="row">';
-                echo '<p class="ticket-title">' . htmlspecialchars($ticket['title']) .'</p>';
+                echo '<p class="ticket-title">' . htmlspecialchars($ticket['title']) . '</p>';
                 echo '</div>';
                 echo '<div class="row">';
                 echo '<i class="far fa-flag flag-icon"></i>';
@@ -58,16 +59,23 @@
                 echo '<div class="row">';
                 echo '<div class="left-group">';
                 echo '<div class="rectangle-icon"></div>';
-                echo '<p>' . htmlspecialchars($ticket['ticket_code']) . '</p>';
-                echo '<i class="fas fa-angle-double-up"></i>';
+                echo '<p>' . htmlspecialchars($ticket['projectKey']) . '-' . htmlspecialchars($ticket['ticketId']) . '</p>';
+                // echo '<i class="fas fa-angle-double-up"></i>';
+                if ($ticket['priority'] == 'High') {
+                    echo '<i class="fas fa-angle-double-up"></i>';
+                } elseif ($ticket['priority'] == 'Medium') {
+                    echo '<i class="fas fa-equals"></i>';
+                } elseif ($ticket['priority'] == 'Low') {
+                    echo '<i class="fas fa-angle-down"></i>';
+                }
                 echo '</div>';
                 echo '<div class="right-group">';
                 echo '<div class="avatar-board">';
-                if ($ticket['comments'] > 0) {
-                    echo '<i class="far fa-comment-alt"></i>';
-                }
-                echo '<img src="' . htmlspecialchars($ticket['avatar1']) . '" alt="Avatar" class="user-avatar">';
-                echo '<img src="' . htmlspecialchars($ticket['avatar2']) . '" alt="Avatar" class="user-avatar">';
+                // if ($ticket['comments'] > 0) {
+                //     echo '<i class="far fa-comment-alt"></i>';
+                // }
+                echo '<img src="../images/kim.jpeg" alt="Avatar" class="user-avatar">';
+                echo '<img src="../images/jessica.jpeg" alt="Avatar" class="user-avatar">';
                 echo '</div>';
                 echo '</div>';
                 echo '</div>';
@@ -125,7 +133,7 @@
         </div>
         <div class="main-content">
             <div class="row">
-            <p><Strong>Project</Strong> / <span id="projectName">Titans</span>  (<span id="projectKey">TTs</span>)</p>
+                <p><Strong>Project</Strong> / <span id="projectName">Titans</span> (<span id="projectKey">TTs</span>)</p>
             </div>
             <div class="row">
                 <h2>Board</h2>
@@ -140,8 +148,8 @@
                     <div class="avatar-board">
                         <img src="../images/jessica.jpeg" alt="Avatar" class="user-avatar">
                         <img src="../images/kim.jpeg" alt="Avatar" class="user-avatar">
-                        <img src="../images/jo.jpeg" alt="Avatar" class="user-avatar">
-                        <div class="circle">+9</div>
+                        <!-- <img src="../images/jo.jpeg" alt="Avatar" class="user-avatar"> -->
+                        <!-- <div class="circle">+9</div> -->
                     </div>
                 </div>
                 <div class="buttons-container">
