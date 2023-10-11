@@ -180,15 +180,19 @@
                 </div>
                 <div class="kanban-block" id="inprogress" ondrop="drop(event)" ondragover="allowDrop(event)">
                     <p class="swimlane-heading">IN PROGRESS <span id="inprogress-count">0</span></p>
+                    <?php displayTickets('Progress', $tickets); ?>
                 </div>
                 <div class="kanban-block" id="intesting" ondrop="drop(event)" ondragover="allowDrop(event)">
                     <p class="swimlane-heading">IN TESTING <span id="intesting-count">0</span></p>
+                    <?php displayTickets('In testing', $tickets); ?>
                 </div>
                 <div class="kanban-block" id="review" ondrop="drop(event)" ondragover="allowDrop(event)">
                     <p class="swimlane-heading">REVIEW <span id="review-count">0</span></p>
+                    <?php displayTickets('Review', $tickets); ?>
                 </div>
                 <div class="kanban-block" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
                     <p class="swimlane-heading">DONE <span id="done-count">0</span></p>
+                    <?php displayTickets('Done', $tickets); ?>
                 </div>
 
             </div>
