@@ -10,14 +10,16 @@ function isNotEmpty(inputField) {
 
 // Function to create project
 function createTicket() {
+
     const title = document.getElementById('title').value.trim();
     const description = document.getElementById('description').value.trim();
     const priority = document.getElementById('Priority-p').value.trim();
     const assignee = document.getElementById('assignee').value.trim();
-    const estimatedDate = document.getElementById('estimatedDate').value.trim() || null;
+    const estimatedDate = document.getElementById('estimatedDate').value.trim() || new Date();
     const reporter = document.getElementById('reporter').value.trim() || null;
     const type = document.getElementById('type').value.trim();
     const relatedTicket = document.getElementById('relatedTicket').value.trim()  || null;
+    const status = "To do";
 
     if (!isNotEmpty(title)) {
         alert('Please enter a valid title.');
@@ -37,11 +39,12 @@ function createTicket() {
         estimatedDate,
         reporter,
         type,
-        relatedTicket
+        relatedTicket,
+        status
     }
 
     const queryString = new URLSearchParams(data).toString();
-    console.log("string", queryString);
+    // console.log("string", queryString);
     window.location.href = '../confirmation/new-ticket-confirmation.php?' + queryString;
 }
 

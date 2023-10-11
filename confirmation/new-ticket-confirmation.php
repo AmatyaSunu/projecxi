@@ -28,6 +28,7 @@
                 <input type="hidden" name="reporter" value="<?php echo $_GET['reporter']; ?>">
                 <input type="hidden" name="type" value="<?php echo $_GET['type']; ?>">
                 <input type="hidden" name="relatedTickets" value="<?php echo $_GET['relatedTicket']; ?>">
+                <input type="hidden" name="status" value="<?php echo $_GET['status']; ?>">
 
                 <h1 class="new-project-confirmation-heading">Are you sure you want to create a new ticket?</h1>
                 <div>
@@ -44,79 +45,79 @@
                     </div>
                 </div>
             </form>
-
-            <?php
-
-            ini_set('display_errors', 1);
-            ini_set('display_startup_errors', 1);
-            error_reporting(E_ALL);
-
-            session_start();
-            if (isset($_SESSION['projectId'])) {
-                $pID = $_SESSION['projectId'];
-            }
-
-            include('../inc/dbconn.inc.php');
-
-            // Check if the request method is POST
-            if ($_SERVER["REQUEST_METHOD"] === "POST") {
-                // Get user input from $_POST
-                $title = $_POST['title'];
-                $description = $_POST['description'];
-                $priority = $_POST['priority'];
-                $assignee = $_POST['assignee'];
-                $estimatedDate = $_POST['estimatedDate'];
-                $reporter = $_POST['reporter'];
-                $type = $_POST['type'];
-                $relatedTickets = $_POST['relatedTickets'];
-
-                // SQL query to insert ticket data into the 'tickets' table
-                $query = "INSERT INTO tickets (title, description, priority, estimatedDate, reporter, type, relatedTickets, projectId) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-
-                // Prepare the statement
-                $statement = mysqli_stmt_init($conn);
-
-                if (mysqli_stmt_prepare($statement, $query)) {
-                    // Bind parameters
-                    mysqli_stmt_bind_param(
-                        $statement,
-                        "ssssssss",
-                        $title,
-                        $description,
-                        $priority,
-                        // $assignee,
-                        $estimatedDate,
-                        $reporter,
-                        $type,
-                        $relatedTickets,
-                        $pID
-                    );
-
-                    if (mysqli_stmt_execute($statement)) {
-                        $success = true; // Set a flag to indicate successful insertion
-                    } else {
-                        $errorMessage = "Statement execution failed: " . mysqli_stmt_error($statement);
-                    }
-                }
-                mysqli_close($conn);
-            }
-            ?>
-            <script>
-                <?php
-                session_start();
-                if (isset($_SESSION['projectKey'])) {
-                    $key = $_SESSION['projectKey'];
-                    $name = $_SESSION['projectName'];
-                }
-                ?>
-                <?php if (!empty($errorMessage)) : ?>
-                    alert("<?php echo $errorMessage; ?>");
-                <?php elseif (isset($success) && $success) : ?>
-                    window.location.href = '../project/kanban.php?projectKey=<?php echo urlencode($key); ?>&projectName=<?php echo urlencode($name); ?>';
-                <?php endif; ?>
-            </script>
         </div>
     </div>
+
+    <!-- PHP code to handle server -->
+    <?php
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+
+    session_start();
+    if (isset($_SESSION['projectId'])) {
+        $pID = $_SESSION['projectId'];
+        $key = $_SESSION['projectKey'];
+        $name = $_SESSION['projectName'];
+    }
+
+    include('../inc/dbconn.inc.php');
+
+    // Check if the request method is POST
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        // Get user input from $_POST
+        $title = $_POST['title'];
+        $description = $_POST['description'];
+        $priority = $_POST['priority'];
+        $assignee = $_POST['assignee'];
+        $estimatedDate = $_POST['estimatedDate'];
+        $reporter = $_POST['reporter'];
+        $type = $_POST['type'];
+        $relatedTickets = $_POST['relatedTickets'];
+        $status = "To do";
+
+        // SQL query to insert ticket data into the 'tickets' table
+        $query = "INSERT INTO tickets (title, description, priority, estimatedDate, reporter, type, relatedTickets, projectId, projectKey, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        // Prepare the statement
+        $statement = mysqli_stmt_init($conn);
+
+        if (mysqli_stmt_prepare($statement, $query)) {
+            // Bind parameters
+            mysqli_stmt_bind_param(
+                $statement,
+                "ssssssssss",
+                $title,
+                $description,
+                $priority,
+                // $assignee,
+                $estimatedDate,
+                $reporter,
+                $type,
+                $relatedTickets,
+                $pID,
+                $key,
+                $status
+            );
+
+            if (mysqli_stmt_execute($statement)) {
+                $success = true; // Set a flag to indicate successful insertion
+            } else {
+                $errorMessage = "Statement execution failed: " . mysqli_stmt_error($statement);
+            }
+        }
+        mysqli_close($conn);
+    }
+    ?>
+
+    <!-- script to handle routing -->
+    <script>
+        <?php if (!empty($errorMessage)) : ?>
+            alert("<?php echo $errorMessage; ?>");
+        <?php elseif (isset($success) && $success) : ?>
+            window.location.href = '../project/kanban.php?projectKey=<?php echo urlencode($key); ?>&projectName=<?php echo urlencode($name); ?>';
+        <?php endif; ?>
+    </script>
 </body>
 
 </html>

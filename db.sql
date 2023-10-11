@@ -55,7 +55,8 @@ CREATE TABLE tickets (
     type VARCHAR(50),
     relatedTickets TEXT,
     attachments TEXT,
-    projectId INT
+    projectId INT,
+    status ENUM('To do', 'Progress', 'In testing', 'Review', 'Done')
 ) AUTO_INCREMENT = 1;
 
 CREATE TABLE ticketAssignees (
