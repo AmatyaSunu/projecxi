@@ -32,8 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION['user_userID'] = mysqli_insert_id($conn);
             
 
-            header('Location: ../dashboard.php');
-            //header('Location: ../php/profile.php');
+            //header('Location: ../dashboard.php');
+            header('Location: ../php/profile.php');
 
             exit();
         } else {
