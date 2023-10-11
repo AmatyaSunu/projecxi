@@ -30,8 +30,21 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
         mysqli_stmt_bind_param($statement, "sssssss", $companyName, $firstName, $lastName, $fullName, $email, $contactNumber, $hashedPassword);
 
         if (mysqli_stmt_execute($statement)) {
-            $_SESSION['fullName'] = $fullName;
-            $_SESSION['email'] = $email;
+
+            session_start();
+
+            // Store user data in session variables
+            $_SESSION['user_companyName'] = $companyName;
+            $_SESSION['user_firstName'] = $firstName;
+            $_SESSION['user_lastName'] = $lastName;
+            $_SESSION['user_fullName'] = $fullName;
+            $_SESSION['user_email'] = $email;
+            $_SESSION['user_contactNumber'] = $contactNumber;
+            $_SESSION['user_userID'] = mysqli_insert_id($conn); // Get the auto-generated user ID
+
+
+
+            //echo "Success!";
             header("location: ../confirmation/verification-sent.html");
             exit;
         } else {
