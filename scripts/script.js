@@ -14,7 +14,7 @@ if (cantLoginLink) {
 const createAccountLink = document.getElementById('create-account');
 if (createAccountLink) {
   createAccountLink.addEventListener('click', function () {
-      navigateToPage('../signup/signup.html');
+    navigateToPage('signup/signup.php');
   });
 }
 
