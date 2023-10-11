@@ -51,3 +51,7 @@ document.getElementById('cant-login').addEventListener('click', function () {
   document.getElementById('faq').addEventListener('click', function () {
     navigateToPage('faq.html');
   });
+
+  document.getElementById('projects').addEventListener('click', function () {
+    navigateToPage('project.php');
+  });

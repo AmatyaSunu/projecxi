@@ -29,7 +29,7 @@
                 <a class="menu-content" id="dashboard">Dashboard</a>
             </div>
             <div>
-                <a class="menu-content" id="project">Project</a>
+                <a class="menu-content" id="projects">Project</a>
             </div>
             <hr class="sidenav-line">
             <div>

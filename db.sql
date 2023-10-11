@@ -54,7 +54,8 @@ CREATE TABLE tickets (
     reporter INT,
     type VARCHAR(50),
     relatedTickets TEXT,
-    attachments TEXT
+    attachments TEXT,
+    projectId INT
 ) AUTO_INCREMENT = 1;
 
 CREATE TABLE ticketAssignees (

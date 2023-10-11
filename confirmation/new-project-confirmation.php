@@ -93,7 +93,9 @@
                     );
 
                     if (mysqli_stmt_execute($statement)) {
-                        $success = true; // Set a flag to indicate successful insertion
+                        // Set a flag to indicate successful insertion
+                        $success = true;
+                        $_SESSION['projectId'] = mysqli_insert_id($conn);
                     } else {
                         $errorMessage = "Statement execution failed: " . mysqli_stmt_error($statement);
                     }

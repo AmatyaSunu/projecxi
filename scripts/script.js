@@ -45,8 +45,7 @@ function navigateToLoginPage() {
   if (userEmail === '' || !isValidEmail(userEmail)) {
       alert('Please enter a valid email address.');
   } else {
-      const nextPageUrl = `../signup/login-form.html?email=${encodeURIComponent(userEmail)}`;
-      window.location.href = nextPageUrl;
+    window.location.href = 'signup/login-form.php?email='+ encodeURIComponent(userEmail);
   }
 }
 

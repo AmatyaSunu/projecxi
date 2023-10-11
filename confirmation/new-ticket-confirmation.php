@@ -46,9 +46,15 @@
             </form>
 
             <?php
+
             ini_set('display_errors', 1);
             ini_set('display_startup_errors', 1);
             error_reporting(E_ALL);
+
+            session_start();
+            if (isset($_SESSION['projectId'])) {
+                $pID = $_SESSION['projectId'];
+            }
 
             include('../inc/dbconn.inc.php');
 
@@ -65,7 +71,7 @@
                 $relatedTickets = $_POST['relatedTickets'];
 
                 // SQL query to insert ticket data into the 'tickets' table
-                $query = "INSERT INTO tickets (title, description, priority, estimatedDate, reporter, type, relatedTickets) VALUES (?, ?, ?, ?, ?, ?, ?)";
+                $query = "INSERT INTO tickets (title, description, priority, estimatedDate, reporter, type, relatedTickets, projectId) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
                 // Prepare the statement
                 $statement = mysqli_stmt_init($conn);
@@ -74,7 +80,7 @@
                     // Bind parameters
                     mysqli_stmt_bind_param(
                         $statement,
-                        "sssssss",
+                        "ssssssss",
                         $title,
                         $description,
                         $priority,
@@ -82,7 +88,8 @@
                         $estimatedDate,
                         $reporter,
                         $type,
-                        $relatedTickets
+                        $relatedTickets,
+                        $pID
                     );
 
                     if (mysqli_stmt_execute($statement)) {
