@@ -20,9 +20,12 @@ document.getElementById('create-project').addEventListener('click', function () 
     navigateToPage('./project/create-project.php');
 });
 
-document.getElementById('kanban1').addEventListener('click', function () {
-    const { projectKey, projectName } = getProjectDetail('kanban1');
-    navigateToPage(`../project/kanban1.php?projectKey=${encodeURIComponent(projectKey)}&projectName=${encodeURIComponent(projectName)}`);
+document.querySelectorAll('.project-row').forEach(row => {
+  row.addEventListener('click', function() {
+      const projectKey = this.getElementsByTagName("td")[0].textContent;
+      const projectName = this.getElementsByTagName("td")[1].textContent;
+      navigateToPage('project/kanband.php?projectKey=' + encodeURIComponent(projectKey) + '&projectName=' + encodeURIComponent(projectName));
+  });
 });
 
 document.getElementById('kanban2').addEventListener('click', function () {

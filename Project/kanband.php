@@ -60,7 +60,6 @@
                 echo '<div class="left-group">';
                 echo '<div class="rectangle-icon"></div>';
                 echo '<p>' . htmlspecialchars($ticket['projectKey']) . '-' . htmlspecialchars($ticket['ticketId']) . '</p>';
-                // echo '<i class="fas fa-angle-double-up"></i>';
                 if ($ticket['priority'] == 'High') {
                     echo '<i class="fas fa-angle-double-up"></i>';
                 } elseif ($ticket['priority'] == 'Medium') {

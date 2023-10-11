@@ -138,8 +138,8 @@
                         if ($projectList) {
                             if (mysqli_num_rows($projectList) >= 1) {
                                 while ($rowProject = mysqli_fetch_assoc($projectList)) {
-                        ?>
-                                    <tr id="kanban1">
+                                    echo "<tr class='project-row' id='project-" . $rowProject["key"] . "'>";
+                                    ?>
                                         <td><?php echo $rowProject["key"]; ?></td>
                                         <td><?php echo $rowProject["projectName"]; ?></td>
                                         <td><?php echo $rowProject["projectLead"]; ?></td>
