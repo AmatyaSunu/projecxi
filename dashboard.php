@@ -81,8 +81,7 @@
         ?> 
     </span>
 
-                <i class="fas fa-chevron-down dropdown-icon"></i>
-            </div>
+                 </div>
         </div>
         <div class="main-content">
             <div class="row">

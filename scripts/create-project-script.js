@@ -76,3 +76,54 @@ document.getElementById('create-project-btn').addEventListener('click', createPr
 document.getElementById('main-logo-project').addEventListener('click', function () {
     navigateToPage('../dashboard.php');
 });
+
+// Adding event listeners to the links
+document.getElementById('dashboard').addEventListener('click', function () {
+    navigateToPage('../dashboard.php');
+  });
+document.getElementById('projects').addEventListener('click', function () {
+    navigateToPage('../project.php');
+  });
+  
+  document.getElementById('profile').addEventListener('click', function () {
+    navigateToPage('../php/profile.php');
+  });
+  
+    document.getElementById('contact-us').addEventListener('click', function () {
+      navigateToPage('../landing-pages/contact-us.html');
+    });
+  
+    document.getElementById('faq').addEventListener('click', function () {
+      navigateToPage('../faq.html');
+    });
+
+    document.getElementById('terms-of-use').addEventListener('click', function () {
+        navigateToPage('../landing-pages/terms-of-use.html');
+      });
+
+      
+// Function to clear user-related session data
+function clearSessionData() {
+
+    sessionStorage.clear();
+  }
+  
+  // Function to logout
+  function logout() {
+      // Display a confirmation dialog
+      const confirmed = window.confirm('Are you sure you want to logout?');
+  
+      if (confirmed) {
+        // Clear user-related session data
+        clearSessionData();
+    
+        // Redirect to the login page
+        navigateToPage('./signup/login-form.php');
+      }
+  }
+  
+  // Adding an event listener to the logout link
+  document.getElementById('logout').addEventListener('click', function () {
+    logout();
+  });
+  

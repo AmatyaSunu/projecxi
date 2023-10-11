@@ -46,7 +46,7 @@ document.getElementById('kanban1').addEventListener('click', function () {
   
 
 document.getElementById('projects').addEventListener('click', function () {
-  navigateToPage('project.php');
+  navigateToPage('../project.php');
 });
 
 document.getElementById('profile').addEventListener('click', function () {
@@ -54,11 +54,11 @@ document.getElementById('profile').addEventListener('click', function () {
 });
 
   document.getElementById('contact-us').addEventListener('click', function () {
-    navigateToPage('./landing-pages/contact-us.html');
+    navigateToPage('../landing-pages/contact-us.html');
   });
 
   document.getElementById('faq').addEventListener('click', function () {
-    navigateToPage('faq.html');
+    navigateToPage('../faq.html');
   });
 
 

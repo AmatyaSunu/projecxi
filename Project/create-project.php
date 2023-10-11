@@ -25,16 +25,17 @@
         </div>
         <div class="project-menu-row2">
           <div class="project-menu-content">
-            <a class="menu-content" href="privacy-policy.html">Dashboard</a>
-            <a class="menu-content" href="privacy-policy.html">People</a>
-            <a class="menu-content" href="privacy-policy.html">Project</a>
+            <a class="menu-content" id="dashboard">Dashboard</a>
+            <a class="menu-content" id="people">People</a>
+            <a class="menu-content" id="projects">Project</a>
             <hr class="bar hr-bar" />
-            <a class="menu-content" href="privacy-policy.html">My Profile</a>
-            <a class="menu-content" href="privacy-policy.html">Settings</a>
-            <a class="menu-content" href="privacy-policy.html">About</a>
+            <a class="menu-content" id="profile">Profile</a>
+            <a class="menu-content" id="Settings">Settings</a>
             <hr class="bar hr-bar" />
-            <a class="menu-content" href="privacy-policy.html">Contact Us</a>
-            <a class="menu-content" href="privacy-policy.html">Help</a>
+            <a class="menu-content" id="contact-us">Contact Us</a>
+            <a class="menu-content" id="faq">FAQ</a>
+            <a class="menu-content" id="terms-of-use">Terms of Use</a>
+            
           </div>
         </div>
         <div class="project-menu-row3">

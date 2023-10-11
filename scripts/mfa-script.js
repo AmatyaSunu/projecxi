@@ -12,5 +12,5 @@ document.getElementById('skip').addEventListener('click', function () {
 });
 
 document.getElementById('confirm-mfa-button').addEventListener('click', function () {
-    navigateToPage('../dashboard.php');
+    navigateToPage('../login.php');
 });
