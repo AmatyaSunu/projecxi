@@ -1,17 +1,20 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 include('../inc/dbconn.inc.php');
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+// Check if the request method is GET
+if ($_SERVER["REQUEST_METHOD"] === "GET") {
     // Get user input
-    $companyName = $_POST['company-name'];
-    $firstName = $_POST['first-name'];
-    $lastName = $_POST['last-name'];
-    $email = $_POST['signup-email'];
-    $contactNumber = $_POST['contact-number'];
-    $password = $_POST['password'];
-
-     // Concatenate first name and last name to create full name
-     $fullName = $firstName . ' ' . $lastName;
+    $companyName = $_GET['companyName'];
+    $firstName = $_GET['firstName'];
+    $lastName = $_GET['lastName'];
+    $fullName = $_GET['fullName'];
+    $email = $_GET['email'];
+    $contactNumber = $_GET['contactNumber'];
+    $password = $_GET['password'];
 
     // Hash the password
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
@@ -20,26 +23,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $query = "INSERT INTO users (companyName, firstName, lastName, fullName, email, contactNumber, password) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
     // Prepare the statement
-    $stmt = mysqli_prepare($conn, $query);
+    $statement = mysqli_stmt_init($conn);
 
-    // Bind parameters
-    mysqli_stmt_bind_param($stmt, "sssssss", $companyName, $firstName, $lastName, $fullName, $email, $contactNumber, $hashedPassword);
+    if (mysqli_stmt_prepare($statement, $query)) {
+        // Bind parameters
+        mysqli_stmt_bind_param($statement, "sssssss", $companyName, $firstName, $lastName, $fullName, $email, $contactNumber, $hashedPassword);
 
-    // Execute the statement
-    $result = mysqli_stmt_execute($stmt);
-
-    if ($result) {
-        header("Location: ../confirmation/verification-sent.html");
-        exit(); // Make sure to exit after redirection
-    } else {
-        echo "Error: " . mysqli_error($conn);
-        // Handle the error
+        if (mysqli_stmt_execute($statement)) {
+            //echo "Success!";
+            header("location: ../confirmation/verification-sent.html");
+            exit; // Important to stop further processing
+        } else {
+            echo "Statement execution failed: " . mysqli_stmt_error($statement);
+        }
     }
 
-    // Close the statement
-    mysqli_stmt_close($stmt);
 
-    // Close the database connection (if not done elsewhere)
     mysqli_close($conn);
 }
-?>

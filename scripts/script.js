@@ -4,20 +4,19 @@ function navigateToPage(url) {
 }
 
 // Adding event listeners to the links
-/* const cantLoginLink = document.getElementById('cant-login');
+const cantLoginLink = document.getElementById('cant-login');
 if (cantLoginLink) {
   cantLoginLink.addEventListener('click', function () {
       navigateToPage('./signup/reset-password.html');
   });
-} */
+}
 
- /**const createAccountLink = document.getElementById('create-account');
+const createAccountLink = document.getElementById('create-account');
 if (createAccountLink) {
   createAccountLink.addEventListener('click', function () {
       navigateToPage('../signup/signup.html');
   });
 }
-*/
 
 const privacyPolicyLink = document.getElementById('privacy-policy');
 if (privacyPolicyLink) {

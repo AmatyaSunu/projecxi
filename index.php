@@ -12,7 +12,7 @@
         <div class="welcome-content">
             <h1>Welcome to Projecxi</h1>
             <p>Where amazing projects come to life!</p>
-            <a href="login.html" class="login-button">Login</a>
+            <a href="login.php" class="login-button">Login</a>
         </div>
     </div>
 </body>

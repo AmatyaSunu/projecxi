@@ -47,3 +47,7 @@ document.getElementById('cant-login').addEventListener('click', function () {
   document.getElementById('terms-of-use').addEventListener('click', function () {
     navigateToPage('./landing-pages/terms-of-use.html');
   });
+
+  document.getElementById('faq').addEventListener('click', function () {
+    navigateToPage('faq.html');
+  });
