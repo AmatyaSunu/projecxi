@@ -98,7 +98,7 @@
                 </button>
               </div>
               <div class="cancel">
-                <p><a href="#" class="c1" id="cancel-create-ticket">Cancel</a></p>
+                <p><a href="../dashboard.php" class="c1" id="cancel-create-ticket">Cancel</a></p>
               </div>
             </div>
           </div>
