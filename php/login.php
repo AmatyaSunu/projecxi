@@ -1,9 +1,14 @@
 <?php
+session_start(); // Start the session to access session variables
 include('../inc/dbconn.inc.php'); // Include your database connection code
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
+
+    // Store email and password in session variables
+    $_SESSION['user_email'] = $email;
+    $_SESSION['user_password'] = $password;
 
     // Query to retrieve user data by email
     $query = "SELECT id, email, password FROM users WHERE email = ? LIMIT 1";
@@ -28,7 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (password_verify($password, $hashedPassword)) {
             // Passwords match; login successful
             // You can set session variables or redirect to the dashboard
-            session_start();
             $_SESSION['user_id'] = $userId;
             header('Location: ../dashboard.html');
             exit();
