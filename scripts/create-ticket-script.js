@@ -44,7 +44,6 @@ function createTicket() {
     }
 
     const queryString = new URLSearchParams(data).toString();
-    // console.log("string", queryString);
     window.location.href = '../confirmation/new-ticket-confirmation.php?' + queryString;
 }
 

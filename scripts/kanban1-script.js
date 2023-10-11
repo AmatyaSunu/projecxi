@@ -41,6 +41,38 @@ function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 }
 
+// Get project key and name query parameter from the URL and render data to page
+const projectKey = getQueryVariable('projectKey');
+const projectName = getQueryVariable('projectName');
+
+const title = document.getElementById('projectName');
+const key = document.getElementById('projectKey');
+
+title.textContent = capitalizeFirstLetter(projectName);
+key.textContent = projectKey.toUpperCase();
+
+// Count the ticket on todo list
+document.addEventListener("DOMContentLoaded", function () {
+    for (var i = 0; i < kanbanColumns.length; i++) {
+        var column = kanbanColumns[i];
+        var columnDiv = document.getElementById(column.index);
+
+        if (columnDiv) {
+            var ticketCount = columnDiv.querySelectorAll('.ticket').length;
+
+            var countSpanId = column.index + '-count';
+            var countSpan = document.getElementById(countSpanId);
+
+            //render count in html 
+            if (countSpan) {
+                countSpan.textContent = ticketCount;
+            }
+
+            column.count = ticketCount;
+        }
+    }
+});
+
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
 }
@@ -117,11 +149,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.getElementById('back1').addEventListener('click', function () {
-    navigateToPage('../dashboard.html');
+    navigateToPage('../dashboard.php');
 });
 
 document.getElementById('create-ticket-btn1').addEventListener('click', function () {
-    navigateToPage('./create-a-ticket.html');
+    navigateToPage('./create-a-ticket.php');
 });
 
 document.getElementById('filter').addEventListener('click', function () {
@@ -129,5 +161,5 @@ document.getElementById('filter').addEventListener('click', function () {
 });
 
 document.getElementById('main-logo1').addEventListener('click', function () {
-    navigateToPage('../dashboard.html');
+    navigateToPage('../dashboard.php');
 });

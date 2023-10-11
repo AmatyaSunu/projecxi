@@ -5,9 +5,8 @@ header("Access-Control-Allow-Headers: Content-Type");
 
 // Connecting to database
 require_once "inc/dbconn.inc.php";
-echo "<script>console.log('hehehe');</script>";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    error_log("here");
     // Retrieve JSON data from the request body
     $data = json_decode(file_get_contents("php://input"), true);
 
@@ -35,6 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             mysqli_stmt_bind_param($statement, 'ssssssss', $projectName, $projectKey, $url, $projectType, $description, $projectLead, $defaultAssignee, $startDate);
 
             if (mysqli_stmt_execute($statement)) {
+                
                 // Send a success response back to the client (optional)
                 echo "Project created successfully!";
             } else {

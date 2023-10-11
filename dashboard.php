@@ -25,7 +25,7 @@
     <div class="sidenav">
         <div class="company-logo">
             <img src="images/project-logo.png" />
-            <span class="project-label">  Armour<br />Technology</span>
+            <span class="project-label"> Armour<br />Technology</span>
         </div>
 
         <div class="menu">
@@ -51,7 +51,7 @@
                 <a class="menu-content" id="faq">FAQ</a>
             </div>
             <div class="sidenav-logo" id="main-logo">
-                <img src="images/logo.png"/>
+                <img src="images/logo.png" />
             </div>
         </div>
     </div>
@@ -128,17 +128,16 @@
                             <td><button class="progress-button">Progress</td>
                         </tr> -->
                         <?php
-                        
+
                         // Query the database to retrieve projects
                         $projectQuery = "SELECT * FROM projects LIMIT 10";
-                        
+
                         $projectList = mysqli_query($conn, $projectQuery);
-                        
+
                         // Check if the query was successful
                         if ($projectList) {
                             if (mysqli_num_rows($projectList) >= 1) {
                                 while ($rowProject = mysqli_fetch_assoc($projectList)) {
-
                         ?>
                                     <tr id="kanban1">
                                         <td><?php echo $rowProject["key"]; ?></td>

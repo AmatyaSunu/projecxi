@@ -115,7 +115,7 @@
         <?php if (!empty($errorMessage)) : ?>
             alert("<?php echo $errorMessage; ?>");
         <?php elseif (isset($success) && $success) : ?>
-            window.location.href = '../project/kanban.php?projectKey=<?php echo urlencode($key); ?>&projectName=<?php echo urlencode($name); ?>';
+            window.location.href = '../project/kanband.php?projectKey=<?php echo urlencode($key); ?>&projectName=<?php echo urlencode($name); ?>';
         <?php endif; ?>
     </script>
 </body>

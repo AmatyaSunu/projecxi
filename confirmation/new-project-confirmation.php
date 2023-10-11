@@ -98,6 +98,7 @@
                     );
 
                     if (mysqli_stmt_execute($statement)) {
+                        $_SESSION['projectId'] = mysqli_insert_id($conn);
                         // Set a flag to indicate successful insertion
                         $success = true;
                     } else {
@@ -111,7 +112,7 @@
                 <?php if (!empty($errorMessage)) : ?>
                     alert("<?php echo $errorMessage; ?>");
                 <?php elseif (isset($success) && $success) : ?>
-                    window.location.href = '../project/kanban.php?projectKey=<?php echo urlencode($projectKey); ?>&projectName=<?php echo urlencode($projectName); ?>';
+                    window.location.href = '../project/kanband.php?projectKey=<?php echo urlencode($projectKey); ?>&projectName=<?php echo urlencode($projectName); ?>';
                 <?php endif; ?>
             </script>
 </body>

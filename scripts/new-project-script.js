@@ -3,7 +3,6 @@ Author: Sunidhi Amatya */
 
 // Function to navigate to the next page
 function navigateToPage(url) {
-    console.log("sdf");
     window.location.href = url;
 }
 
