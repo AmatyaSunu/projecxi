@@ -11,8 +11,8 @@
 </head>
 
 <body>
-    <?php
-   session_start(); // Start the session to access session variables
+<?php
+    session_start(); // Start the session to access session variables
 
     // Check if the user is logged in
     if (!isset($_SESSION['user_email'])) {
@@ -24,7 +24,7 @@
     require_once "../inc/dbconn.inc.php";
 
     // Fetch the user's current profile information from the database
-   $userEmail = $_SESSION['user_email']; // Fetch the email from sessions
+    $userEmail = $_SESSION['user_email']; // Fetch the email from sessions
     $selectQuery = "SELECT * FROM users WHERE email='$userEmail'";
     $result = mysqli_query($connection, $selectQuery);
     $row = mysqli_fetch_assoc($result);
@@ -42,10 +42,10 @@
     // Check if the form is submitted
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Get the updated profile information from the form
-        $firstName = $_POST['first_name'];
-        $lastName = $_POST['last_name'];
+        $firstName = $_POST['first-name'];
+        $lastName = $_POST['last-name'];
         $email = $_SESSION['user_email']; // The email should not be changeable
-        $contactNumber = $_POST['contact_number'];
+        $contactNumber = $_POST['contact-number'];
         $project = $_POST['project'];
 
         // Update the user's profile information in the database

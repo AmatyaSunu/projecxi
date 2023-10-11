@@ -23,7 +23,7 @@
                 <label>Email</label>
             </div>
             <div>
-                <input class="custom-input" type="email" id="emailID" name="signup-email" placeholder="Required">
+                <input class="custom-input" type="email" id="signup-email" name="signup-email" placeholder="Required">
             </div>
             <div>
                 <label>Password</label>
