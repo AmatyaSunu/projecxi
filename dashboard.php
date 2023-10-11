@@ -19,7 +19,7 @@
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
-
+    
     require_once "inc/dbconn.inc.php";
     ?>
     <div class="sidenav">
@@ -41,7 +41,7 @@
                 <a class="menu-content" id="profile">Profile</a>
             </div>
             <div>
-                <a class="menu-content" id="Setting">Setting</a>
+                <a class="menu-content" id="setting">Setting</a>
             </div>
             <hr class="sidenav-line">
             <div>
@@ -49,6 +49,10 @@
             </div>
             <div>
                 <a class="menu-content" id="faq">FAQ</a>
+            </div>
+            <hr class="sidenav-line">
+            <div>
+                <a class="menu-content" id="logout">Log out</a>
             </div>
             <div class="sidenav-logo" id="main-logo">
                 <img src="images/logo.png"/>
@@ -63,7 +67,20 @@
             </div>
             <div class="user-container">
                 <img src="./images/jessica.jpeg" alt="Avatar" class="user-avatar">
-                <span class="user-name">Jessica Bells</span>
+
+               <span class="user-name">
+        <?php
+        session_start();
+
+        // Fetch and display the user's name dynamically
+        if (isset($_SESSION['user_fullname'])) {
+            echo $_SESSION['user_fullname'];
+        } else {
+            echo "User";
+        }
+        ?> 
+    </span>
+
                 <i class="fas fa-chevron-down dropdown-icon"></i>
             </div>
         </div>

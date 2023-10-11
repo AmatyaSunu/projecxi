@@ -25,33 +25,67 @@ document.getElementById('kanban1').addEventListener('click', function () {
     navigateToPage(`../project/kanban1.php?projectKey=${encodeURIComponent(projectKey)}&projectName=${encodeURIComponent(projectName)}`);
 });
 
-document.getElementById('kanban2').addEventListener('click', function () {
+/* document.getElementById('kanban2').addEventListener('click', function () {
     const { projectKey, projectName } = getProjectDetail('kanban2');
     navigateToPage(`./project/kanban.html?projectKey=${encodeURIComponent(projectKey)}&projectName=${encodeURIComponent(projectName)}`);
-});
+}); */
 
 // Adding event listeners to the side nav-bar links
-document.getElementById('cant-login').addEventListener('click', function () {
+/*document.getElementById('cant-login').addEventListener('click', function () {
     navigateToPage('./signup/reset-password.html');
   });
-  
-  document.getElementById('create-account').addEventListener('click', function () {
+  */
+  /* document.getElementById('create-account').addEventListener('click', function () {
     navigateToPage('./signup/signup.html');
   });
-  
-  document.getElementById('privacy-policy').addEventListener('click', function () {
+  */ 
+  /*document.getElementById('privacy-policy').addEventListener('click', function () {
     console.log("here");
     navigateToPage('./landing-pages/privacy-policy.html');
-  });
+  }); */
   
-  document.getElementById('terms-of-use').addEventListener('click', function () {
-    navigateToPage('./landing-pages/terms-of-use.html');
+
+document.getElementById('projects').addEventListener('click', function () {
+  navigateToPage('project.php');
+});
+
+document.getElementById('profile').addEventListener('click', function () {
+  navigateToPage('../php/profile.php');
+});
+
+  document.getElementById('contact-us').addEventListener('click', function () {
+    navigateToPage('./landing-pages/contact-us.html');
   });
 
   document.getElementById('faq').addEventListener('click', function () {
     navigateToPage('faq.html');
   });
 
-  document.getElementById('projects').addEventListener('click', function () {
-    navigateToPage('project.php');
-  });
+
+
+
+
+// Function to clear user-related session data
+function clearSessionData() {
+
+  sessionStorage.clear();
+}
+
+// Function to logout
+function logout() {
+    // Display a confirmation dialog
+    const confirmed = window.confirm('Are you sure you want to logout?');
+
+    if (confirmed) {
+      // Clear user-related session data
+      clearSessionData();
+  
+      // Redirect to the login page
+      navigateToPage('./signup/login-form.php');
+    }
+}
+
+// Adding an event listener to the logout link
+document.getElementById('logout').addEventListener('click', function () {
+  logout();
+});
