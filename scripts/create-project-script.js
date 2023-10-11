@@ -13,7 +13,7 @@ function isNotEmpty(inputField) {
 
 // Function to create project
 function createProject() {
-    console.log("check");
+    console.log("here");
     const projectKey = document.getElementById('project-key').value.trim();
     const projectName = document.getElementById('project-name').value.trim();
     const url = document.getElementById('url').value.trim();
@@ -61,36 +61,10 @@ function createProject() {
         startDate
     }
 
-    localStorage.setItem('projectData', JSON.stringify(data));
-
-    navigateToPage('../confirmation/new-project-confirmation.html?projectKey=' + encodeURIComponent(data.projectKey) + '&projectName=' + encodeURIComponent(data.projectName));
-}
-
-// // Function to send data to the server
-// function sendDataToServer(data) {
-//     console.log("data", data)
-//     fetch('../php/createproject.php', {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(data)
-//     })
-//         .then(response => {
-//             console.log("return", response);
-//         if (response.ok) {
-//             console.log("sucess");
-//             // Handle success as needed, e.g., redirect to a confirmation page
-//             // navigateToPage('../confirmation/new-project-confirmation.html?projectKey=' + encodeURIComponent(data.projectKey) + '&projectName=' + encodeURIComponent(data.projectName));
-//         } else {
-//             // Handle errors, e.g., show an error message
-//             alert('An error occurred while creating the project.');
-//         }
-//     })
-//     .catch(error => {
-//         console.error('Error:', error);
-//     });
-// } 
+    const queryString = new URLSearchParams(data).toString();
+    console.log("string", queryString);
+    window.location.href = '../confirmation/new-project-confirmation.php?' + queryString;
+} 
 
 document.getElementById('create-project-btn').addEventListener('click', createProject);
 

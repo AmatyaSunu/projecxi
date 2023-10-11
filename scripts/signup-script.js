@@ -17,8 +17,6 @@ document.getElementById('terms-of-use').addEventListener('click', function () {
 
 // Check validity of input element
 function createAccount(event) {
-  // event.preventDefault(); // Prevent the form from submitting by default
-
   const signupForm = document.getElementById("signupForm");
 
   const companyNameInput = document.getElementById("company-name");
@@ -31,6 +29,7 @@ function createAccount(event) {
 
   // Checks Company Name validity
   if (!isNotEmpty(companyNameInput)) {
+    event.preventDefault(); 
     alert("Please enter a valid company name.");
     return;
   }
@@ -97,6 +96,6 @@ function isValidPassword(password) {
 // Add event listener to the Create Account button
 const signupForm = document.getElementById("signupForm");
 signupForm.addEventListener("submit", function (event) {
-  event.preventDefault(); // Prevent the form from submitting by default
+  event.preventDefault();
   createAccount();
 });

@@ -48,7 +48,6 @@
       <div class="project-form">
         <h1 class="create-heading">Create a project</h1>
         <h2 class="Details">Details</h2>
-        <!-- <form id="create-project"> -->
           <div class="row">
             <div class="column1">
               <div class="element">
@@ -120,7 +119,6 @@
               </div>
             </div>
           </div>
-        <!-- </form> -->
       </div>
     </div>
   </div>

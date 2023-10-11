@@ -30,9 +30,10 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
         mysqli_stmt_bind_param($statement, "sssssss", $companyName, $firstName, $lastName, $fullName, $email, $contactNumber, $hashedPassword);
 
         if (mysqli_stmt_execute($statement)) {
-            //echo "Success!";
+            $_SESSION['fullName'] = $fullName;
+            $_SESSION['email'] = $email;
             header("location: ../confirmation/verification-sent.html");
-            exit; // Important to stop further processing
+            exit;
         } else {
             echo "Statement execution failed: " . mysqli_stmt_error($statement);
         }
