@@ -55,9 +55,9 @@
     // error_reporting(E_ALL);
 
     session_start();
-    echo "Project ID: " . $_SESSION['projectId'] . "<br>";
-    echo "Project Key: " . $_SESSION['projectKey'] . "<br>";
-    echo "Project Name: " . $_SESSION['projectName'] . "<br>";
+    // echo "Project ID: " . $_SESSION['projectId'] . "<br>";
+    // echo "Project Key: " . $_SESSION['projectKey'] . "<br>";
+    // echo "Project Name: " . $_SESSION['projectName'] . "<br>";
 
     if (isset($_SESSION['projectId'])) {
         $pID = $_SESSION['projectId'];

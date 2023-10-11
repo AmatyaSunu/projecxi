@@ -77,9 +77,9 @@
               <div class="element">
                 <label>Default Assignee</label>
                 <select id="default-assignee" name="default-assignee">
-                  <option value="Employee 1">Employee 1</option>
-                  <option value="Employee 2">Employee 2</option>
-                  <option value="Employee 3">Employee 3</option>
+                <option value="Jessica Bells">Jessica Bells</option>
+                <option value="Tasmia">Tasmia</option>
+                <option value="Sunidhi Amatya">Sunidhi Amatya</option>
                 </select>
               </div>
               <div class="create">
