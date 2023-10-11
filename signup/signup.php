@@ -23,7 +23,7 @@
             <div class="signup-column">
                 <div class="signup-form">
                     <h1 class="signup-heading">Create your account</h1>
-                    <form id="signupForm" action="../php/signup.php" method="post">
+                    <form id="signupForm" action="" method="GET">
                     <div>
                         <div>
                             <label>Company Name</label>
@@ -80,7 +80,7 @@
                              id="terms-of-use" href="#">Terms of Use</a> and <a class="policy-link"
                              id="privacy-policy" href="#">Privacy Policy.</a></p>
                     <div class="create-button">
-                        <button class="create-account-button" id="create-account">Create Account</button>
+                        <button class="create-account-button" id="create-account" type="submit">Create Account</button>
                     </div>
                     </form>
                 </div>

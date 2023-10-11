@@ -6,26 +6,26 @@ function navigateToPage(url) {
   window.location.href = url;
 }
 
-/* // Adding event listeners to the links
+// Adding event listeners to the links
 document.getElementById('privacy-policy').addEventListener('click', function () {
-    navigateToPage('../landing-pages/privacy-policy.html');
+  navigateToPage('../landing-pages/privacy-policy.html');
 });
 
 document.getElementById('terms-of-use').addEventListener('click', function () {
-    navigateToPage('../landing-pages/terms-of-use.html');
+  navigateToPage('../landing-pages/terms-of-use.html');
 });
-
-*/
 
 // Check validity of input element
 function createAccount(event) {
-  event.preventDefault(); // Prevent the form from submitting by default
+  // event.preventDefault(); // Prevent the form from submitting by default
 
   const signupForm = document.getElementById("signupForm");
 
   const companyNameInput = document.getElementById("company-name");
   const firstNameInput = document.getElementById("first-name");
   const lastNameInput = document.getElementById("last-name");
+  const fullNameInput = firstNameInput + " " + lastNameInput;
+  const contactNumberInput = document.getElementById("contact-number");
   const signupEmailInput = document.getElementById("signup-email");
   const passwordInput = document.getElementById("password");
 
@@ -60,6 +60,20 @@ function createAccount(event) {
     );
     return;
   }
+
+  data = {
+    companyName: companyNameInput.value,
+    firstName: firstNameInput.value,
+    lastName: lastNameInput.value,
+    fullName: firstNameInput.value,
+    email: signupEmailInput.value,
+    contactNumber: contactNumberInput.value,
+    password: passwordInput.value
+  }
+
+  const queryString = new URLSearchParams(data).toString();
+
+  window.location.href = '../php/signup.php?' + queryString;
 }
 
 // Checks if an input field is not empty
@@ -84,5 +98,5 @@ function isValidPassword(password) {
 const signupForm = document.getElementById("signupForm");
 signupForm.addEventListener("submit", function (event) {
   event.preventDefault(); // Prevent the form from submitting by default
-  createAccount(event);
+  createAccount();
 });

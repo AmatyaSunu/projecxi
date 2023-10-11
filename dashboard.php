@@ -122,11 +122,12 @@
                             <td><button class="progress-button">Progress</td>
                         </tr> -->
                         <?php
-                    echo"<script>console.log('dsaf');</script>";
+                    echo"<script>console.log('1');</script>";
                         // Query the database to retrieve projects
                         $projectQuery = "SELECT * FROM projects";
+                        echo"<script>console.log('2');</script>";
                         $projectList = mysqli_query($conn, $projectQuery);
-                        echo"<script>Console.log('dsaasdff');</script>";
+                        echo"<script>console.log('3');</script>";
                         // Check if the query was successful
                         if ($projectList) {
                             if (mysqli_num_rows($projectList) >= 1) {

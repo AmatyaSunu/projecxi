@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="author" content="Ramya" />
-  <meta name="description" content="Login"/>
+  <meta name="description" content="Login" />
   <link rel="stylesheet" href="styles/login-style.css">
   <link rel="stylesheet" href="styles/icon-style.css">
-  <script src="./scripts/script.js" defer></script>
+  <script src="scripts/script.js" defer></script>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <title>ProjecXi</title>
@@ -32,17 +32,17 @@
       </div>
       <div class="social">
         <button class="social-button">
-          <img src="../images/goog.png" class="social-icon-google" alt="Google Icon">
+          <img src="images/goog.png" class="social-icon-google" alt="Google Icon">
           Google</button>
       </div>
       <div class="social">
         <button class="social-button">
-          <img src="../images/app.png" class="social-icon-apple" alt="Google Icon">
+          <img src="images/app.png" class="social-icon-apple" alt="Google Icon">
           Apple</button>
       </div>
       <div class="social">
         <button class="social-button">
-          <img src="../images/micro.png" class="social-icon-microsoft" alt="Google Icon">
+          <img src="images/micro.png" class="social-icon-microsoft" alt="Google Icon">
           Microsoft</button>
       </div>
 
@@ -56,13 +56,13 @@
 
       <div>
         <div class="main-logo">
-          <img class="sub-logo" src="../images/sub-logo.png">
+          <img class="sub-logo" src="images/sub-logo.png">
         </div>
 
         <div class="terms">
-        <a id="privacy-policy" href="#">Privacy Policy</a>
-        <a id="terms-of-use" href="#">Terms of Use</a>
-      </div>
+          <a id="privacy-policy" href="#">Privacy Policy</a>
+          <a id="terms-of-use" href="#">Terms of Use</a>
+        </div>
       </div>
 
     </div>
