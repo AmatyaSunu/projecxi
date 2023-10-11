@@ -131,3 +131,26 @@ document.getElementById('filter').addEventListener('click', function () {
 document.getElementById('main-logo-kanban').addEventListener('click', function () {
     navigateToPage('../dashboard.php')
 });
+
+document.getElementById('dashboard').addEventListener('click', function () {
+    navigateToPage('../dashboard.php');
+  });
+document.getElementById('projects').addEventListener('click', function () {
+    navigateToPage('../project.php');
+  });
+  
+  document.getElementById('profile').addEventListener('click', function () {
+    navigateToPage('../php/profile.php');
+  });
+  
+    document.getElementById('contact-us').addEventListener('click', function () {
+      navigateToPage('../landing-pages/contact-us.html');
+    });
+  
+    document.getElementById('faq').addEventListener('click', function () {
+      navigateToPage('../faq.html');
+    });
+
+    document.getElementById('terms-of-use').addEventListener('click', function () {
+        navigateToPage('../landing-pages/terms-of-use.html');
+      });

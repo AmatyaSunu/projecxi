@@ -23,32 +23,36 @@
 
         <div class="menu">
             <div>
-                <a class="menu-content">Dashboard</a>
+                <a class="menu-content" id="dashboard">Dashboard</a>
             </div>
             <div>
-                <a class="menu-content">Project</a>
-            </div>
-            <hr class="sidenav-line">
-            <div>
-                <a class="menu-content">Profile</a>
+                <a class="menu-content" id="people">People</a>
             </div>
             <div>
-                <a class="menu-content">Setting</a>
-            </div>
-            <div>
-                <a class="menu-content">About</a>
+                <a class="menu-content" id="projects">Project</a>
             </div>
             <hr class="sidenav-line">
             <div>
-                <a class="menu-content">Contact us</a>
+                <a class="menu-content" id="profile">Profile</a>
             </div>
             <div>
-                <a class="menu-content">Help</a>
+                <a class="menu-content" id="Settings">Setting</a>
+            </div>
+            <hr class="sidenav-line">
+            <div>
+                <a class="menu-content" id="contact-us">Contact us</a>
+            </div>
+            <div>
+                <a class="menu-content" id="faq">FAQ</a>
+            </div>
+            <div>
+                <a class="menu-content" id="logout">Log out</a>
             </div>
         </div>
         <div class="logo" id="main-logo-kanban">
             <img class="img-logo" src="../images/logo.png" />
         </div>
+       
     </div>
     <div class="main">
         <div class="topnav">

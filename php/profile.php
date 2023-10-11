@@ -4,7 +4,7 @@
 <head>
     <title>Profile</title>
     <meta charset="UTF-8" />
-    <meta name="author" content="Ramya Karri" />
+    <meta name="author" content="Ramya Karri and Tasmia Bhuiyan" />
     <link rel="stylesheet" href="../styles/profile.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
@@ -12,56 +12,70 @@
 
 <body>
 <?php
-    session_start(); // Start the session to access session variables
 
-    // Check if the user is logged in
-    if (!isset($_SESSION['user_email'])) {
-        // Redirect the user to the login page if not logged in
-        header("Location: ../login.html");
-        exit(); // Make sure to exit after redirection
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+session_start(); // Start the session to access session variables
+
+// Check if the user is logged in
+if (!isset($_SESSION['user_email'])) {
+    // Redirect the user to the login page if not logged in
+    header("Location: ../signup/login-form.php");
+    exit(); // Make sure to exit after redirection
+}
+
+require_once "../inc/dbconn.inc.php";
+
+// Check if the database connection is successful
+if (!$connection) {
+    die("Database connection failed: " . mysqli_connect_error());
+}
+
+// Fetch the user's current profile information from the database
+$userEmail = $_SESSION['user_email']; // Fetch the email from sessions
+$selectQuery = "SELECT * FROM users WHERE email='$userEmail'";
+$result = mysqli_query($connection, $selectQuery);
+
+if (!$result) {
+    die("Error executing the query: " . mysqli_error($connection));
+}
+
+$row = mysqli_fetch_assoc($result);
+
+// Close the database connection
+mysqli_close($connection);
+
+// Populate user information
+$firstName = $row['firstName'];
+$lastName = $row['lastName'];
+$email = $row['email'];
+$contactNumber = $row['contactNumber'];
+$project = $row['companyName'];
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get the updated profile information from the form
+    $firstName = $_POST['first-name'];
+    $lastName = $_POST['last-name'];
+    $email = $_SESSION['user_email']; // The email should not be changeable
+    $contactNumber = $_POST['contact-number'];
+    $project = $_POST['project'];
+
+    // Update the user's profile information in the database
+    $updateQuery = "UPDATE users SET firstName='$firstName', lastName='$lastName', contactNumber='$contactNumber', companyName='$project' WHERE email='$email'";
+
+    // Execute the update query
+    $result = mysqli_query($connection, $updateQuery);
+
+    if (!$result) {
+        die("Error updating profile: " . mysqli_error($connection));
     }
 
-    require_once "../inc/dbconn.inc.php";
-
-    // Fetch the user's current profile information from the database
-    $userEmail = $_SESSION['user_email']; // Fetch the email from sessions
-    $selectQuery = "SELECT * FROM users WHERE email='$userEmail'";
-    $result = mysqli_query($connection, $selectQuery);
-    $row = mysqli_fetch_assoc($result);
-
-    // Close the database connection
-    mysqli_close($connection);
-
-    // Populate user information
-    $firstName = $row['firstName'];
-    $lastName = $row['lastName'];
-    $email = $row['email'];
-    $contactNumber = $row['contactNumber'];
-    $project = $row['companyName'];
-
-    // Check if the form is submitted
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Get the updated profile information from the form
-        $firstName = $_POST['first-name'];
-        $lastName = $_POST['last-name'];
-        $email = $_SESSION['user_email']; // The email should not be changeable
-        $contactNumber = $_POST['contact-number'];
-        $project = $_POST['project'];
-
-        // Update the user's profile information in the database
-        $updateQuery = "UPDATE users SET firstName='$firstName', lastName='$lastName', contactNumber='$contactNumber', companyName='$project' WHERE email='$email'";
-
-        // Execute the update query
-        $result = mysqli_query($connection, $updateQuery);
-
-        // Check if the update was successful
-        if ($result) {
-            echo "<p>Profile updated successfully!</p>";
-        } else {
-            echo "<p>Error updating profile.</p>";
-        }
-    }
-    ?>
+    echo "<p>Profile updated successfully!</p>";
+}
+?>
 
     <div class="sidenav">
         <div class="sidenav-logo">
