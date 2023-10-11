@@ -117,11 +117,11 @@ function navigateToPage(url) {
 }
 
 document.getElementById('back').addEventListener('click', function () {
-    navigateToPage('../dashboard.html');
+    navigateToPage('../dashboard.php');
 });
 
 document.getElementById('create-ticket-btn').addEventListener('click', function () {
-    navigateToPage('./create-a-ticket.html');
+    navigateToPage('../project/create-a-ticket.php');
 });
 
 document.getElementById('filter').addEventListener('click', function () {
@@ -129,5 +129,5 @@ document.getElementById('filter').addEventListener('click', function () {
 });
 
 document.getElementById('main-logo-kanban').addEventListener('click', function () {
-    navigateToPage('../dashboard.html')
+    navigateToPage('../dashboard.php')
 });

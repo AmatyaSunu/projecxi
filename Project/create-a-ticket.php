@@ -52,44 +52,43 @@
           <div class="column1">
             <div class="element">
               <label>Title</label>
-              <input class="custom-input" type="text" id="name" name="name" placeholder="Required" />
+              <input class="custom-input" type="text" id="title" name="title" placeholder="Required" required/>
             </div>
             <div class="element">
               <label>Description</label>
-              <input class="custom-inputD" type="text" id="name" name="name" placeholder="Required" />
+              <input class="custom-inputD" type="text" id="description" name="description" placeholder="Required" required/>
             </div>
             <div class="elementp">
               <label>Priority</label>
-
-              <select id="Priority-p" name="Priority">
-                <option value="#">High</option>
-                <option value="#">Medium</option>
-                <option value="#">Low</option>
+              <select id="Priority-p" name="priority">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
               </select>
 
             </div>
             <div class="element">
               <label>Assignee</label>
-              <select id="Priority" name="Priority">
-                <option value="#">Employee 1</option>
-                <option value="#">Employee 2</option>
-                <option value="#">Employee 3</option>
+              <select id="assignee" name="assignee">
+                <option value="Employee 1">Employee 1</option>
+                <option value="Employee 2">Employee 2</option>
+                <option value="Employee 3">Employee 3</option>
               </select>
             </div>
             <div class="element">
               <label>Estimated Date</label>
-              <input class="custom-input" type="date" id="name" name="name" placeholder="Required" />
+              <input class="custom-input" type="date" id="estimatedDate" name="estimatedDate" placeholder="Required" required/>
             </div>
             <div class="element">
               <label>Reporter</label>
-              <input class="custom-input" type="text" id="name" name="name" />
+              <input class="custom-input" type="text" id="reporter" name="reporter" />
             </div>
             <div class="element">
               <label>Type</label>
-              <select id="Priority" name="Priority">
-                <option value="#">Type 1</option>
-                <option value="#">Type 2</option>
-                <option value="#">Type 3</option>
+              <select id="type" name="type" class="type">
+                <option value="Type 1">Type 1</option>
+                <option value="Type 2">Type 2</option>
+                <option value="Type 3">Type 3</option>
               </select>
             </div>
             <div class="create">
@@ -108,7 +107,7 @@
             <div class="column2-row1">
               <div>
                 <label>Related Tickets</label>
-                <input class="custom-input2" type="text" id="name" name="name" placeholder="TT" />
+                <input class="custom-input2" type="text" id="relatedTicket" name="relatedTicket" placeholder="TT" required/>
               </div>
               <div class="info">
                 <button type="button" id="infoButton">i</button>

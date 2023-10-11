@@ -13,7 +13,7 @@ function isNotEmpty(inputField) {
 
 // Function to create project
 function createProject() {
-    console.log("here");
+
     const projectKey = document.getElementById('project-key').value.trim();
     const projectName = document.getElementById('project-name').value.trim();
     const url = document.getElementById('url').value.trim();
@@ -62,7 +62,7 @@ function createProject() {
     }
 
     const queryString = new URLSearchParams(data).toString();
-    console.log("string", queryString);
+
     window.location.href = '../confirmation/new-project-confirmation.php?' + queryString;
 } 
 

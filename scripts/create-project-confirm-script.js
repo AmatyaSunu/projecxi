@@ -24,10 +24,7 @@ function navigateToPage(url) {
     window.location.href = url;
 }
 
-// document.getElementById('project-btn-new').addEventListener('click', function () {
-//     });
 
 document.getElementById('cancel-new').addEventListener('click', function () {
-    // navigateToPage('project/create-project.php');
     window.history.back();
 });

@@ -40,7 +40,7 @@
                             <button class="yes-button" id="project-btn-new" type="submit">Yes, I want to.</button>
                         </div>
                         <div class="continue-button">
-                        <button type="button" class="cancel-button" id="cancel-new">Cancel</button>
+                            <button type="button" class="cancel-button" id="cancel-new">Cancel</button>
                         </div>
                     </div>
                 </div>
@@ -65,6 +65,12 @@
                 $startDate = $_POST['startDate'];
 
                 echo "<script>console.log(" . $projectKey . ");</script>";
+                // starting session
+                session_start();
+
+                //storing project detail on session
+                $_SESSION['projectName'] = $projectName;
+                $_SESSION['projectKey'] = $projectKey;
 
                 // SQL query to insert user data into the 'users' table
                 $query = "INSERT INTO projects (`key`, projectName, url, projectType, description, defaultAssignee, startDate) VALUES (?, ?, ?, ?, ?, ?, ?)";

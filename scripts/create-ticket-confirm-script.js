@@ -8,5 +8,5 @@ document.getElementById('create-ticket').addEventListener('click', function () {
 });
 
 document.getElementById('cancel-ticket').addEventListener('click', function () {
-    navigateToPage('../project/create-a-ticket.html');
+    window.history.back();
 });

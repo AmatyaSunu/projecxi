@@ -3,9 +3,49 @@ function navigateToPage(url) {
     window.location.href = url;
 }
 
-document.getElementById('create-Ticket-button').addEventListener('click', function () {
-    navigateToPage('../confirmation/new-ticket-confirmation.html');
-});
+// Checks if an input field is not empty
+function isNotEmpty(inputField) {
+    return inputField !== '';
+}
+
+// Function to create project
+function createTicket() {
+    const title = document.getElementById('title').value.trim();
+    const description = document.getElementById('description').value.trim();
+    const priority = document.getElementById('Priority-p').value.trim();
+    const assignee = document.getElementById('assignee').value.trim();
+    const estimatedDate = document.getElementById('estimatedDate').value.trim() || null;
+    const reporter = document.getElementById('reporter').value.trim() || null;
+    const type = document.getElementById('type').value.trim();
+    const relatedTicket = document.getElementById('relatedTicket').value.trim()  || null;
+
+    if (!isNotEmpty(title)) {
+        alert('Please enter a valid title.');
+        return;
+    }
+
+    if (!isNotEmpty(description)) {
+        alert('Please enter a valid description.');
+        return;
+    }
+
+    data = {
+        title,
+        description,
+        priority,
+        assignee,
+        estimatedDate,
+        reporter,
+        type,
+        relatedTicket
+    }
+
+    const queryString = new URLSearchParams(data).toString();
+    console.log("string", queryString);
+    window.location.href = '../confirmation/new-ticket-confirmation.php?' + queryString;
+}
+
+document.getElementById('create-Ticket-button').addEventListener('click', createTicket);
 
 document.getElementById('cancel-create-ticket').addEventListener('click', function () {
     navigateToPage('./kanban1.html');
