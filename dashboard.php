@@ -74,7 +74,7 @@
 
         // Fetch and display the user's name dynamically
         if (isset($_SESSION['user_fullname'])) {
-            echo $_SESSION['user_fullname'];
+            echo "<script>console.log(".$_SESSION['user_fullname'].");</script>";
         } else {
             echo "User";
         }

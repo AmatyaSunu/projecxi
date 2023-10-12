@@ -3,21 +3,21 @@ Author: Sunidhi Amatya */
 
 // Function to navigate to the next page
 function navigateToPage(url) {
-    window.location.href = url;
+  window.location.href = url;
 }
 
 function getProjectDetail(elem) {
-    const trElement = document.getElementById(elem);
-    const tdElements = trElement.getElementsByTagName("td");
+  const trElement = document.getElementById(elem);
+  const tdElements = trElement.getElementsByTagName("td");
 
-    const projectKey = tdElements[0].textContent;
-    const projectName = tdElements[1].textContent;
-    
-    return {projectKey, projectName};
+  const projectKey = tdElements[0].textContent;
+  const projectName = tdElements[1].textContent;
+
+  return { projectKey, projectName };
 }
 // Adding event listeners to the links
 document.getElementById('create-project').addEventListener('click', function () {
-    navigateToPage('./project/create-project.php');
+  navigateToPage('./project/create-project.php');
 });
 
 function navigateToPage(url, projectKey, projectName) {
@@ -25,15 +25,15 @@ function navigateToPage(url, projectKey, projectName) {
     // window.location.href = `../php/setProjectId.php?projectKey=${projectKey}&redirectUrl=${encodeURIComponent(url)}`;
     window.location.href = 'php/setProjectId.php?projectKey=' + projectKey + '&redirectUrl=' + encodeURIComponent(url) + '&projectName=' + projectName;
   } else {
-      window.location.href = url;
+    window.location.href = url;
   }
 }
 
 document.querySelectorAll('.project-row').forEach(row => {
-  row.addEventListener('click', function() {
-      const projectKey = this.getElementsByTagName("td")[0].textContent;
-      const projectName = this.getElementsByTagName("td")[1].textContent;
-      // navigateToPage('project/kanband.php?projectKey=' + encodeURIComponent(projectKey) + '&projectName=' + encodeURIComponent(projectName));
+  row.addEventListener('click', function () {
+    const projectKey = this.getElementsByTagName("td")[0].textContent;
+    const projectName = this.getElementsByTagName("td")[1].textContent;
+    // navigateToPage('project/kanband.php?projectKey=' + encodeURIComponent(projectKey) + '&projectName=' + encodeURIComponent(projectName));
     const redirectUrl = '../project/kanband.php?projectKey=' + encodeURIComponent(projectKey) + '&projectName=' + encodeURIComponent(projectName);
     navigateToPage(redirectUrl, projectKey, projectName);
   });
@@ -49,35 +49,31 @@ document.querySelectorAll('.project-row').forEach(row => {
     navigateToPage('./signup/reset-password.html');
   });
   */
-  /* document.getElementById('create-account').addEventListener('click', function () {
-    navigateToPage('./signup/signup.html');
-  });
-  */ 
-  /*document.getElementById('privacy-policy').addEventListener('click', function () {
-    console.log("here");
-    navigateToPage('./landing-pages/privacy-policy.html');
-  }); */
-  
+/* document.getElementById('create-account').addEventListener('click', function () {
+  navigateToPage('./signup/signup.html');
+});
+*/
+/*document.getElementById('privacy-policy').addEventListener('click', function () {
+  console.log("here");
+  navigateToPage('./landing-pages/privacy-policy.html');
+}); */
+
 
 document.getElementById('projects').addEventListener('click', function () {
   navigateToPage('../project.php');
 });
 
 document.getElementById('profile').addEventListener('click', function () {
-  navigateToPage('../php/profile.php');
+  navigateToPage('php/profile.php');
 });
 
-  document.getElementById('contact-us').addEventListener('click', function () {
-    navigateToPage('../landing-pages/contact-us.html');
-  });
+document.getElementById('contact-us').addEventListener('click', function () {
+  navigateToPage('../landing-pages/contact-us.html');
+});
 
-  document.getElementById('faq').addEventListener('click', function () {
-    navigateToPage('../faq.html');
-  });
-
-
-
-
+document.getElementById('faq').addEventListener('click', function () {
+  navigateToPage('../faq.html');
+});
 
 // Function to clear user-related session data
 function clearSessionData() {
@@ -87,16 +83,16 @@ function clearSessionData() {
 
 // Function to logout
 function logout() {
-    // Display a confirmation dialog
-    const confirmed = window.confirm('Are you sure you want to logout?');
+  // Display a confirmation dialog
+  const confirmed = window.confirm('Are you sure you want to logout?');
 
-    if (confirmed) {
-      // Clear user-related session data
-      clearSessionData();
-  
-      // Redirect to the login page
-      navigateToPage('./signup/login-form.php');
-    }
+  if (confirmed) {
+    // Clear user-related session data
+    clearSessionData();
+
+    // Redirect to the login page
+    navigateToPage('./signup/login-form.php');
+  }
 }
 
 // Adding an event listener to the logout link

@@ -8,7 +8,7 @@ function navigateToPage(url) {
 
 // Adding event listeners to the links
 document.getElementById('skip').addEventListener('click', function () {
-    navigateToPage('../dashboard.php');
+    navigateToPage('../login.php');
 });
 
 document.getElementById('confirm-mfa-button').addEventListener('click', function () {
