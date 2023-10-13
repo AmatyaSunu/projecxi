@@ -81,8 +81,7 @@
               <select id="assignee" name="assignee">
                 <!-- Rendering of Usernames from the database for dropdown -->
                 <?php
-                echo "<script>console.log('result');</script>";
-
+                // Query to get user list from database
                 $sql = "SELECT fullName, userId FROM users ORDER BY fullName ASC";
                 $result = mysqli_query($conn, $sql);
 
@@ -90,7 +89,6 @@
 
                 if (mysqli_num_rows($result) > 0) {
                   while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<script>console.log(" . $row . ");</script>";
                     $usernames[] = $row['fullName'];
                   }
                 }
@@ -109,8 +107,7 @@
               <select id="assignee" name="assignee">
                 <!-- Rendering of Usernames from the database for dropdown -->
                 <?php
-                echo "<script>console.log('result');</script>";
-
+                // Query to get user list from database
                 $sql = "SELECT fullName, userId FROM users ORDER BY fullName ASC";
                 $result = mysqli_query($conn, $sql);
 
@@ -118,7 +115,6 @@
 
                 if (mysqli_num_rows($result) > 0) {
                   while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<script>console.log(" . $row . ");</script>";
                     $usernames[] = $row['fullName'];
                   }
                 }
