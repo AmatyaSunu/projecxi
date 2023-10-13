@@ -42,9 +42,6 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
             $_SESSION['user_contactNumber'] = $contactNumber;
             $_SESSION['user_userID'] = mysqli_insert_id($conn); // Get the auto-generated user ID
 
-
-
-            //echo "Success!";
             header("location: ../confirmation/verification-sent.html");
             exit;
         } else {

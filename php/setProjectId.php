@@ -29,8 +29,6 @@ if (isset($_GET['projectKey']) && isset($_GET['redirectUrl']) && isset($_GET['pr
     // Fetch the result
     if (mysqli_stmt_fetch($stmt)) {
         $_SESSION['projectId'] = $projectId;
-        // // $_SESSION['projectKey'] = $projectKey;
-        // $_SESSION['projectName'] = $projectName;
         header('Location: ' . $_GET['redirectUrl']);
         exit;
     } else {

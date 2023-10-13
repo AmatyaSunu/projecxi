@@ -64,10 +64,6 @@ function navigateToDashboardPage() {
     document.getElementById('loginForm').submit();
 }
 
-
-
-
-
 // Navigate back to landing page after cancel
 document.getElementById('cancel').addEventListener('click', function () {
     window.location.href = '../index.html';

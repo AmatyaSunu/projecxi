@@ -14,10 +14,7 @@
 
 <body>
     <?php
-    // ini_set('display_errors', 1);
-    // ini_set('display_startup_errors', 1);
-    // error_reporting(E_ALL);
-
+    
     session_start();
     if (isset($_SESSION['projectId'])) {
         $pID = $_SESSION['projectId'];
@@ -70,9 +67,6 @@
                 echo '</div>';
                 echo '<div class="right-group">';
                 echo '<div class="avatar-board">';
-                // if ($ticket['comments'] > 0) {
-                //     echo '<i class="far fa-comment-alt"></i>';
-                // }
                 echo '<img src="../images/kim.jpeg" alt="Avatar" class="user-avatar">';
                 echo '<img src="../images/jessica.jpeg" alt="Avatar" class="user-avatar">';
                 echo '</div>';
@@ -147,8 +141,7 @@
                     <div class="avatar-board">
                         <img src="../images/jessica.jpeg" alt="Avatar" class="user-avatar">
                         <img src="../images/kim.jpeg" alt="Avatar" class="user-avatar">
-                        <!-- <img src="../images/jo.jpeg" alt="Avatar" class="user-avatar"> -->
-                        <!-- <div class="circle">+9</div> -->
+                        
                     </div>
                 </div>
                 <div class="buttons-container">
@@ -161,28 +154,7 @@
             <div class="kanban-board">
                 <div class="kanban-block" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
                     <p class="swimlane-heading">TO DO <span id="todo-count">0</span></p>
-                    <!-- <div class="ticket" id="ticket-1" draggable="true" ondragstart="drag(event)">
-                        <div class="row">
-                            <p class="ticket-title">Implement the project dashboard</p>
-                        </div>
-                        <div class="row">
-                            <i class="far fa-flag flag-icon"></i>
-                        </div>
-                        <div class="row">
-                            <div class="left-group">
-                                <div class="rectangle-icon"></div>
-                                <p>TT-01</p>
-                                <i class="fas fa-angle-double-up"></i>
-                            </div>
-                            <div class="right-group">
-                                <div class="avatar-board">
-                                    <i class="far fa-comment-alt"></i>
-                                    <img src="../images/kim.jpeg" alt="Avatar" class="user-avatar">
-                                    <img src="../images/jessica.jpeg" alt="Avatar" class="user-avatar">
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
+                    
                     <?php displayTickets('To do', $tickets); ?>
                 </div>
                 <div class="kanban-block" id="inprogress" ondrop="drop(event)" ondragover="allowDrop(event)">

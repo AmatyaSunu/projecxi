@@ -11,7 +11,7 @@
 
 <body class="new-confirmation">
     <div class="confirmation-container">
-        <!-- <span class="close-button" onclick="closePage()">&times;</span> -->
+        
         <div class="close-button">
             <button>x</button>
         </div>

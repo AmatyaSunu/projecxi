@@ -11,6 +11,15 @@
 </head>
 
 <body class="Ticket-body">
+<?php
+  //uncomment for debugging
+  // ini_set('display_errors', 1);
+  // ini_set('display_startup_errors', 1);
+  // error_reporting(E_ALL);
+
+  // Database connection
+  include('../inc/dbconn.inc.php');
+  ?>
   <div class="Ticket-row">
     <div class="navbar">
       <div class="project-menu">
@@ -70,9 +79,25 @@
             <div class="element">
               <label>Assignee</label>
               <select id="assignee" name="assignee">
-                <option value="Jessica Bells">Jessica Bells</option>
-                <option value="Tasmia">Tasmia</option>
-                <option value="Sunidhi Amatya">Sunidhi Amatya</option>
+                <!-- Rendering of Usernames from the database for dropdown -->
+                <?php
+                echo "<script>console.log('result');</script>";
+
+                $sql = "SELECT fullName, userId FROM users ORDER BY fullName ASC";
+                $result = mysqli_query($conn, $sql);
+
+                $usernames = [];
+
+                if (mysqli_num_rows($result) > 0) {
+                  while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<script>console.log(" . $row . ");</script>";
+                    $usernames[] = $row['fullName'];
+                  }
+                }
+                ?>
+                <?php foreach ($usernames as $username) : ?>
+                  <option value="<?php echo $username; ?>"><?php echo $username; ?></option>
+                <?php endforeach; ?>
               </select>
             </div>
             <div class="element">
@@ -81,7 +106,27 @@
             </div>
             <div class="element">
               <label>Reporter</label>
-              <input class="custom-input" type="text" id="reporter" name="reporter" />
+              <select id="assignee" name="assignee">
+                <!-- Rendering of Usernames from the database for dropdown -->
+                <?php
+                echo "<script>console.log('result');</script>";
+
+                $sql = "SELECT fullName, userId FROM users ORDER BY fullName ASC";
+                $result = mysqli_query($conn, $sql);
+
+                $usernames = [];
+
+                if (mysqli_num_rows($result) > 0) {
+                  while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<script>console.log(" . $row . ");</script>";
+                    $usernames[] = $row['fullName'];
+                  }
+                }
+                ?>
+                <?php foreach ($usernames as $username) : ?>
+                  <option value="<?php echo $username; ?>"><?php echo $username; ?></option>
+                <?php endforeach; ?>
+              </select>
             </div>
             <div class="element">
               <label>Type</label>

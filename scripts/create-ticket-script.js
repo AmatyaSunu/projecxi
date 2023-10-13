@@ -49,10 +49,6 @@ function createTicket() {
 
 document.getElementById('create-Ticket-button').addEventListener('click', createTicket);
 
-// document.getElementById('cancel-create-ticket').addEventListener('click', function () {
-//     // navigateToPage('./kanban1.html');
-//     window.history.back();
-// });
 
 document.getElementById('main-logo-ticket').addEventListener('click', function () {
     navigateToPage('../dashboard.php');

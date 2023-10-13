@@ -33,7 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             
 
             header('Location: ../dashboard.php');
-            //header('Location: ../php/profile.php');
 
             exit();
         } else {
