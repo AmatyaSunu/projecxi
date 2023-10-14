@@ -4,78 +4,78 @@
 <head>
     <title>Profile</title>
     <meta charset="UTF-8" />
-    <meta name="author" content="Ramya Karri and Tasmia Bhuiyan" />
+    <meta name="author" content="All" />
     <link rel="stylesheet" href="../styles/profile.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 </head>
 
 <body>
-<?php
+    <?php
+    //uncomment for debugging
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+    // Start the session to access session variables
+    session_start();
 
-session_start(); // Start the session to access session variables
+    echo "<script>console.log('" . $_SESSION['user_email'] . ");</script>";
 
-// Check if the user is logged in
-if (!isset($_SESSION['user_email'])) {
-    // Redirect the user to the login page if not logged in
-    header("Location: ../signup/login-form.php");
-    exit(); // Make sure to exit after redirection
-}
+    // Database connection
+    include('../inc/dbconn.inc.php');
+    // // Check if the user is logged in
+    // if (!isset($_SESSION['user_email'])) {
+    //     // Redirect the user to the login page if not logged in
+    //     header("Location: ../signup/login-form.php");
+    //     exit(); // Make sure to exit after redirection
+    // }
 
-require_once "../inc/dbconn.inc.php";
-
-// Check if the database connection is successful
-if (!$connection) {
-    die("Database connection failed: " . mysqli_connect_error());
-}
-
-// Fetch the user's current profile information from the database
-$userEmail = $_SESSION['user_email']; // Fetch the email from sessions
-$selectQuery = "SELECT * FROM users WHERE email='$userEmail'";
-$result = mysqli_query($connection, $selectQuery);
-
-if (!$result) {
-    die("Error executing the query: " . mysqli_error($connection));
-}
-
-$row = mysqli_fetch_assoc($result);
-
-// Close the database connection
-mysqli_close($connection);
-
-// Populate user information
-$firstName = $row['firstName'];
-$lastName = $row['lastName'];
-$email = $row['email'];
-$contactNumber = $row['contactNumber'];
-$project = $row['companyName'];
-
-// Check if the form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get the updated profile information from the form
-    $firstName = $_POST['first-name'];
-    $lastName = $_POST['last-name'];
-    $email = $_SESSION['user_email']; // The email should not be changeable
-    $contactNumber = $_POST['contact-number'];
-    $project = $_POST['project'];
-
-    // Update the user's profile information in the database
-    $updateQuery = "UPDATE users SET firstName='$firstName', lastName='$lastName', contactNumber='$contactNumber', companyName='$project' WHERE email='$email'";
-
-    // Execute the update query
-    $result = mysqli_query($connection, $updateQuery);
+    // Fetch the user's current profile information from the database
+    $userEmail = $_SESSION['user_email']; // Fetch the email from sessions
+    $selectQuery = "SELECT * FROM users WHERE email='$userEmail'";
+    $result = mysqli_query($conn, $selectQuery);
 
     if (!$result) {
-        die("Error updating profile: " . mysqli_error($connection));
+        die("Error executing the query: " . mysqli_error($con));
     }
 
-    echo "<p>Profile updated successfully!</p>";
-}
-?>
+    $row = mysqli_fetch_assoc($result);
+
+    // Close the database connection
+    mysqli_close($conn);
+
+    // Populate user information
+    $firstName = $row['firstName'];
+    $lastName = $row['lastName'];
+    $fullName = $row['fullName'];
+    $email = $row['email'];
+    $contactNumber = $row['contactNumber'];
+    $companyName = $row['companyName'];
+
+    // Check if the form is submitted
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Get the updated profile information from the form
+        $firstName = $_POST['first-name'];
+        $lastName = $_POST['last-name'];
+        $fullName = $_POST['full-name'];
+        $email = $_SESSION['user_email']; // The email should not be changeable
+        $contactNumber = $_POST['contact-number'];
+        $project = $_POST['project'];
+
+        // Update the user's profile information in the database
+        $updateQuery = "UPDATE users SET firstName='$firstName', lastName='$lastName', contactNumber='$contactNumber', companyName='$project' WHERE email='$email'";
+
+        // Execute the update query
+        $result = mysqli_query($connection, $updateQuery);
+
+        if (!$result) {
+            die("Error updating profile: " . mysqli_error($connection));
+        }
+
+        echo "<p>Profile updated successfully!</p>";
+    }
+    ?>
 
     <div class="sidenav">
         <div class="sidenav-logo">
@@ -120,8 +120,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="user-container">
                 <img src="../images/jessica.jpeg" alt="Avatar" class="user-avatar" />
-                <span class="user-name">Jessica Bells</span>
-
+                <span class="user-name">
+                    <?php
+                    echo $fullName;
+                    ?>
+                </span>
             </div>
         </div>
         <div class="main-content">
@@ -135,30 +138,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="edit-content">
                 <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                    <div class="row">
-                        <div class="column">
-                            <div>
-                                <label>First Name</label>
-                            </div>
-                            <div>
-                                <input class="custom-input-half" type="text" id="first-name" name="name" value="<?php echo $row['first_name']; ?>" required>
-                            </div>
+                    <div>
+                        <div>
+                            <label>First Name</label>
                         </div>
-                        <div class="column last-name">
-                            <div>
-                                <label>Last Name</label>
-                            </div>
-                            <div>
-                                <input class="custom-input-half" type="text" id="last-name" name="name" value="<?php echo $row['last_name']; ?>" required>
-                            </div>
+                        <div>
+                            <input class="custom-input" type="text" id="first-name" name="name" value="<?php echo $firstName; ?>" required>
                         </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label>Last Name</label>
+                        </div>
+                        <div>
+                            <input class="custom-input" type="text" id="last-name" name="name" value="<?php echo $lastName; ?>" required>
+                        </div>
+
                     </div>
                     <div>
                         <div>
                             <label>Email</label>
                         </div>
                         <div>
-                            <input class="custom-input" type="email" id="signup-email" name="signup-email" value="<?php echo $row['email']; ?>" required readonly>
+                            <input class="custom-input" type="email" id="signup-email" name="signup-email" value="<?php echo $email; ?>" required readonly>
                         </div>
                     </div>
                     <div>
@@ -166,23 +168,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <label>Contact Number</label>
                         </div>
                         <div>
-                            <input class="custom-input" type="tel" id="contact-number" value="<?php echo $row['contact_number']; ?>" required>
+                            <input class="custom-input" type="tel" id="contact-number" value="<?php echo $contactNumber; ?>" required>
                         </div>
                     </div>
                     <div>
                         <div>
-                            <label>Project</label>
+                            <label>Company</label>
                         </div>
                         <div>
-                            <input class="custom-input" type="password" id="password" name="password" value="<?php echo $row['project']; ?>" required>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <label>Password</label>
-                        </div>
-                        <div>
-                            <input class="custom-input" type="password" id="password" name="password" value="<?php echo $row['passworde']; ?>" required>
+                            <input class="custom-input" type="text" id="company-name" name="company-name" value="<?php echo $companyName; ?>" required>
                         </div>
                     </div>
                     <div class="button">
@@ -190,7 +184,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <button class="save-changes-button" id="save-changes">Save</button>
                         </div>
                         <div class="cancle-button">
-                            <button class="cancle-changes-button" id="cancle-changes">Cancle</button>
+                            <button class="cancle-changes-button" id="cancle-changes">Cancel</button>
                         </div>
                     </div>
                 </form>

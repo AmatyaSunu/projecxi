@@ -11,7 +11,7 @@
 
 <body class="new-confirmation">
     <div class="confirmation-container">
-        
+
         <div class="close-button">
             <button>x</button>
         </div>
@@ -102,7 +102,13 @@
                         // Set a flag to indicate successful insertion
                         $success = true;
                     } else {
-                        $errorMessage = "Statement execution failed: " . mysqli_stmt_error($statement);
+                        // Check for duplicate key error
+                        if (mysqli_errno($conn) == 1062) {
+                            $errorMessage = "Duplicate entry error, please provide a unique key.";
+                        } else {
+                            // For other errors, re-throw the exception
+                            throw new Exception(mysqli_error($conn));
+                        }
                     }
                 }
                 mysqli_close($conn);
@@ -110,7 +116,7 @@
             ?>
             <script>
                 <?php if (!empty($errorMessage)) : ?>
-                    alert("<?php echo $errorMessage; ?>");
+                    alert("<?php echo addslashes($errorMessage); ?>");
                 <?php elseif (isset($success) && $success) : ?>
                     window.location.href = '../project/kanband.php?projectKey=<?php echo urlencode($projectKey); ?>&projectName=<?php echo urlencode($projectName); ?>';
                 <?php endif; ?>

@@ -131,22 +131,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- <tr id="kanban1">
-                            <td>TT</td>
-                            <td>Titan</td>
-                            <td>Jessica Bells</td>
-                            <td>21/7/2023</td>
-                            <td><button class="progress-button">Progress</td>
-                        </tr>
-                        <tr id="kanban2">
-                            <td>PH</td>
-                            <td>Personhood</td>
-                            <td>Jessica Bells</td>
-                            <td>23/7/2023</td>
-                            <td><button class="progress-button">Progress</td>
-                        </tr> -->
                         <?php
-
                         // Query the database to retrieve projects
                         $projectQuery = "SELECT * FROM projects LIMIT 10";
 

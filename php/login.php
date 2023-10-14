@@ -30,7 +30,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION['user_email'] = $email;
             $_SESSION['user_fullname'] = $fullname; // Store the user's full name in the session
             $_SESSION['user_userID'] = mysqli_insert_id($conn);
-            
 
             header('Location: ../dashboard.php');
 
