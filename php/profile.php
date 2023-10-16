@@ -6,32 +6,35 @@
     <meta charset="UTF-8" />
     <meta name="author" content="All" />
     <link rel="stylesheet" href="../styles/profile.css" />
+    <!-- For implementing google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+    <!-- For implementing the various icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 </head>
 
 <body>
     <?php
     //uncomment for debugging
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
+    // ini_set('display_errors', 1);
+    //  ini_set('display_startup_errors', 1);
+    //  error_reporting(E_ALL); 
 
-    // Start the session to access session variables
+
     session_start();
 
+    // Output email to the console
     echo "<script>console.log('" . $_SESSION['user_email'] . ");</script>";
 
-    // Database connection
     include('../inc/dbconn.inc.php');
+
     // // Check if the user is logged in
     // if (!isset($_SESSION['user_email'])) {
     //     // Redirect the user to the login page if not logged in
     //     header("Location: ../signup/login-form.php");
-    //     exit(); // Make sure to exit after redirection
+    //     exit();
     // }
 
-    // Fetch the user's current profile information from the database
+
     $userEmail = $_SESSION['user_email']; // Fetch the email from sessions
     $selectQuery = "SELECT * FROM users WHERE email='$userEmail'";
     $result = mysqli_query($conn, $selectQuery);
@@ -42,7 +45,6 @@
 
     $row = mysqli_fetch_assoc($result);
 
-    // Close the database connection
     mysqli_close($conn);
 
     // Populate user information

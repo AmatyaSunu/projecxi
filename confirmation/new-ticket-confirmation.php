@@ -50,9 +50,10 @@
 
     <!-- PHP code to handle server -->
     <?php
-    
+
     session_start();
-    
+
+    // // Retrieve project details from the session
     if (isset($_SESSION['projectId'])) {
         $pID = $_SESSION['projectId'];
         $key = $_SESSION['projectKey'];
@@ -61,9 +62,8 @@
 
     include('../inc/dbconn.inc.php');
 
-    // Check if the request method is POST
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
-        // Get user input from $_POST
+        // Get data from the submitted form
         $title = $_POST['title'];
         $description = $_POST['description'];
         $priority = $_POST['priority'];
@@ -77,11 +77,9 @@
         // SQL query to insert ticket data into the 'tickets' table
         $query = "INSERT INTO tickets (title, description, priority, estimatedDate, reporter, type, relatedTickets, projectId, projectKey, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-        // Prepare the statement
         $statement = mysqli_stmt_init($conn);
 
         if (mysqli_stmt_prepare($statement, $query)) {
-            // Bind parameters
             mysqli_stmt_bind_param(
                 $statement,
                 "ssssssssss",
@@ -99,7 +97,7 @@
             );
 
             if (mysqli_stmt_execute($statement)) {
-                $success = true; // Set a flag to indicate successful insertion
+                $success = true;
             } else {
                 $errorMessage = "Statement execution failed: " . mysqli_stmt_error($statement);
             }

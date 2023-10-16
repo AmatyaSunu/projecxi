@@ -8,32 +8,36 @@
     <link rel="stylesheet" href="../styles/kanban-style.css">
     <link rel="stylesheet" href="../styles/icon-style.css">
     <script src="../scripts/kanban1-script.js" defer></script>
+    <!-- For implementing google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inria+Sans&family=Roboto&family=Inria:wght@400;700&display=swap" rel="stylesheet">
+    <!-- For implementing the various icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 
 <body>
     <?php
-    
+
     session_start();
+
+    // Check if the session variables are set
     if (isset($_SESSION['projectId'])) {
         $pID = $_SESSION['projectId'];
         $key = $_SESSION['projectKey'];
         $name = $_SESSION['projectName'];
     }
 
+    // Get the user's full name
     $fullName = isset($_SESSION['user_fullName']) ? $_SESSION['user_fullName'] : 'Jessica Bells';
 
     include('../inc/dbconn.inc.php');
 
-    // Query the database to retrieve projects
+    // Query the database to retrieve tickets
     $key = mysqli_real_escape_string($conn, $_SESSION['projectKey']);
     $query = "SELECT * FROM tickets WHERE projectKey = '$key'";
 
     $result = mysqli_query($conn, $query);
 
     $tickets = [];
-    // Check if the query was successful
     if ($result) {
         if (mysqli_num_rows($result) >= 1) {
             while ($row = mysqli_fetch_assoc($result)) {
@@ -42,6 +46,7 @@
         }
     }
 
+    //display tickets by status
     function displayTickets($status, $tickets)
     {
         foreach ($tickets as $ticket) {
@@ -141,7 +146,7 @@
                     <div class="avatar-board">
                         <img src="../images/jessica.jpeg" alt="Avatar" class="user-avatar">
                         <img src="../images/kim.jpeg" alt="Avatar" class="user-avatar">
-                        
+
                     </div>
                 </div>
                 <div class="buttons-container">
@@ -154,7 +159,7 @@
             <div class="kanban-board">
                 <div class="kanban-block" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
                     <p class="swimlane-heading">TO DO <span id="todo-count">0</span></p>
-                    
+
                     <?php displayTickets('To do', $tickets); ?>
                 </div>
                 <div class="kanban-block" id="inprogress" ondrop="drop(event)" ondragover="allowDrop(event)">

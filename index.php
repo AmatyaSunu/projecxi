@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Ramya">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="./styles/styles-welcome.css">
     <title>Welcome to Projecxi</title>
 </head>
+
 <body>
     <div class="welcome-container">
         <div class="welcome-content">
@@ -16,4 +18,5 @@
         </div>
     </div>
 </body>
+
 </html>

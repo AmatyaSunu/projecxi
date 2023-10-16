@@ -49,15 +49,17 @@
             </form>
 
             <?php
+            //Display errors for debugging
             ini_set('display_errors', 1);
             ini_set('display_startup_errors', 1);
             error_reporting(E_ALL);
 
+            //include database connection file
             include('../inc/dbconn.inc.php');
 
-            // Check if the request method is POST
+
             if ($_SERVER["REQUEST_METHOD"] === "POST") {
-                // Get user input from $_POST
+                // Get user input from the submitted form
                 $projectKey = $_POST['projectKey'];
                 $projectName = $_POST['projectName'];
                 $url = $_POST['url'];
@@ -68,21 +70,18 @@
                 $startDate = $_POST['startDate'];
                 $status = $_POST['status'];
 
-                // starting session
+
                 session_start();
 
-                //storing project detail on session
+                //Save project information in the session for later use
                 $_SESSION['projectName'] = $projectName;
                 $_SESSION['projectKey'] = $projectKey;
 
-                // SQL query to insert user data into the 'users' table
                 $query = "INSERT INTO projects (`key`, projectName, url, projectType, projectLead, description, defaultAssignee, startDate, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-                // Prepare the statement
                 $statement = mysqli_stmt_init($conn);
 
                 if (mysqli_stmt_prepare($statement, $query)) {
-                    // Bind parameters
                     mysqli_stmt_bind_param(
                         $statement,
                         "sssssssss",
@@ -97,16 +96,15 @@
                         $status
                     );
 
+                    // SQL statement to insert data into the database
                     if (mysqli_stmt_execute($statement)) {
                         $_SESSION['projectId'] = mysqli_insert_id($conn);
-                        // Set a flag to indicate successful insertion
                         $success = true;
                     } else {
                         // Check for duplicate key error
                         if (mysqli_errno($conn) == 1062) {
                             $errorMessage = "Duplicate entry error, please provide a unique key.";
                         } else {
-                            // For other errors, re-throw the exception
                             throw new Exception(mysqli_error($conn));
                         }
                     }

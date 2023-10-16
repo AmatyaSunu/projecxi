@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="../styles/kanban-style.css">
     <link rel="stylesheet" href="../styles/icon-style.css">
     <script src="../scripts/kanban1-script.js" defer></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inria+Sans&family=Roboto&family=Inria:wght@400;700&display=swap"
-        rel="stylesheet">
+    <!-- For implementing google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans&family=Roboto&family=Inria:wght@400;700&display=swap" rel="stylesheet">
+    <!-- For implementing the various icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 
@@ -113,7 +113,7 @@
                                     <img src="../images/jessica.jpeg" alt="Avatar" class="user-avatar">
                                 </div>
                             </div>
-                        </div>                        
+                        </div>
                     </div>
                     <div class="ticket" id="ticket-2" draggable="true" ondragstart="drag(event)">
                         <div class="row">
@@ -132,7 +132,7 @@
                                     <img src="../images/jessica.jpeg" alt="Avatar" class="user-avatar">
                                 </div>
                             </div>
-                        </div>                        
+                        </div>
                     </div>
                     <div class="ticket" id="ticket-3" draggable="true" ondragstart="drag(event)">
                         <div class="row">
@@ -154,7 +154,7 @@
                                     <img src="../images/jessica.jpeg" alt="Avatar" class="user-avatar">
                                 </div>
                             </div>
-                        </div>                        
+                        </div>
                     </div>
                 </div>
                 <div class="kanban-block" id="inprogress" ondrop="drop(event)" ondragover="allowDrop(event)">

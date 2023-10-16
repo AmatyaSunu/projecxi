@@ -6,7 +6,9 @@
     <meta charset="UTF-8" />
     <meta name="author" content="Ramya Karri" />
     <link rel="stylesheet" href="../styles/project.styles.css" />
+    <!-- For implementing google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+    <!-- For implementing the various icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 </head>
 
@@ -83,20 +85,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- <tr id="kanban1">
-                        <td>TT</td>
-                        <td>Titan</td>
-                        <td>Jessica Bells</td>
-                        <td>21/7/2023</td>
-                        <td><button class="progress-button">Progress</td>
-                    </tr>
-                    <tr id="kanban2">
-                        <td>PH</td>
-                        <td>Personhood</td>
-                        <td>Jessica Bells</td>
-                        <td>23/7/2023</td>
-                        <td><button class="progress-button">Progress</td>
-                    </tr> -->
+
                     <?php
                     // Query the database to retrieve projects
                     $projectQuery = "SELECT * FROM projects";

@@ -1,14 +1,20 @@
 <?php
-ini_set('display_errors', 1);
+
+
+//uncomment for debugging
+/* ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+*/
 
 include('../inc/dbconn.inc.php');
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $email = $_POST['signup-email']; // Use the correct form field name
-    $password = $_POST['password']; // Use the correct form field name
+    // Get user input from login form
+    $email = $_POST['signup-email']; 
+    $password = $_POST['password']; 
 
+    // fetch user information based on email
     $query = "SELECT email, password, fullname FROM users WHERE email = ? LIMIT 1";
 
     $stmt = mysqli_prepare($conn, $query);
@@ -19,20 +25,23 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $result = mysqli_stmt_get_result($stmt);
 
+     // Check if a user with the provided email exists
     if ($row = mysqli_fetch_assoc($result)) {
         $storedPassword = $row['password'];
-        $fullname = $row['fullname']; // Fetch the user's full name
+        $fullname = $row['fullname'];
 
         // Verify the provided password against the stored (hashed) password
         if (password_verify($password, $storedPassword)) {
-            // Passwords match; login successful
+            // if Passwords match then login successful
             session_start();
+
+             // Store user information in session variables
             $_SESSION['user_email'] = $email;
             $_SESSION['user_fullname'] = $fullname; // Store the user's full name in the session
             $_SESSION['user_userID'] = mysqli_insert_id($conn);
 
+             // Redirect the user to dashboard
             header('Location: ../dashboard.php');
-
             exit();
         } else {
             echo "Wrong Credential: Please enter a valid email or password.";
@@ -45,4 +54,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 
 mysqli_close($conn);
-?>

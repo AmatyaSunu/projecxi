@@ -7,12 +7,14 @@ function navigateToPage(url) {
 }
 
 // Adding event listeners to the links
-document.getElementById('privacy-policy').addEventListener('click', function () {
-  navigateToPage('../landing-pages/privacy-policy.html');
-});
+document
+  .getElementById("privacy-policy")
+  .addEventListener("click", function () {
+    navigateToPage("../landing-pages/privacy-policy.html");
+  });
 
-document.getElementById('terms-of-use').addEventListener('click', function () {
-  navigateToPage('../landing-pages/terms-of-use.html');
+document.getElementById("terms-of-use").addEventListener("click", function () {
+  navigateToPage("../landing-pages/terms-of-use.html");
 });
 
 // Check validity of input element
@@ -27,32 +29,27 @@ function createAccount(event) {
   const signupEmailInput = document.getElementById("signup-email");
   const passwordInput = document.getElementById("password");
 
-  // Checks Company Name validity
   if (!isNotEmpty(companyNameInput)) {
-    event.preventDefault(); 
+    event.preventDefault();
     alert("Please enter a valid company name.");
     return;
   }
 
-  // Checks First Name validity
   if (!isNotEmpty(firstNameInput)) {
     alert("Please enter a valid first name.");
     return;
   }
 
-  // Check Last Name validity
   if (!isNotEmpty(lastNameInput)) {
     alert("Please enter a valid last name.");
     return;
   }
 
-  // Check Email validity
   if (!isNotEmpty(signupEmailInput) || !isEmailValid(signupEmailInput)) {
     alert("Please enter a valid email address.");
     return;
   }
 
-  // Check Password validity
   if (!isValidPassword(passwordInput)) {
     alert(
       "Please enter a valid password. Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one digit, and one special character."
@@ -67,12 +64,12 @@ function createAccount(event) {
     fullName: firstNameInput.value,
     email: signupEmailInput.value,
     contactNumber: contactNumberInput.value,
-    password: passwordInput.value
-  }
+    password: passwordInput.value,
+  };
 
   const queryString = new URLSearchParams(data).toString();
 
-  window.location.href = '../php/signup.php?' + queryString;
+  window.location.href = "../php/signup.php?" + queryString;
 }
 
 // Checks if an input field is not empty
@@ -80,7 +77,7 @@ function isNotEmpty(inputField) {
   return inputField.value.trim() !== "";
 }
 
-// Checks if an email address is valid
+// Checks if email address validity
 function isEmailValid(email) {
   const correctPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return correctPattern.test(email.value.trim());
@@ -93,7 +90,6 @@ function isValidPassword(password) {
   return passwordPattern.test(password.value.trim());
 }
 
-// Add event listener to the Create Account button
 const signupForm = document.getElementById("signupForm");
 signupForm.addEventListener("submit", function (event) {
   event.preventDefault();

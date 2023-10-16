@@ -3,7 +3,7 @@
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Content-Type");
 
-// Connecting to database
+
 require_once "inc/dbconn.inc.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $startDate = $data["startDate"];
 
         // Debugging: Print the received data to the error log (check your server's error log)
-        error_log("Received data:\n" . print_r($data, true));
+       // error_log("Received data:\n" . print_r($data, true));
 
         $sql = "INSERT INTO projects (projectName, `key`, url, projectType, description, projectLead, defaultAssignee, startDate)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
@@ -35,7 +35,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if (mysqli_stmt_execute($statement)) {
                 
-                // Send a success response back to the client (optional)
                 echo "Project created successfully!";
             } else {
                 echo "Error: " . mysqli_error($conn);
@@ -46,4 +45,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         mysqli_close($conn);
     }
 }
-?>

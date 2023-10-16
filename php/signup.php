@@ -1,13 +1,14 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// Configure error reporting for debugging purposes
+//ini_set('display_errors', 1);
+//ini_set('display_startup_errors', 1);
+//error_reporting(E_ALL);
 
 include('../inc/dbconn.inc.php');
 
-// Check if the request method is GET
+// Check request method is GET
 if ($_SERVER["REQUEST_METHOD"] === "GET") {
-    // Get user input
+    // Get user input from the URL query parameters
     $companyName = $_GET['companyName'];
     $firstName = $_GET['firstName'];
     $lastName = $_GET['lastName'];
@@ -16,17 +17,15 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
     $contactNumber = $_GET['contactNumber'];
     $password = $_GET['password'];
 
-    // Hash the password
+    // Hash user's password for security
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     // SQL query to insert user data into the 'users' table
     $query = "INSERT INTO users (companyName, firstName, lastName, fullName, email, contactNumber, password) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
-    // Prepare the statement
     $statement = mysqli_stmt_init($conn);
 
     if (mysqli_stmt_prepare($statement, $query)) {
-        // Bind parameters
         mysqli_stmt_bind_param($statement, "sssssss", $companyName, $firstName, $lastName, $fullName, $email, $contactNumber, $hashedPassword);
 
         if (mysqli_stmt_execute($statement)) {

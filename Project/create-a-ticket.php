@@ -11,13 +11,12 @@
 </head>
 
 <body class="Ticket-body">
-<?php
+  <?php
   //uncomment for debugging
   // ini_set('display_errors', 1);
   // ini_set('display_startup_errors', 1);
   // error_reporting(E_ALL);
 
-  // Database connection
   include('../inc/dbconn.inc.php');
   ?>
   <div class="Ticket-row">
@@ -61,11 +60,11 @@
           <div class="column1">
             <div class="element">
               <label>Title</label>
-              <input class="custom-input" type="text" id="title" name="title" placeholder="Required" required/>
+              <input class="custom-input" type="text" id="title" name="title" placeholder="Required" required />
             </div>
             <div class="element">
               <label>Description</label>
-              <input class="custom-inputD" type="text" id="description" name="description" placeholder="Required" required/>
+              <input class="custom-inputD" type="text" id="description" name="description" placeholder="Required" required />
             </div>
             <div class="elementp">
               <label>Priority</label>
@@ -100,7 +99,7 @@
             </div>
             <div class="element">
               <label>Estimated Date</label>
-              <input class="custom-input" type="date" id="estimatedDate" name="estimatedDate" placeholder="Required" required/>
+              <input class="custom-input" type="date" id="estimatedDate" name="estimatedDate" placeholder="Required" required />
             </div>
             <div class="element">
               <label>Reporter</label>
@@ -148,7 +147,7 @@
             <div class="column2-row1">
               <div>
                 <label>Related Tickets</label>
-                <input class="custom-input2" type="text" id="relatedTicket" name="relatedTicket" placeholder="TT" required/>
+                <input class="custom-input2" type="text" id="relatedTicket" name="relatedTicket" placeholder="TT" required />
               </div>
               <div class="info">
                 <button type="button" id="infoButton">i</button>

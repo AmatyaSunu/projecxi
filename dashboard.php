@@ -21,7 +21,7 @@
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
-    
+
     require_once "inc/dbconn.inc.php";
     ?>
     <div class="sidenav">
@@ -70,20 +70,20 @@
             <div class="user-container">
                 <img src="./images/jessica.jpeg" alt="Avatar" class="user-avatar">
 
-               <span class="user-name">
-        <?php
-        session_start();
+                <span class="user-name">
+                    <?php
+                    session_start();
 
-        // Fetch and display the user's name dynamically
-        if (isset($_SESSION['user_fullname'])) {
-            echo "<script>console.log(".$_SESSION['user_fullname'].");</script>";
-        } else {
-            echo "User";
-        }
-        ?> 
-    </span>
+                    // Fetch and display the user's name dynamically
+                    if (isset($_SESSION['user_fullname'])) {
+                        echo "<script>console.log(" . $_SESSION['user_fullname'] . ");</script>";
+                    } else {
+                        echo "User";
+                    }
+                    ?>
+                </span>
 
-                 </div>
+            </div>
         </div>
         <div class="main-content">
             <div class="row">
@@ -142,12 +142,12 @@
                             if (mysqli_num_rows($projectList) >= 1) {
                                 while ($rowProject = mysqli_fetch_assoc($projectList)) {
                                     echo "<tr class='project-row' id='project-" . $rowProject["key"] . "'>";
-                                    ?>
-                                        <td><?php echo $rowProject["key"]; ?></td>
-                                        <td><?php echo $rowProject["projectName"]; ?></td>
-                                        <td><?php echo $rowProject["projectLead"]; ?></td>
-                                        <td><?php echo $rowProject["startDate"]; ?></td>
-                                        <td><button class="progress-button"><?php echo $rowProject["status"]; ?></td>
+                        ?>
+                                    <td><?php echo $rowProject["key"]; ?></td>
+                                    <td><?php echo $rowProject["projectName"]; ?></td>
+                                    <td><?php echo $rowProject["projectLead"]; ?></td>
+                                    <td><?php echo $rowProject["startDate"]; ?></td>
+                                    <td><button class="progress-button"><?php echo $rowProject["status"]; ?></td>
                                     </tr>
                         <?php
                                 }

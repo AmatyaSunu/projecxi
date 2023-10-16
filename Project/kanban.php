@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="../styles/kanban-style.css">
     <script src="../scripts/script.js" defer></script>
     <script src="../scripts/kanban-script.js" defer></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inria+Sans&family=Roboto&family=Inria:wght@400;700&display=swap"
-        rel="stylesheet">
+    <!-- For implementing google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans&family=Roboto&family=Inria:wght@400;700&display=swap" rel="stylesheet">
+    <!-- For implementing the various icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 
@@ -52,7 +52,7 @@
         <div class="logo" id="main-logo-kanban">
             <img class="img-logo" src="../images/logo.png" />
         </div>
-       
+
     </div>
     <div class="main">
         <div class="topnav">
@@ -68,7 +68,7 @@
         </div>
         <div class="main-content">
             <div class="row">
-                <p><Strong>Project</Strong> / <span id="projectName">Titans</span>  (<span id="projectKey">TTs</span>)</p>
+                <p><Strong>Project</Strong> / <span id="projectName">Titans</span> (<span id="projectKey">TTs</span>)</p>
             </div>
             <div class="row">
                 <h2>Board</h2>
@@ -110,8 +110,9 @@
                 <div class="kanban-block" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
                     <p class="swimlane-heading">DONE <span>0</span></p>
                 </div>
-                
+
             </div>
         </div>
 </body>
+
 </html>
