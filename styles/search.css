@@ -195,9 +195,12 @@ body {
 
 .search-container {
   display: flex;
-  justify-content: space-between; /* Align divs at opposite ends */
-  align-items: center; /* Vertically center align the content */
-  padding: 40px 40px; /* Adjust padding as needed */
+  justify-content: space-between;
+  /* Align divs at opposite ends */
+  align-items: center;
+  /* Vertically center align the content */
+  padding: 40px 40px;
+  /* Adjust padding as needed */
 }
 
 .search-input-container {
@@ -256,6 +259,7 @@ body {
   padding-left: 40px;
   padding-right: 40px;
 }
+
 .borderless-dropdown {
   border: none;
   background-color: transparent;

@@ -1,6 +1,4 @@
 <?php
-
-
 //uncomment for debugging
 /* ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -11,8 +9,8 @@ include('../inc/dbconn.inc.php');
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Get user input from login form
-    $email = $_POST['signup-email']; 
-    $password = $_POST['password']; 
+    $email = $_POST['signup-email'];
+    $password = $_POST['password'];
 
     // fetch user information based on email
     $query = "SELECT email, password, fullname FROM users WHERE email = ? LIMIT 1";
@@ -25,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $result = mysqli_stmt_get_result($stmt);
 
-     // Check if a user with the provided email exists
+    // Check if a user with the provided email exists
     if ($row = mysqli_fetch_assoc($result)) {
         $storedPassword = $row['password'];
         $fullname = $row['fullname'];
@@ -35,12 +33,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             // if Passwords match then login successful
             session_start();
 
-             // Store user information in session variables
+            // Store user information in session variables
             $_SESSION['user_email'] = $email;
             $_SESSION['user_fullname'] = $fullname; // Store the user's full name in the session
             $_SESSION['user_userID'] = mysqli_insert_id($conn);
 
-             // Redirect the user to dashboard
+            // Redirect the user to dashboard
             header('Location: ../dashboard.php');
             exit();
         } else {

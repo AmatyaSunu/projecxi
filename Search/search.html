@@ -1,165 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Search</title>
-    <meta charset="UTF-8" />
-    <meta name="author" content="Tasmia Bhuiyan" />
-    <link rel="stylesheet" href="../styles/search.css" />
-    <script src="../scripts/script.js" defer></script>
-    <!-- For implementing google fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
-      rel="stylesheet"
-    />
-    <!-- For implementing the various icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    />
-  </head>
 
-  <body>
-    <div class="sidenav">
-      <div class="sidenav-logo">
-        <img src="../images/project-logo.png" />
-        <span class="project-label">Armour<br />Technology</span>
-      </div>
+<head>
+  <title>Search</title>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Tasmia Bhuiyan" />
+  <link rel="stylesheet" href="../styles/search.css" />
+  <script src="../scripts/script.js" defer></script>
+  <!-- For implementing google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+  <!-- For implementing the various icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+</head>
 
-      <div class="menu">
-        <div>
-          <a class="menu-content">Dashboard</a>
-        </div>
-        <div>
-          <a class="menu-content">Project</a>
-        </div>
-        <hr class="sidenav-line" />
-        <div>
-          <a class="menu-content">Profile</a>
-        </div>
-        <div>
-          <a class="menu-content">Setting</a>
-        </div>
-        <div>
-          <a class="menu-content">About</a>
-        </div>
-        <hr class="sidenav-line" />
-        <div>
-          <a class="menu-content">Contact us</a>
-        </div>
-        <div>
-          <a class="menu-content">Help</a>
-        </div>
+<body>
+  <div class="sidenav">
+    <div class="sidenav-logo">
+      <img src="../images/project-logo.png" />
+      <span class="project-label">Armour<br />Technology</span>
+    </div>
+
+    <div class="menu">
+      <div>
+        <a class="menu-content">Dashboard</a>
       </div>
-      <div class="logo">
-        <img src="../images/logo.png" />
+      <div>
+        <a class="menu-content">Project</a>
+      </div>
+      <hr class="sidenav-line" />
+      <div>
+        <a class="menu-content">Profile</a>
+      </div>
+      <div>
+        <a class="menu-content">Setting</a>
+      </div>
+      <div>
+        <a class="menu-content">About</a>
+      </div>
+      <hr class="sidenav-line" />
+      <div>
+        <a class="menu-content">Contact us</a>
+      </div>
+      <div>
+        <a class="menu-content">Help</a>
       </div>
     </div>
-    <div class="main">
-      <div class="topnav">
-        <div class="back-container">
-          <i class="fas fa-chevron-left"></i>
-          <span> Back </span>
-        </div>
-        <div class="user-container">
-          <img src="../images/jessica.jpeg" alt="Avatar" class="user-avatar" />
-          <span class="user-name">Jessica Bells</span>
-          <i class="fas fa-chevron-down dropdown-icon"></i>
-        </div>
+    <div class="logo">
+      <img src="../images/logo.png" />
+    </div>
+  </div>
+  <div class="main">
+    <div class="topnav">
+      <div class="back-container">
+        <i class="fas fa-chevron-left"></i>
+        <span> Back </span>
       </div>
-      <div class="main-content">
-        <div class="grid-2">
-          <div class="search-header">
-            <h1>Search</h1>
-            <div class="export-dropdown">
-              <div class="dropdown">
-                <button class="dropbtn">Export</button>
-                <div class="dropdown-content">
-                  <a href="#">Printable</a>
-                  <a href="#">CSV</a>
-                  <a href="#">Dashboard Chart</a>
-                </div>
-              </div>
-              <i class="fas fa-chevron-down dropdown-icon"></i>
-            </div>
-          </div>
-
-          <div class="search-container">
-            <div class="search-input-container">
-              <i class="fas fa-search search-icon"></i>
-              <input type="text" class="search-input" placeholder="Search" />
-            </div>
-            <button class="search-btn">Search</button>
-          </div>
-
-          <div class="search-filters">
-            <form>
-              <div class="filter-row">
-                <div class="filter-group">
-                  <label for="project">Project: </label>
-                  <select
-                    name="project"
-                    id="project"
-                    class="borderless-dropdown"
-                  >
-                    <option value="All">All</option>
-                    <option value="project1">Lamda</option>
-                  </select>
-                </div>
-
-                <div class="filter-group">
-                  <label for="type">Type: </label>
-                  <select name="type" id="type" class="borderless-dropdown">
-                    <option value="All">All</option>
-                    <option value="type1">Bug</option>
-                    <option value="type2">Task</option>
-                    <option value="type3">Epic</option>
-                  </select>
-                </div>
-
-                <div class="filter-group">
-                  <label for="priority">Priority: </label>
-                  <select
-                    name="priority"
-                    id="priority"
-                    class="borderless-dropdown"
-                  >
-                    <option value="All">All</option>
-                    <option value="priority1">High</option>
-                    <option value="priority2">Medium</option>
-                    <option value="priority3">Low</option>
-                  </select>
-                </div>
-
-                <div class="filter-group">
-                  <label for="status">Status: </label>
-                  <select name="status" id="status" class="borderless-dropdown">
-                    <option value="All">All</option>
-                    <option value="status1">To Do</option>
-                    <option value="status2">In Progress</option>
-                    <option value="status3">In Testing</option>
-                    <option value="status4">Done</option>
-                  </select>
-                </div>
-              </div>
-            </form>
-          </div>
-
-          <table class="search-table">
-            <thead>
-              <tr>
-                <th>Key</th>
-                <th>Summary</th>
-                <th>Assignee</th>
-                <th>Priority</th>
-                <th>Status</th>
-                <th>Type</th>
-                <th>Sprint</th>
-                <th>Report</th>
-              </tr>
-            </thead>
-          </table>
-        </div>
+      <div class="user-container">
+        <img src="../images/jessica.jpeg" alt="Avatar" class="user-avatar" />
+        <span class="user-name">Jessica Bells</span>
+        <i class="fas fa-chevron-down dropdown-icon"></i>
       </div>
     </div>
-  </body>
+    <div class="main-content">
+      <div class="grid-2">
+        <div class="search-header">
+          <h1>Search</h1>
+          <div class="export-dropdown">
+            <div class="dropdown">
+              <button class="dropbtn">Export</button>
+              <div class="dropdown-content">
+                <a href="#">Printable</a>
+                <a href="#">CSV</a>
+                <a href="#">Dashboard Chart</a>
+              </div>
+            </div>
+            <i class="fas fa-chevron-down dropdown-icon"></i>
+          </div>
+        </div>
+
+        <div class="search-container">
+          <div class="search-input-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" class="search-input" placeholder="Search" />
+          </div>
+          <button class="search-btn">Search</button>
+        </div>
+
+        <div class="search-filters">
+          <form>
+            <div class="filter-row">
+              <div class="filter-group">
+                <label for="project">Project: </label>
+                <select name="project" id="project" class="borderless-dropdown">
+                  <option value="All">All</option>
+                  <option value="project1">Lamda</option>
+                </select>
+              </div>
+
+              <div class="filter-group">
+                <label for="type">Type: </label>
+                <select name="type" id="type" class="borderless-dropdown">
+                  <option value="All">All</option>
+                  <option value="type1">Bug</option>
+                  <option value="type2">Task</option>
+                  <option value="type3">Epic</option>
+                </select>
+              </div>
+
+              <div class="filter-group">
+                <label for="priority">Priority: </label>
+                <select name="priority" id="priority" class="borderless-dropdown">
+                  <option value="All">All</option>
+                  <option value="priority1">High</option>
+                  <option value="priority2">Medium</option>
+                  <option value="priority3">Low</option>
+                </select>
+              </div>
+
+              <div class="filter-group">
+                <label for="status">Status: </label>
+                <select name="status" id="status" class="borderless-dropdown">
+                  <option value="All">All</option>
+                  <option value="status1">To Do</option>
+                  <option value="status2">In Progress</option>
+                  <option value="status3">In Testing</option>
+                  <option value="status4">Done</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <table class="search-table">
+          <thead>
+            <tr>
+              <th>Key</th>
+              <th>Summary</th>
+              <th>Assignee</th>
+              <th>Priority</th>
+              <th>Status</th>
+              <th>Type</th>
+              <th>Sprint</th>
+              <th>Report</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>

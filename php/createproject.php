@@ -3,7 +3,6 @@
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Content-Type");
 
-
 require_once "inc/dbconn.inc.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

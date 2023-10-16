@@ -1,10 +1,12 @@
 body {
     background-color: white;
 }
+
 .row {
     display: flex;
-   
+
 }
+
 .sidenav {
     height: 100%;
     width: 200px;
@@ -17,11 +19,13 @@ body {
     padding-top: 20px;
     color: white;
 }
+
 /* Style to place brand logo */
 .sidenav-logo {
     display: flex;
     align-items: center;
 }
+
 .sidenav-logo img {
     width: 40px;
     height: auto;
@@ -34,6 +38,7 @@ body {
     font-weight: medium;
     margin-left: 5px;
 }
+
 /* style horizontal line on sidebar */
 .sidenav-line {
     width: 150px;
@@ -129,6 +134,7 @@ body {
     font-size: medium;
     font-family: 'Inter', sans-serif;
 }
+
 /* Style Main content */
 .main {
     margin-left: 220px;
@@ -153,39 +159,40 @@ body {
 }
 
 .avatar-dispaly {
-    width: 150px; 
-    height: 150px; 
+    width: 150px;
+    height: 150px;
     border-top: 80px;
     border-radius: 50%;
-  }
-  .profile-pic{
-   
+}
+
+.profile-pic {
+
     margin-left: 650px;
-  }
+}
 
 .edit-profile-picture-button {
     display: inline-block;
     position: relative;
     overflow: hidden;
-    width: 40px; 
-    height: 40px; 
-    border: 2px solid #007bff; 
-    border-radius: 50%; 
+    width: 40px;
+    height: 40px;
+    border: 2px solid #007bff;
+    border-radius: 50%;
     cursor: pointer;
-  }
-  
-  /* Style the image within the button */
-  .edit-profile-picture-button img {
+}
+
+/* Style the image within the button */
+.edit-profile-picture-button img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
-  }
-  
-  /* Hide the file input */
-  #profilePictureInput {
+    object-fit: cover;
+}
+
+/* Hide the file input */
+#profilePictureInput {
     display: none;
-  }
-  
+}
+
 
 /*my profile css */
 .custom-input {
@@ -204,13 +211,14 @@ body {
     border: black 1px solid;
     border-radius: 5px;
     margin-bottom: 10px;
-    border-right:30px;
-}
-.edit-content{
-    margin-left:400px;
+    border-right: 30px;
 }
 
-.button{
+.edit-content {
+    margin-left: 400px;
+}
+
+.button {
     display: flex;
 }
 
@@ -220,7 +228,7 @@ body {
     color: #fff;
     border: none;
     border-radius: 30px;
-    background-color:#2196f3;
+    background-color: #2196f3;
     padding: 10px 25px;
     width: 100px;
     height: 45px;
@@ -230,8 +238,9 @@ body {
 .save-changes-button:hover {
     font-weight: bolder;
     cursor: pointer;
-    background-color:  #2196f3;
+    background-color: #2196f3;
 }
+
 .cancle-changes-button {
     font-size: x-large;
     font-weight: bolder;
@@ -248,5 +257,5 @@ body {
 .cancle-changes-button:hover {
     font-weight: bolder;
     cursor: pointer;
-    background-color:  #2196f3;
+    background-color: #2196f3;
 }

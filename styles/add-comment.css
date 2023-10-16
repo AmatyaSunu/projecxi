@@ -4,6 +4,7 @@
   width: 100vw;
   display: flex;
 }
+
 .Ticket-body-container {
   background-color: white;
   width: 100%;
@@ -11,13 +12,16 @@
   border-radius: 10px;
   padding: 20px;
 }
+
 .Ticket-row {
   display: flex;
   width: 100%;
 }
+
 .navbar {
   width: 250px;
 }
+
 /* Project Menu Styles */
 .project-menu {
   flex: 1;
@@ -26,30 +30,37 @@
   width: 250px;
   height: 700px;
 }
+
 .project-menu-row1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .project-menu-row2 {
   padding-top: 20px;
 }
+
 .project-menu-row3 {
   display: flex;
 }
+
 .project-menu-content {
   width: 100px;
 }
+
 .project-logo img {
   width: 60px;
   height: auto;
   margin-left: 20px;
   border-radius: 10px;
 }
+
 .project-logo {
   display: flex;
   align-items: center;
 }
+
 .project-logo-label {
   margin-top: 20px;
   margin-right: 10px;
@@ -57,14 +68,17 @@
   color: white;
   font: bolder;
 }
+
 .label {
   font-size: 16px;
   font-weight: bold;
   margin: 0px;
 }
+
 p {
   margin-top: 10px;
 }
+
 .menu-content {
   display: flex;
   color: white;
@@ -85,6 +99,7 @@ p {
   width: 130px;
   margin-bottom: 30px;
 }
+
 .main-logo {
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -94,15 +109,18 @@ p {
   background-color: white;
   margin-top: 110px;
 }
+
 .img-main-logo {
   width: 200px;
   height: auto;
   margin-left: 15px;
   border-radius: 10px;
 }
+
 img.img-main-logo {
   margin-left: 0px;
 }
+
 /* Ticket view CSS */
 .Ticket-form {
   background-color: #fff;
@@ -117,6 +135,7 @@ img.img-main-logo {
   display: flex;
   align-items: center;
 }
+
 .green-box {
   width: 15px;
   height: 15px;
@@ -136,6 +155,7 @@ img.img-main-logo {
   font-weight: bold;
   padding-left: 20px;
 }
+
 h2 {
   margin: 0px;
   padding-left: 20px;
@@ -149,6 +169,7 @@ label {
   font-size: medium;
   color: rgba(11, 11, 11, 0.845);
 }
+
 .Ticket-form-row2 {
   display: flex;
   width: 1000px;
@@ -174,7 +195,8 @@ label {
   font-family: Arial;
   font-weight: bold;
   font-size: medium;
-  color: grey; /* Add this line for grey color */
+  color: grey;
+  /* Add this line for grey color */
   width: 30%;
 }
 
@@ -185,6 +207,7 @@ label {
   width: 70%;
   margin-top: 9px;
 }
+
 .field .in-filedD {
   margin-left: 0px;
   color: black;
@@ -197,6 +220,7 @@ label {
 
   margin-top: 20px;
 }
+
 .custom-input2 {
   width: 630px;
   height: 38px;
@@ -205,6 +229,7 @@ label {
   border-radius: 5px;
   margin-bottom: 10px;
 }
+
 .row {
   display: flex;
   width: 100%;
@@ -216,6 +241,7 @@ label {
   padding-left: 20px;
   padding-right: 20px;
 }
+
 .custom-inputD {
   width: 600px;
   height: 80px;
@@ -244,6 +270,7 @@ label {
 .Ticket-form-row3 {
   margin: 40px;
 }
+
 .edit-Ticket-button {
   font-size: large;
   font-weight: bolder;
@@ -260,10 +287,12 @@ label {
 .column2-row1 {
   padding-right: 150px;
 }
+
 .column2-row2 {
   display: flex;
   padding-right: 150px;
 }
+
 .info {
   width: 50px;
   height: 20px;
@@ -272,6 +301,7 @@ label {
   border: black;
   margin: 0px;
 }
+
 #infoButton {
   background-color: rgb(206, 202, 202);
   color: black;
@@ -285,12 +315,15 @@ label {
 .Attachments {
   padding-top: 20px;
 }
+
 .Attachments-logo {
   width: 10px;
 }
+
 .Attachments-logo img {
   width: 50px;
 }
+
 .bar {
   padding-right: 40px;
 }
@@ -304,25 +337,30 @@ label {
   margin: 10px 0px 0px 50px;
   white-space: nowrap;
 }
+
 .in-line {
   display: flex;
 }
+
 h3 {
   color: grey;
 }
+
 .add-comment {
   text-decoration: none;
   color: #007bff;
   font-size: 17px;
   white-space: nowrap;
 }
+
 .comment-section {
   display: flex;
   align-items: center;
 }
 
 .comment-count {
-  margin-right: 10px; /* Adjust the margin as needed */
+  margin-right: 10px;
+  /* Adjust the margin as needed */
   color: grey;
   white-space: nowrap;
 }
@@ -365,7 +403,9 @@ h3 {
   margin-top: 20px;
   margin-left: 430px;
   display: flex;
-  justify-content: flex-end; /* Add padding for spacing */ /* Right-align the buttons */
+  justify-content: flex-end;
+  /* Add padding for spacing */
+  /* Right-align the buttons */
 }
 
 /* Style for the Comment button */

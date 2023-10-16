@@ -88,9 +88,9 @@ body {
     padding-top: 5px;
 }
 
-.logo:hover{
+.logo:hover {
     cursor: pointer;
-  }
+}
 
 /* CSS main section of kanban page */
 .main {
