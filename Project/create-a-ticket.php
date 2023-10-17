@@ -103,7 +103,7 @@
             </div>
             <div class="element">
               <label>Reporter</label>
-              <select id="assignee" name="assignee">
+              <select id="reporter" name="reporter" class="reporter-t">
                 <!-- Rendering of Usernames from the database for dropdown -->
                 <?php
                 // Query to get user list from database

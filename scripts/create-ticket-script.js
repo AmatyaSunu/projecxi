@@ -17,7 +17,7 @@ function createTicket() {
   const estimatedDate =
     document.getElementById("estimatedDate").value.trim() || new Date();
   const reporter = document.getElementById("reporter").value.trim() || null;
-  const type = document.getElementById("type").value.trim();
+  const type = document.getElementById("type").value.trim() || null;
   const relatedTicket =
     document.getElementById("relatedTicket").value.trim() || null;
   const status = "To do";
