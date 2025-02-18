@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>MFA</title>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Sunidhi Amatya" />
+  <link rel="stylesheet" href="../styles/style.css" />
+  <script src="../scripts/mfa-script.js" defer></script>
+</head>
+
+<body class="signup-body">
+  <div class="mfa-container">
+    <div class="main-logo">
+      <img class="mfa-logo" src="../images/logo.png" />
+    </div>
+    <div class="signup-row">
+      <div class="signup-column">
+        <h1>Multi-Factor Authentication</h1>
+        <p>
+          Add additional protection to your account. When enabled, you need to
+          enter both your correct password and a one-time password (generated
+          by an authentication app) when you login.
+        </p>
+        <p class="para-2">Multi-factor authentication for your</p>
+        <p class="para-3">account is currently:</p>
+        <div class="line-container">
+          <span class="disabled">disabled</span>
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider round"></span>
+          </label>
+          <span class="enabled">enabled</span>
+        </div>
+        <div id="mfa-button">
+          <button class="confirm-button" id="confirm-mfa-button">
+            Confirm
+          </button>
+          <a id="skip">Skip for now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

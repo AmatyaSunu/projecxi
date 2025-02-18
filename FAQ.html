@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>FAQ</title>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Ramya Karri" />
+    <link rel="stylesheet" href="../styles/FAQ.css" />
+    <script src="../scripts/script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Frequently Asked Questions</h1>
+    </header>
+    <main>
+        <?php
+        require_once "inc/dbconn.inc.php";
+    
+    Step 2: Query the database to retrieve FAQ items
+        $faqQuery = "SELECT question, answer FROM faq_table"; // Replace 'faq_table' with your actual table name
+        $result = mysqli_query($connection, $faqQuery); // $connection is your database connection object
+
+
+        // Step 3: Use PHP to generate HTML based on the retrieved data
+        if ($result) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $question = $row['question'];
+                $answer = $row['answer'];
+
+                echo '<section class="faq-item">';
+                echo '<h2 class="question">' . $question . '</h2>';
+                echo '<p class="answer">' . $answer . '</p>';
+                echo '</section>';
+            }
+        } else {
+            echo 'Error: ' . mysqli_error($connection); // Handle any database errors here
+        }
+
+        mysqli_close($connection);
+        ?>
+
+
+    </main>
+
+</body>

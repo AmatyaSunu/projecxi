@@ -1,0 +1,54 @@
+/* Style for icons */
+
+.fa-angle-double-up {
+    color: red;
+}
+
+fa-angle-down {
+    color: blue;
+}
+
+.fa-equals {
+    color: rgb(243, 199, 97);
+}
+
+.fa-flag {
+    color: rgb(221, 31, 31);
+}
+
+.fa-comment-alt {
+    padding-top: 10px;
+
+}
+
+.rectangle-icon {
+    width: 15px;
+    height: 15px;
+    background-color: green;
+}
+
+.social-icon-google {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.social-icon-apple {
+    width: 38px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.social-icon-microsoft {
+    width: 50px;
+    height: auto;
+    margin-left: 15px;
+}
+
+.dot {
+    width: 5px;
+    height: 5px;
+    background-color: #0052cc;
+    border-radius: 50%;
+    margin: 0px 30px;
+}

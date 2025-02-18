@@ -1,0 +1,49 @@
+*** initial step ***
+cloning repository
+    git clone git@github.com:AmatyaSunu/ProjecXi.git
+
+fetch git from remote repository
+    git fetch
+
+checkout to new branch if that branch is not in ours
+    git checkout "branch_name" 
+
+Creating new branch
+    git branch "branch_name"
+
+switching branch
+    git checkout "branch_name"
+
+merging branch
+    git merge current_location_branch_name branch_tobe_merged
+
+
+**** whenever we make any changes we need to add, commit and push to the remote repository ****
+
+check status
+    git status
+
+add new files/changes
+    git add .
+
+commit changes
+    git commit -m "message"
+
+pull if any update
+    git pull origin "branch_name"
+
+push update
+    git push --set-upstream origin branch_name
+
+
+**** steps to push all your changes *****
+git status
+git add .
+git commit -m  "message"
+git push
+
+***** steps to fetch and merge other branch code in yours *****
+git fetch
+git merge branch_name
+    ** resolve merge conflict if any **
+git push
