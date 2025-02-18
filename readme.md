@@ -27,7 +27,7 @@ We followed a structured **Software Development Life Cycle (SDLC)** approach wit
 3. **Final Release**
    - Incorporated feedback and refinements from each sprint to deliver a polished final product.
   
-![Project Screenshot](images/Landing Page.png)
+[Project Screenshot](https://github.com/AmatyaSunu/projecxi/blob/main/images/Landing%20Page.png)
 
 <!-- 
 Login credential
